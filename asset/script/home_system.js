@@ -113,8 +113,10 @@ function updateTimeClock() {
 	mooooafafafafafa3 = document.getElementById("windowframe").clientWidth;
 	mooooafafafafafa4 = document.getElementById("windowframe").clientHeight;
 	document.getElementById("NetscapeNavigatorHeader").innerHTML = document.getElementById("mainNav").contentWindow.document.title;
-	document.getElementById("mainNav").style.left = (mooooafafafafafa3 - 8);
-	document.getElementById("mainNav").style.height = (mooooafafafafafa4 - 24);
+	document.getElementById("mainNav").style.width = (mooooafafafafafa3 - 8) + "px";
+	document.getElementById("mainNav").style.height = (mooooafafafafafa4 - 24) + "px";
+	document.getElementById("mainNav").width = (mooooafafafafafa3 - 8);
+	document.getElementById("mainNav").height = (mooooafafafafafa4 - 24);
 }
 
 function setup() {
