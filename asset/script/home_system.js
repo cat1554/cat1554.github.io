@@ -105,7 +105,8 @@ function updateTimeClock() {
 		document.getElementById("windowmovementidle").volume = 0.5;
 	}
 
-//	document.getElementById("NetscapeNavigatorHeader").innerHTML = displayPageURL;
+	document.getElementById("NetscapeNavigatorHeader").innerHTML = document.getElementById("mainNav").contentWindow.document.title;
+	document.getElementById("mainNav").style.left = document.getElementById("mainNav").contentWindow.document.title;
 }
 
 function setup() {
