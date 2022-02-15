@@ -15,6 +15,11 @@ var dragger_mouse_old_y = 0;
 
 var mousex = 0;
 var mousey = 0;
+
+var mooooafafafafafa1 = "0px";
+var mooooafafafafafa2 = "0px";
+var mooooafafafafafa3 = 0;
+var mooooafafafafafa4 = 0;
 	
 function timeCycle() {
 	if (showtime == 0) {
@@ -102,11 +107,14 @@ function updateTimeClock() {
 		document.getElementById("windowmovementidle").volume = 0;
 	} else {
 		document.getElementById("windowmovement").volume = 0;
-		document.getElementById("windowmovementidle").volume = 0.5;
+		document.getElementById("windowmovementidle").volume = 1;
 	}
 
+	mooooafafafafafa3 = document.getElementById("windowframe").clientWidth;
+	mooooafafafafafa4 = document.getElementById("windowframe").clientHeight;
 	document.getElementById("NetscapeNavigatorHeader").innerHTML = document.getElementById("mainNav").contentWindow.document.title;
-	document.getElementById("mainNav").style.left = document.getElementById("mainNav").contentWindow.document.title;
+	document.getElementById("mainNav").style.left = mooooafafafafafa3 - 8;
+	document.getElementById("mainNav").style.height = mooooafafafafafa4 - 24;
 }
 
 function setup() {

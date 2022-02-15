@@ -23,7 +23,7 @@
 	width: 16px;
 	height: 16px;
 	background-color: lightgrey;
-	background-image: url('Scrollbars/stepper-up.png');
+	background-image: url('../Scrollbars/stepper-up.png');
 	background-position: 0px 0px;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -37,7 +37,7 @@
 	width: 16px;
 	height: 16px;
 	background-color: lightgrey;
-	background-image: url('Scrollbars/stepper-up-active.png');
+	background-image: url('../Scrollbars/stepper-up-active.png');
 	background-position: 0px 0px;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -69,7 +69,7 @@
 	width: 16px;
 	height: 16px;
 	background-color: lightgrey;
-	background-image: url('Scrollbars/stepper-down.png');
+	background-image: url('../Scrollbars/stepper-down.png');
 	background-position: 0px 0px;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -83,7 +83,7 @@
 	width: 16px;
 	height: 16px;
 	background-color: lightgrey;
-	background-image: url('Scrollbars/stepper-down-active.png');
+	background-image: url('../Scrollbars/stepper-down-active.png');
 	background-position: 0px 0px;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
@@ -95,7 +95,7 @@
 	right: 0px;
 	width: 16px;
 	background-color: transparent;
-	border-image-source: url('Scrollbars/slider-vertical.png');
+	border-image-source: url('../Scrollbars/slider-vertical.png');
 	border-image-slice: 8 fill;
 	border-image-width: 8px;
 	border-image-repeat: stretch;
@@ -107,7 +107,7 @@
 	width: 16px;
 
 	background-color: transparent;
-	border-image-source: url('Scrollbars/slider-vertical-prelight.png');
+	border-image-source: url('../Scrollbars/slider-vertical-prelight.png');
 	border-image-slice: 8 fill;
 	border-image-width: 8px;
 	border-image-repeat: stretch;
@@ -121,7 +121,7 @@
 	left: -2px;
 	width: 16px;
 	background-color: transparent;
-	background-image: url('Scrollbars/v-overlay.png');
+	background-image: url('../Scrollbars/v-overlay.png');
 	background-position: center;
 	background-repeat:no-repeat;
 	background-size: 8px;
@@ -136,11 +136,11 @@
 	left: -2px;
 	width: 16px;
 	background-color: transparent;
-	background-image: url('Scrollbars/v-overlay.png');
+	background-image: url('../Scrollbars/v-overlay.png');
 	background-position: center;
 	background-repeat:no-repeat;
 	background-size: 8px;
-	border-image-source: url('Scrollbars/slider-background-active.png');
+	border-image-source: url('../Scrollbars/slider-background-active.png');
 	border-image-slice: 8 fill;
 	border-image-width: 8px;
 	border-image-repeat: stretch;
@@ -150,7 +150,7 @@
 	position: absolute;
 	right: 0px;
 	width: 16px;
-	border-image-source: url('Scrollbars/trough-scrollbar-vert.png');
+	border-image-source: url('../Scrollbars/trough-scrollbar-vert.png');
 	border-image-slice: 8 fill;
 	border-image-width: 8px;
 	border-image-repeat: stretch;

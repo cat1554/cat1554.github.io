@@ -10,7 +10,7 @@ body {
 }
 
 * {
-	cursor: url(arrow.cur), auto;
+	cursor: url(../misc/arrow.cur), auto;
 }
 
 #fakemacos_topbar {
@@ -49,9 +49,9 @@ body {
 }
 
 #windowframegrabber {
-	cursor: url(hover.cur), auto;
+	cursor: url(../misc/hover.cur), auto;
 }
 
 #afafafafafafafafafafa {
-	cursor: url(hover.cur), auto;
+	cursor: url(../misc/hover.cur), auto;
 }
