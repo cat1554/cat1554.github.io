@@ -1,0 +1,12 @@
+/* CSS Document */
+
+@font-face {
+	font-family: myFirstFont;
+	src: url(../misc/charcoal.ttf);
+}
+
+* {
+	font-family: myFirstFont;
+	cursor: url(../misc/arrow.cur), auto;
+	image-rendering: pixelated;
+}
