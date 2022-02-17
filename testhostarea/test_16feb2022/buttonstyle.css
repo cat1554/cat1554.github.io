@@ -1,0 +1,44 @@
+@keyframes buttonFlashAnim {
+	0% {
+		color: #FFFFFF;
+		background-color: #AAAAFF;
+	}
+	49% {
+		color: #FFFFFF;
+		background-color: #AAAAFF;
+	}
+	50% {
+		color: #000000;
+		background-color: #FFFFFF;
+	}
+	99% {
+		color: #000000;
+		background-color: #FFFFFF;
+	}
+	100% {
+		color: #FFFFFF;
+		background-color: #AAAAFF;
+	}
+}
+
+.menuButtonStyle {
+	border-style: solid;
+	border-width: 1px;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+.menuButtonStyleDisable {
+	border-style: solid;
+	border-width: 1px;
+	color: #000000;
+	background-color: #999999;
+}
+
+.menuButtonStyle:hover {
+	border-style: solid;
+	border-width: 1px;
+	color: #FFFFFF;
+	border-color: #FFFFFF;
+	background-color: #AAAAFF;
+}
