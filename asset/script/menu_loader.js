@@ -60,5 +60,6 @@ function doLoad(){
 	document.getElementById("output6").innerHTML = "06:" + linkparam;
 	document.getElementById("output7").innerHTML = "07:" + paramfind;
 
+	setInterval(haoreuch, 10)
+
 }
-setTimeout(doLoad, 200)
