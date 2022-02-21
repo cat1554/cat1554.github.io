@@ -61,4 +61,4 @@ function doLoad(){
 	document.getElementById("output7").innerHTML = "07:" + paramfind;
 
 }
-setTimeout(doLoad, 50)
+setTimeout(doLoad, 200)
