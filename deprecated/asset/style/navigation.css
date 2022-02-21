@@ -1,0 +1,58 @@
+/* CSS Document */
+
+@font-face {
+	font-family: myFirstFont;
+	src: url(../misc/charcoal.ttf);
+}
+
+body {
+	font-family: myFirstFont;
+}
+
+* {
+	cursor: url(../misc/arrow.cur), auto;
+	image-rendering: pixelated;
+}
+
+#fakemacos_topbar {
+	font-size: 13px;
+	position: absolute;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	height: 20px;
+	border: none;
+	background-color: lightgrey;
+}
+
+.fakemacos_bar {
+	position: absolute;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	height: 20px;
+	border: none;
+	background-color: transparent;
+}
+
+#topbar_divider {
+	border-image-source: url('../Platnium/Panel/normal.png');
+	border-image-slice: 4 fill;
+	border-image-width: 4px;
+	border-image-repeat: stretch;
+}
+
+#windowframe {
+	border-image-source: url('../Platnium/Panel/normal.png');
+	border-image-slice: 4 fill;
+	border-image-width: 4px;
+	border-image-repeat: stretch;
+}
+
+#windowframegrabber {
+	cursor: url(../misc/hover.cur), auto;
+}
+
+#afafafafafafafafafafa {
+	cursor: url(../misc/hover.cur), auto;
+}

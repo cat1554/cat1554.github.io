@@ -2,49 +2,46 @@
 <html>
 <head>
 <meta charset="UTF-8">
-	<title>Netscape</title>
-	<data value="http://totallylegitwebsite/" id="displayPageURL"></data>
-	<link rel="stylesheet" href="asset/style/navigation.css">
-	<script src="asset/script/home_system.js"></script>
+	<title>http://totallylegitwebsite/</title>
+	<link rel="stylesheet" href="asset/style/main.css">
+	<link rel="stylesheet" href="asset/style/global.css">
 
-	<audio id="windowmovement" loop preload="auto">
-		<source src="asset/UIAudio/WindowMove.wav">
-	</audio>
-	<audio id="windowmovementidle" loop preload="auto">
-		<source src="asset/UIAudio/WindowIdle.wav">
-	</audio>
+	<script src="asset/script/menu_loadsystem.js">
+	</script>
+
+	<script src="asset/script/menu_script.js">
+	</script>
 
 	<style>
-		#prevent_print1 {
-			z-index: 2904890120398412890348901293084;
-			position: fixed;
-			left: 0px;
-			top: 0px;
-			width: 100%;
-			height: 100%;
-			background-color: white;
-			padding: 50vh 0;
-			text-align: center;
+		@keyframes showError {
+			from {color: #000; background-color: #000;}
+			99% {color: #000; background-color: #000;}
+			to {color: #FFF; background-color: #00F;}
 		}
-		#prevent_print {
-			font-family: 'myFirstFont', 'Lucida Console', 'Courier New', monospace;
-			color: #000;
-			text-align: center;
-			font-size: 50px;
-			font-weight: 900;
+		@keyframes showErrorB {
+			from {color: transparent;}
+			99% {color: transparent;}
+			to {color: transparent;}
 		}
+
 		@media print {
-			#prevent_print1 {
-				display: initial;
+			#contx {
+				display: none;
+			}
+			#corntents {
+				display: none;
+			}
+			#clock {
+				display: none;
+			}
+			#NavMenu {
+				display: none;
 			}
 			#prevent_print {
 				display: initial;
 			}
 		}
 		@media screen {
-			#prevent_print1 {
-				display: none;
-			}
 			#prevent_print {
 				display: none;
 			}
@@ -52,59 +49,180 @@
 	</style>
 </head>
 
-<body style="background-color: #000000" onLoad="setup()" onMouseMove="saveMousePos(event);" >
-<div style="width: 100%; height: 100%;">
-	<p style="color: red" id="houhrcouchrrchouichroeuchri"></p>
-	<div style="margin: auto; width: 640px; height: 480px; background-image: url('asset/misc/default.png'); position: relative; border-radius: 12px; overflow: hidden;" id="notMainContents">
-		<div style="width: 100%; height: 100%;" id="mainContents">
-			<div id="fakemacos_topbar">
-				<div class="fakemacos_bar">
-					<table style="position: absolute; top: -8px; left: 0px; width: 100%; border-spacing: 8px; white-space: nowrap;">
-						<tr>
-							<td style="width: 4px"></td>
-							<td><img src="asset/Platnium/Apple-Logo.png" alt="N" style="width: 20px; height: 20px; vertical-align: text-bottom;"></td>
-							<td id="output1">File</td>
-							<td id="output2">Edit</td>
-							<td id="output3">View</td>
-							<td id="output4">Go</td>
-							<td id="output5">Bookmarks</td>
-							<td id="output6">Tools</td>
-							<td onClick="openTheFull()" id="afafafafafafafafafafa">Window</td>
-							<td>Help</td>
-							<td style="width: 100%"></td>
-							<td id="topbar_clock" onClick="timeCycle()">
-00:00:00
-							</td>
-							<td><div style="width: 4px; height: 20px;" id="topbar_divider">
-							<img src="asset/Platnium/Panel/panel-handle-v.png" alt="N" style="width: 4px; height: 20px; vertical-align: text-bottom;"></div>
-							</td>
-							<td><img src="asset/netscape.png" alt="N" style="width: 20px; height: 20px; vertical-align: text-bottom;"></td>
-							<td>Netscape
-							</td>
-							<td style="width: 4px"></td>
-						</tr>
-					</table> 
-				</div>
+<body style="background-image: repeating-linear-gradient(to right, black, black 100px, rgb(204, 204, 204) 140px, rgb(204, 204, 204) 175px); overflow-x: hidden" onLoad="setInterval(haoreuch, 10)" oncontextmenu="openContextMenu(event); return false;" onMouseMove="saveMousePos(event);" onMouseUp="moooEndHold()" onMouseLeave="moooEndHold()">
+	<script src="asset/script/menu_loader.js"></script>
+	<audio id="sel">
+		<source src="../asset/mnus.mp3">
+	</audio>
+	<audio id="wcl">
+		<source src="../asset/tung.mp3">
+	</audio>
+	<audio id="wop">
+		<source src="../asset/tung.mp3">
+	</audio>
+	<audio id="tng">
+		<source src="../asset/tung.mp3">
+	</audio>
+	<audio id="hvr">
+		<source id="popAUDSource" src="../asset/mnui.mp3">
+	</audio>
+	<audio id="cls">
+		<source id="closeAUDSource" src="../asset/mnuc.mp3">
+	</audio>
+	<audio id="opn">
+		<source id="openAUDSource" src="../asset/mnuo.mp3">
+	</audio>
+	<audio id="scrl" loop preload="auto">
+		<source src="../asset/sbar.wav">
+	</audio>
+
+	<svg width="150" height="150" style="position: fixed; left: 0px; bottom: 0px">
+		<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+	</svg>
+
+<div style="position: absolute; left: 170px; right: -30px; background-color: rgba(204, 204, 204, 1); top: 0px; height: 100%; overflow: scroll; overscroll-behavior: none;" id="contx">
+	<div id="scrlbar" style="position: fixed; width: 16px; height: 100%; right: 0px; background-color: white;">
+		<button type="button" style="top: 0px" class="upscrolllll" onMouseDown="startuphold()" id="upscrolllll" onMouseUp="enduphold()" onMouseOut="enduphold()">
+			<div>
 			</div>
-			<div style="position: absolute; top: 20px; left: 0px; width: 640px; height: 460px; z-index: 2" id="windowframe">
-				<div style="width: 100%; height: 18px; position: absolute; top: 0px; left: 0px;" id="windowframegrabber">
-					<div style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background-image: url('asset/Platnium/Handles/handle-h.png');">
+		</button> 
+		<button type="button" style="bottom: 0px" class="downscrolll" onMouseDown="startdnhold()" id="downscrolll" onMouseUp="enddnhold()" onMouseOut="enddnhold()">
+			<div>
+			</div>
+		</button> 
+		<div id="jaojaojeoajaoj" style="position: fixed; width: 30px; top: 16px; bottom: 16px; right: 0px; background-color: transparent">
+			<div id="jetrlojertlarje" style="position: fixed; width: 30px; top: 16px; bottom: 16px; right: 0px; background-color: transparent; z-index: 2">
+				<button type="button" style="" class="scrolllllllll" id="moocow_scroll" onMouseDown="moooStartHold()" onMouseUp="moooEndHold()">
+					<div id="shaderScroller">
 					</div>
-					<p id="NetscapeNavigatorHeader" style="width: 100%; height: 18px; position: absolute; top: 0px; left: 0px; vertical-align: text-bottom; font-size: 10px;">Netscape</p>
+					<div id="backdropScroller">
+					</div>
+				</button>
+				<div id="upperScrollCover" class="scrollCover" style="top: 0px">
 				</div>
-				<iframe src="pages/home.html" style="position: absolute; left: 4px; top: 38px; border: 1px solid black" id="mainNav"></iframe>
 			</div>
-			<div style="position: absolute; top: 20px; left: 0px; width: 640px; height: 460px;" id="windowframeoutline">
-				<div style="width: 100%; height: 18px; position: absolute; top: 0px; left: 0px; z-index: 4" id="windowframeoutlinegrabber">
+			<div id="etjetnmjtnmejtnmej" style="position: fixed; width: 30px; top: 16px; bottom: 16px; right: 0px; background-color: transparent">
+				<div id="lowerScrollCover" class="scrollCover" style="bottom: 0px">
+				</div>
 			</div>
 		</div>
 	</div>
+	<div id="corntents" style="position: absolute; left: 10px; right: 50px; background-color: rgba(204, 204, 204, 1); top: 0px; min-height: 100%; overflow: hidden; overscroll-behavior: none;">
+		<p id="output0"></p>
+		<p id="output1"></p>
+		<p id="output2"></p>
+		<p id="output3"></p>
+		<p id="output4"></p>
+		<p id="output5"></p>
+		<p id="output6"></p>
+		<p id="output7"></p>
+		<p id="output8"></p>
+		<p id="output9"></p>
+		<p>1</p>
+		<br>
+		<br>
+		<br>
+		<p>2</p>
+		<br>
+		<br>
+		<br>
+		<p>3</p>
+		<br>
+		<br>
+		<br>
+		<p>4</p>
+		<br>
+		<br>
+		<br>
+		<p>5</p>
+		<br>
+		<br>
+		<br>
+		<p>6</p>
+		<br>
+		<br>
+		<br>
+		<p>7</p>
+		<br>
+		<br>
+		<br>
+		<p>8</p>
+		<p>1</p>
+		<br>
+		<br>
+		<br>
+		<p>2</p>
+		<br>
+		<br>
+		<br>
+		<p>3</p>
+		<br>
+		<br>
+		<br>
+		<p>4</p>
+		<br>
+		<br>
+		<br>
+		<p>5</p>
+		<br>
+		<br>
+		<br>
+		<p>6</p>
+		<br>
+		<br>
+		<br>
+		<p>7</p>
+		<br>
+		<br>
+		<br>
+		<p>8</p>
+		<p>1</p>
+		<br>
+		<br>
+		<br>
+		<p>2</p>
+		<br>
+		<br>
+		<br>
+		<p>3</p>
+		<br>
+		<br>
+		<br>
+		<p>4</p>
+		<br>
+		<br>
+		<br>
+		<p>5</p>
+		<br>
+		<br>
+		<br>
+		<p>6</p>
+		<br>
+		<br>
+		<br>
+		<p>7</p>
+		<br>
+		<br>
+		<br>
+		<p>8</p>
+	</div>
 </div>
 
-	<div style="" id="prevent_print1">
-		<p style="" id="prevent_print">This page may not be printed.</p>
+	<canvas id="canvas_object" width="8" height="5000" style="width: 100%; height: 100%; position: fixed; left: 0px; top: 0px; display: none">
+	</canvas>
+
+	<noscript>
+		<div id="prevent_noscript" style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 109234908123; background-color: #00F; padding: 30px; font-size: 48px; font-weight: 900; cursor:not-allowed; animation: showError 1s linear">
+			<p style="font-family: 'Lucida Console', 'Courier New', monospace; color: #FFF; animation: showErrorB 1.1s linear">Please enable your JavaScript.</p>
+		</div>
+	</noscript>
+
+	<div id="prevent_print" style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 109234908123; background-color: #FFF; padding: 30px; font-size: 16px; font-weight: 900; cursor:not-allowed;">
+		<p style="font-family: 'Lucida Console', 'Courier New', monospace; color: #000;">This page may not be printed.</p>
 	</div>
 
-	 <!--sandbox="allow-modals allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation"-->
+	<div id="prevent_inspect" style="width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 109234908123; background-color: #00F; padding: 30px; font-size: 48px; font-weight: 900; cursor:not-allowed; animation: showError 1s linear; display: none">
+		<p style="font-family: 'Lucida Console', 'Courier New', monospace; color: #FFF; animation: showErrorB 1.1s linear">Developer tools are not permitted.</p>
+	</div>
 </body>
 </html>
