@@ -4,6 +4,7 @@ var elm;
 var newone;
 var textnode;
 var menuObj;
+var menuObjx;
 var elementThing;
 var currSub;
 var currSet;
@@ -68,6 +69,38 @@ function createMenu(width, text, setid, depth, direction, position, xpos, ypos, 
 }
 
 function createButton(width, text, setid, menuid, position, xpos, ypos, mode, link, isSub){
+	//String(text).concat("back");
+	menuObj = document.createElement("button");
+	menuObj.id = String(menuid).concat("_",setid);
+	textnode = document.createTextNode(text);
+	menuObj.appendChild(textnode);
+	elementThing = document.getElementById(menuid);
+	elementThing.appendChild(menuObj);
+
+	document.getElementById(String(menuid).concat("_",setid)).style.width = String(width).concat("px");
+	document.getElementById(String(menuid).concat("_",setid)).style.height = "20px";
+	document.getElementById(String(menuid).concat("_",setid)).style.margin = "auto";
+	document.getElementById(String(menuid).concat("_",setid)).style.textAlign = "left";
+	document.getElementById(String(menuid).concat("_",setid)).style.display = "none";
+	document.getElementById(String(menuid).concat("_",setid)).style.fontWeight = "700";
+	document.getElementById(String(menuid).concat("_",setid)).style.position = position;
+	document.getElementById(String(menuid).concat("_",setid)).style.left = "0px";
+	document.getElementById(String(menuid).concat("_",setid)).style.top = String(ypos*20).concat("px");
+	document.getElementById(String(menuid).concat("_",setid)).className = "menuButtonStyle";
+	document.getElementById(String(menuid).concat("_",setid)).onmouseover = function(){
+		hoverable(String(menuid).concat("_",setid));
+		if (document.getElementById(currSub) != null) {
+			if (isSub == "false") {
+				closeSubMenu(currSub,currSet);
+			};
+		};
+		//currSub = String(menuid).concat("_",setid,"_sub");
+		//currSet = setid;
+	};
+	document.getElementById(String(menuid).concat("_",setid)).onmousedown = function(){clickHandle(setid, menuid, mode, link)};
+}
+
+function createTestButton(width, text, setid, menuid, position, xpos, ypos, mode, link, isSub){
 	//String(text).concat("back");
 	menuObj = document.createElement("button");
 	menuObj.id = String(menuid).concat("_",setid);

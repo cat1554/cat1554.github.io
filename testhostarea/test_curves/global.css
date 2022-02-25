@@ -1,0 +1,90 @@
+/* CSS Document */
+
+* {
+	font-family: monospace;
+	font-size: 20px;
+}
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 16px; /* Specified height */
+  background: #000000; /* Grey background */
+  outline: none; /* Remove outline */
+	border-radius: 0px;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+
+.slider_on::-webkit-slider-thumb {
+	border-radius: 0px;
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 16px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  background: #00FF00; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+	border: none;
+	transition: background 0.1s;
+}
+
+.slider_on::-moz-range-thumb {
+	border-radius: 0px;
+  width: 16px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  background: #00FF00; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+	border: none;
+	transition: background 0.1s;
+}
+.slider_off::-webkit-slider-thumb {
+	border-radius: 0px;
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 16px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  background: #FF0000; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+	border: none;
+	transition: background 0.1s;
+}
+
+.slider_off::-moz-range-thumb {
+	border-radius: 0px;
+  width: 16px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  background: #FF0000; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+	border: none;
+	transition: background 0.1s;
+}
+
+.slider_ok::-webkit-slider-thumb {
+	border-radius: 0px;
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 16px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  background: #0000FF; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+	border: none;
+}
+
+.slider_ok::-moz-range-thumb {
+	border-radius: 0px;
+  width: 16px; /* Set a specific slider handle width */
+  height: 16px; /* Slider handle height */
+  background: #0000FF; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+	border: none;
+}

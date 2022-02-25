@@ -98,6 +98,12 @@
 		case "link":
 			window.location.assign(link)
 			break;
+		case "test_link":
+			document.querySelector('body').style.opacity = 0;
+			setTimeout(function() { 
+				window.location.href = link;
+			}, 500)
+			break;
 		case "extlink":
 			IsClick = "false";
 			IsSound = "false";
@@ -240,3 +246,7 @@
 			IsSubOpen = "false";
 		}
 	}
+
+document.addEventListener('DOMContentLoaded', function(event) {
+	document.querySelector('body').style.opacity = 1;
+})

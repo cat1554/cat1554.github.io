@@ -24,11 +24,11 @@ function doLoad(){
 	createSubMenu(150, "Social", "social", "NavMenu", 40, "absolute", 0, 4, "sub", "", "right", "absolute", 150, 80)
 
 	createButton(150, "Blog", "blog", "NavMenu", "absolute", 0, 3, "link", "blog/", "false")
-	createButton(150, "About", "aboot", "NavMenu", "absolute", 0, 4, "link", "aboot/", "false")
+	createTestButton(150, "About", "aboot", "NavMenu", "absolute", 0, 4, "test_link", "aboot/index.html", "false")
 	createButton(150, "Contact", "con", "NavMenu", "absolute", 0, 5, "link", "con/", "false")
 
 
-	createMenu(150, "Navigate", "ContextNavMenu", 5, "down", "fixed", 0, 300, "false")
+	createMenu(150, "Navigate", "ContextNavMenu", 5, "down", "fixed", 0, -512, "false")
 	createButton(150, "Procrastinate", "procrast", "ContextNavMenu", "absolute", 0, 1, "procrastinate", "", "false")
 
 	createSubMenu(150, "Projects", "game", "ContextNavMenu", 240, "absolute", 0, 2, "sub", "project/", "right", "absolute", 150, 20)
@@ -60,6 +60,6 @@ function doLoad(){
 	document.getElementById("output6").innerHTML = "06:" + linkparam;
 	document.getElementById("output7").innerHTML = "07:" + paramfind;
 
-	setInterval(haoreuch, 10)
+	setTimeout(haoreuchSetup, 30)
 
 }

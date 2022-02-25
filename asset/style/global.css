@@ -15,6 +15,13 @@
 	cursor: url(../misc/hover.cur), pointer;
 }
 
+body { 
+	opacity: 0;
+	background-image: linear-gradient(to right, black, black 100px, rgb(204, 204, 204) 140px, rgb(204, 204, 204) 175px); 
+	transition: opacity .5s linear 1;
+	cursor: url(../misc/arrow.cur), default;
+}
+
 @keyframes buttonFlashAnim {
 	0% {
 		color: #FFFFFF;

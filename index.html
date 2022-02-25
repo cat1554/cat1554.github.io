@@ -55,7 +55,7 @@
 	</style>
 </head>
 
-<body style="background-image: repeating-linear-gradient(to right, black, black 100px, rgb(204, 204, 204) 140px, rgb(204, 204, 204) 175px); overflow-x: hidden" onLoad="setTimeout(doLoad, 200)" oncontextmenu="openContextMenu(event); return false;" onMouseMove="saveMousePos(event);" onMouseUp="moooEndHold()" onMouseLeave="moooEndHold()">
+<body style="overflow-x: hidden" onLoad="setTimeout(doLoad, 200)" oncontextmenu="openContextMenu(event); return false;" onMouseMove="saveMousePos(event);" onMouseUp="moooEndHold()" onMouseLeave="moooEndHold()">
 	<audio id="sel">
 		<source src="asset/mnus.mp3">
 	</audio>
@@ -81,7 +81,10 @@
 		<source src="asset/sbar.wav">
 	</audio>
 
-	<svg width="150" height="150" style="position: fixed; left: 0px; bottom: 0px">
+	<canvas id="canvas_clock" width="1200" height="1200" style="position: fixed; left: 0px; bottom: 0px; width: 150px; height: 150px; display: block; object-fit: contain; transition: all 0.1s">
+	</canvas>
+
+	<svg width="150" height="150" style="position: fixed; left: 0px; bottom: 0px; display: none">
 		<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
 	</svg>
 
