@@ -1,17 +1,11 @@
 // JavaScript Document
 
+// https://javascript.info/bezier-curve#maths
+
 var c;
 var ctx;
 
 var dpr;
-
-var clockable = new Date();
-
-var clockable_secval;
-
-var topbarhour = "00" //clockable.getHours();
-var topbarminute = "00" //clockable.getMinutes();
-var topbarsecond = "00" //clockable.getSeconds();
 
 var temp1 = 0;
 var temp2 = 0;
@@ -58,6 +52,10 @@ var tempCalcZ = 0;
 var curveSize;
 var startX;
 var startY;
+var midX;
+var midY;
+var endX;
+var endY;
 var curveRes;
 var curveType;
 
@@ -106,70 +104,64 @@ function getObjectFitSize(
 }
 
 function haoreuch() {
-	curveSize = document.getElementById("siz").value;
-	document.getElementById("sizlbl").innerHTML = "Size: " + curveSize;
-	if (curveSize < 99.5) {
-		document.getElementById("sizlbl").innerHTML = "Size: 0" + curveSize;
-	}
-
 	startX = document.getElementById("stx").value;
 	document.getElementById("stxlbl").innerHTML = "Start X: " + startX;
-	if (startX < 99.5) {
-		document.getElementById("stxlbl").innerHTML = "Start X: 0" + startX;
-	}
-	if (startX < 9.5) {
-		document.getElementById("stxlbl").innerHTML = "Start X: 00" + startX;
-	}
 
 	startY = document.getElementById("sty").value;
 	document.getElementById("stylbl").innerHTML = "Start Y: " + startY;
-	if (startY < 99.5) {
-		document.getElementById("stylbl").innerHTML = "Start Y: 0" + startY;
-	}
-	if (startY < 9.5) {
-		document.getElementById("stylbl").innerHTML = "Start Y: 00" + startY;
-	}
+
+
+	midX = document.getElementById("mdx").value;
+	document.getElementById("mdxlbl").innerHTML = "Mid X: " + midX;
+
+	midY = document.getElementById("mdy").value;
+	document.getElementById("mdylbl").innerHTML = "Mid Y: " + midY;
+
+
+	endX = document.getElementById("enx").value;
+	document.getElementById("enxlbl").innerHTML = "End X: " + endX;
+
+	endY = document.getElementById("eny").value;
+	document.getElementById("enylbl").innerHTML = "End Y: " + endY;
+
 
 	curveRes = document.getElementById("res").value;
 	document.getElementById("reslbl").innerHTML = "Resolution: " + curveRes;
-	if (curveRes < 9.5) {
-		document.getElementById("reslbl").innerHTML = "Resolution: 0" + curveRes;
-	}
+
 
 	curveType = document.getElementById("typ").value;
-	document.getElementById("typlbl").innerHTML = "Colour mode: on&nbsp;";
+	document.getElementById("typlbl").innerHTML = "Colour mode: on";
 	document.getElementById("typ").className = "slider slider_on";
 	if (curveType < 1.5) {
 		document.getElementById("typ").className = "slider slider_off";
 		document.getElementById("typlbl").innerHTML = "Colour mode: off";
 	}
 
-	curveStartX = parseInt(startX);
-	curveStartY = parseInt(startY);
-	curveStartZ = 0;
-	curveMidX = (parseInt(curveSize) - (parseInt(curveSize) / 8));
-	curveMidY = ((parseInt(curveSize) / 8) - parseInt(curveSize));
-	curveMidZ = 0;
-	curveEndX = parseInt(curveSize);
-	curveEndY = parseInt(curveSize);
-	curveEndZ = parseInt(curveSize);
 
-	clockable = new Date();
+	curveStartX = (parseInt(startX) + 256);
+	curveStartY = (parseInt(startY) + 256);
+	curveMidX = (parseInt(midX) + 256);
+	curveMidY = (parseInt(midY) + 256);
+	curveEndX = (parseInt(endX) + 256);
+	curveEndY = (parseInt(endY) + 256);
 
-	ctx.clearRect(0,0,(512 * clockScaleMultiplier),(512 * clockScaleMultiplier));
+	ctx.clearRect(0,0,(1024 * clockScaleMultiplier),(1024 * clockScaleMultiplier));
+
 	ctx.beginPath();
-	ctx.moveTo(0, 0);
-	ctx.fillStyle = "#F00";
-	ctx.arcTo((curveSize * clockScaleMultiplier), 0, (curveSize * clockScaleMultiplier), (curveSize * clockScaleMultiplier), (curveSize * clockScaleMultiplier));
+	ctx.moveTo((curveStartX * clockScaleMultiplier), (curveStartY * clockScaleMultiplier));
+	ctx.quadraticCurveTo((curveMidX * clockScaleMultiplier), (curveMidY * clockScaleMultiplier), (curveEndX * clockScaleMultiplier), (curveEndY * clockScaleMultiplier));
 	ctx.strokeStyle = "#000";
 	ctx.lineWidth = (5 * clockScaleMultiplier);
 	ctx.stroke();
 
+
 	ctx.beginPath();
 	ctx.fillStyle = "#0000FF88";
-	ctx.arcTo((curveSize * clockScaleMultiplier), 0, (curveSize * clockScaleMultiplier), (curveSize * clockScaleMultiplier), (curveSize * clockScaleMultiplier));
-	ctx.lineTo((curveSize * clockScaleMultiplier), 0);
+	ctx.moveTo((curveStartX * clockScaleMultiplier), (curveStartY * clockScaleMultiplier));
+	ctx.quadraticCurveTo((curveMidX * clockScaleMultiplier), (curveMidY * clockScaleMultiplier), (curveEndX * clockScaleMultiplier), (curveEndY * clockScaleMultiplier));
+	ctx.lineTo((curveMidX * clockScaleMultiplier), (curveMidY * clockScaleMultiplier));
 	ctx.fill();
+
 
 	for (let i = 0; i < (parseInt(curveRes)); i++) {
 		t = ((i) / (parseInt(curveRes)));
@@ -178,24 +170,12 @@ function haoreuch() {
 		tempCalcA = (1 - t);
 		tempCalcB = (1 - tt);
 
-		temp1 = ((tempCalcA * curveStartX) + (tempCalcA * t * curveMidX) + (tempCalcA * curveEndX));
-		temp2 = ((tempCalcA * curveStartY) + (tempCalcA * t * curveMidY) + (tempCalcA * curveEndY));
+		temp1 = (((tempCalcA * tempCalcA) * curveStartX) + (2 * tempCalcA * t * curveMidX) + ((t * t) * curveEndX));
+		temp2 = (((tempCalcA * tempCalcA) * curveStartY) + (2 * tempCalcA * t * curveMidY) + ((t * t) * curveEndY));
 
-		temp3 = ((tempCalcB * curveStartX) + (tempCalcB * tt * curveMidX) + (tempCalcB * curveEndX));
-		temp4 = ((tempCalcB * curveStartY) + (tempCalcB * tt * curveMidY) + (tempCalcB * curveEndY));
+		temp3 = (((tempCalcB * tempCalcB) * curveStartX) + (2 * tempCalcB * tt * curveMidX) + ((tt * tt) * curveEndX));
+		temp4 = (((tempCalcB * tempCalcB) * curveStartY) + (2 * tempCalcB * tt * curveMidY) + ((tt * tt) * curveEndY));
 
-		ctx.beginPath();
-		if (curveType == "2") {
-			ctx.strokeStyle = "#FFFFFF00";
-		} else {
-			ctx.strokeStyle = "#000000FF";
-		}
-
-		ctx.moveTo((temp1 * clockScaleMultiplier), (temp2 * clockScaleMultiplier));
-		ctx.lineTo((temp3 * clockScaleMultiplier), (temp4 * clockScaleMultiplier));
-
-		ctx.lineWidth = (7 * clockScaleMultiplier);
-		ctx.stroke();
 
 		ctx.beginPath();
 		if (curveType == "2") {
@@ -225,22 +205,13 @@ function haoreuch() {
 			ctx.strokeStyle = "#8800FFFF";
 		}
 
-		ctx.moveTo((temp1 * clockScaleMultiplier), (temp2 * clockScaleMultiplier));
-		ctx.lineTo((temp3 * clockScaleMultiplier), (temp4 * clockScaleMultiplier));
+		ctx.moveTo(((temp1 * clockScaleMultiplier)), ((temp2 * clockScaleMultiplier)));
+
+		ctx.lineTo(((temp3 * clockScaleMultiplier)), ((temp4 * clockScaleMultiplier)));
 
 		ctx.lineWidth = (5 * clockScaleMultiplier);
 		ctx.stroke();
-	} 
-
-//	ctx.beginPath();
-//	ctx.strokeStyle = "#FF000088";
-//	ctx.moveTo(0, 0);
-//	ctx.lineTo((temp1 * clockScaleMultiplier), (temp2 * clockScaleMultiplier));
-//	ctx.lineWidth = (5 * clockScaleMultiplier);
-//	ctx.stroke();
-//	ctx.arc((temp1 * clockScaleMultiplier), (temp2 * clockScaleMultiplier), (4 * clockScaleMultiplier), 0, 2 * Math.PI);
-//	ctx.fillStyle = "#FF000088";
-//	ctx.fill(); 
+	}
 }
 
 function haoreuchSetup2() {
@@ -271,9 +242,13 @@ function haoreuchSetup2() {
 
 //	ctx.scale(ratio, ratio);
 
-	document.getElementById("siz").value = document.getElementById("siz").defaultValue
-	document.getElementById("siz").value = document.getElementById("stx").defaultValue
-	document.getElementById("siz").value = document.getElementById("sty").defaultValue
+	document.getElementById("stx").value = document.getElementById("stx").defaultValue
+	document.getElementById("sty").value = document.getElementById("sty").defaultValue
+	document.getElementById("mdx").value = document.getElementById("mdx").defaultValue
+	document.getElementById("mdy").value = document.getElementById("mdy").defaultValue
+	document.getElementById("enx").value = document.getElementById("enx").defaultValue
+	document.getElementById("eny").value = document.getElementById("eny").defaultValue
+
 	document.getElementById("res").value = document.getElementById("res").defaultValue
 	document.getElementById("typ").value = document.getElementById("typ").defaultValue
 

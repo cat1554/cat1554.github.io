@@ -47,29 +47,41 @@
 
 <body style="overflow-x: hidden" onLoad="setTimeout(haoreuchSetup, 200)">
 	<div class="slidecontainer">
-		<label for="siz" id="sizlbl">Size: ---</label>
-		<input type="range" id="siz" name="siz" min="16" max="256" step="1" style="width: 484px" value="256" class="slider slider_ok">
-	</div>
-	<div class="slidecontainer">
+		<input type="range" id="stx" name="stx" min="-256" max="256" step="1" style="width: 484px" value="0" class="slider slider_ok">
 		<label for="stx" id="stxlbl">Start X: ---</label>
-		<input type="range" id="stx" name="stx" min="0" max="256" step="1" style="width: 484px" value="0" class="slider slider_ok">
 	</div>
 	<div class="slidecontainer">
+		<input type="range" id="sty" name="sty" min="-256" max="256" step="1" style="width: 484px" value="0" class="slider slider_ok">
 		<label for="sty" id="stylbl">Start Y: ---</label>
-		<input type="range" id="sty" name="sty" min="0" max="256" step="1" style="width: 484px" value="0" class="slider slider_ok">
 	</div>
 	<div class="slidecontainer">
+		<input type="range" id="mdx" name="mdx" min="-256" max="256" step="1" style="width: 484px" value="256" class="slider slider_ok">
+		<label for="mdx" id="mdxlbl">Mid X: ---</label>
+	</div>
+	<div class="slidecontainer">
+		<input type="range" id="mdy" name="mdy" min="-256" max="256" step="1" style="width: 484px" value="0" class="slider slider_ok">
+		<label for="mdy" id="mdylbl">Mid Y: ---</label>
+	</div>
+	<div class="slidecontainer">
+		<input type="range" id="enx" name="enx" min="-256" max="256" step="1" style="width: 484px" value="256" class="slider slider_ok">
+		<label for="enx" id="enxlbl">End X: ---</label>
+	</div>
+	<div class="slidecontainer">
+		<input type="range" id="eny" name="eny" min="-256" max="256" step="1" style="width: 484px" value="256" class="slider slider_ok">
+		<label for="eny" id="enylbl">End Y: ---</label>
+	</div>
+	<div class="slidecontainer">
+		<input type="range" id="res" name="res" min="2" max="256" step="1" style="width: 484px" value="32" class="slider slider_ok">
 		<label for="res" id="reslbl">Resolution: --</label>
-		<input type="range" id="res" name="res" min="2" max="64" step="1" style="width: 124px" value="32" class="slider slider_ok">
 	</div>
 	<div class="slidecontainer">
-		<label for="typ" id="typlbl">Colour mode: ---</label>
 		<input type="range" id="typ" name="typ" min="1" max="2" step="1" style="width: 32px" value = "2" class="slider slider_on">
+		<label for="typ" id="typlbl">Colour mode: ---</label>
 	</div>
 
 	<p id="debugOutput"></p>
 
-	<canvas id="canvas_clock" width="1200" height="1200" style="position: fixed; left: 0px; top: 150px; width: 512px; height: 512px; display: block; object-fit: contain; transition: all 0.1s">
+	<canvas id="canvas_clock" width="1200" height="1200" style="position: fixed; left: 0px; top: 200px; width: 600px; height: 600px; display: block; object-fit: contain; transition: all 0.1s">
 	</canvas>
 
 </body>
