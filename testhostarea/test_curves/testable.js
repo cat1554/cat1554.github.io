@@ -56,6 +56,8 @@ var tempCalcY = 0;
 var tempCalcZ = 0;
 
 var curveSize;
+var startX;
+var startY;
 var curveRes;
 var curveType;
 
@@ -110,6 +112,24 @@ function haoreuch() {
 		document.getElementById("sizlbl").innerHTML = "Size: 0" + curveSize;
 	}
 
+	startX = document.getElementById("stx").value;
+	document.getElementById("stxlbl").innerHTML = "Start X: " + startX;
+	if (startX < 99.5) {
+		document.getElementById("stxlbl").innerHTML = "Start X: 0" + startX;
+	}
+	if (startX < 9.5) {
+		document.getElementById("stxlbl").innerHTML = "Start X: 00" + startX;
+	}
+
+	startY = document.getElementById("sty").value;
+	document.getElementById("stylbl").innerHTML = "Start Y: " + startY;
+	if (startY < 99.5) {
+		document.getElementById("stylbl").innerHTML = "Start Y: 0" + startY;
+	}
+	if (startY < 9.5) {
+		document.getElementById("stylbl").innerHTML = "Start Y: 00" + startY;
+	}
+
 	curveRes = document.getElementById("res").value;
 	document.getElementById("reslbl").innerHTML = "Resolution: " + curveRes;
 	if (curveRes < 9.5) {
@@ -124,8 +144,8 @@ function haoreuch() {
 		document.getElementById("typlbl").innerHTML = "Colour mode: off";
 	}
 
-	curveStartX = 0;
-	curveStartY = 0;
+	curveStartX = parseInt(startX);
+	curveStartY = parseInt(startY);
 	curveStartZ = 0;
 	curveMidX = (parseInt(curveSize) - (parseInt(curveSize) / 8));
 	curveMidY = ((parseInt(curveSize) / 8) - parseInt(curveSize));
@@ -252,6 +272,8 @@ function haoreuchSetup2() {
 //	ctx.scale(ratio, ratio);
 
 	document.getElementById("siz").value = document.getElementById("siz").defaultValue
+	document.getElementById("siz").value = document.getElementById("stx").defaultValue
+	document.getElementById("siz").value = document.getElementById("sty").defaultValue
 	document.getElementById("res").value = document.getElementById("res").defaultValue
 	document.getElementById("typ").value = document.getElementById("typ").defaultValue
 
