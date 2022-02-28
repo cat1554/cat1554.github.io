@@ -95,8 +95,8 @@ function haoreuch() {
 	}
 
 	if (debugmode == 1) {
-		document.getElementById("output8").innerHTML = "08:" + linkparam;
-		document.getElementById("output9").innerHTML = "09:" + linkparam.indexOf("music=1");
+//		document.getElementById("output8").innerHTML = "08:" + linkparam;
+//		document.getElementById("output9").innerHTML = "09:" + linkparam.indexOf("music=1");
 	}
 
 	windowHigh = window.innerHeight;
@@ -152,7 +152,7 @@ function haoreuch() {
 		var moooooablar2 = moooooablar1.replace("%","");
 
 		if (debugmode == 1) {
-			document.getElementById("output0").innerHTML = "moooooablar2=" + moooooablar2;
+//			document.getElementById("output0").innerHTML = "moooooablar2=" + moooooablar2;
 		}
 
 		if (mousey != mouseyB) {

@@ -57,8 +57,8 @@ function doLoad(){
 	var paramfind = linkparam.indexOf("music=1");
 
 	window.console.log(paramfind);
-	document.getElementById("output6").innerHTML = "06:" + linkparam;
-	document.getElementById("output7").innerHTML = "07:" + paramfind;
+//	document.getElementById("output6").innerHTML = "06:" + linkparam;
+//	document.getElementById("output7").innerHTML = "07:" + paramfind;
 
 	setTimeout(haoreuchSetup, 30)
 
