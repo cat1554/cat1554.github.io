@@ -375,7 +375,7 @@ function haoreuchSetup2() {
 
 //	ctx.scale(ratio, ratio);
 
-	setInterval(haoreuch, 500);
+	setInterval(haoreuch, 10);
 }
 
 function haoreuchSetup() {
