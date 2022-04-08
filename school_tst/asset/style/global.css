@@ -66,3 +66,21 @@ body {
 	border-color: #FFFFFF;
 	background-color: #AAAAFF;
 }
+
+details > summary::marker:hover {
+	display:none;
+}
+
+@counter-style thumbs {
+	system: cyclic;
+/*	symbols: url('../misc/oi_marker.png'); */
+	symbols: "\26A0";
+	suffix: " ";
+}
+
+details > summary {
+  	padding: 2px 6px;
+	list-style-type: thumbs;
+	list-style-position: inside;
+/*	list-style-image: url('../misc/oi_marker.png'); */
+}

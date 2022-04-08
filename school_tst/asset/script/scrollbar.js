@@ -34,6 +34,9 @@ var linkparam;
 var paramfind;
 var debugmode;
 
+var warningCreatorSys;
+var warningCreatorSysInto;
+
 var c;
 var ctx;
 
@@ -347,7 +350,72 @@ function openContextMenu(event) {
 	openMenu("ContextNavMenu");
 }
 
+function taoeutnaoetuhntohneauTEST() {
+	warningCreatorSys = document.createElement("div");
+	warningCreatorSys.id = "schoolalertdetailsdiv";
+	warningCreatorSysInto = document.getElementById("corntents");
+	warningCreatorSysInto.insertBefore(warningCreatorSys, warningCreatorSysInto.children[0]);
+
+	warningCreatorSys = document.createElement("table");
+	warningCreatorSys.id = "schoolalertdetailstable";
+	warningCreatorSys.style.width = "100%"
+	warningCreatorSys.style.height = "20px"
+	warningCreatorSysInto = document.getElementById("schoolalertdetailsdiv");
+	warningCreatorSysInto.appendChild(warningCreatorSys);
+
+	warningCreatorSys = document.createElement("tr");
+	warningCreatorSys.id = "schoolalertdetailstr";
+	warningCreatorSysInto = document.getElementById("schoolalertdetailstable");
+	warningCreatorSysInto.appendChild(warningCreatorSys);
+
+	warningCreatorSys = document.createElement("td");
+	warningCreatorSys.id = "schoolalertdetailstextualicon";
+	warningCreatorSysInto = document.getElementById("schoolalertdetailstr");
+	warningCreatorSysInto.appendChild(warningCreatorSys);
+
+	warningCreatorSys = document.createElement("img");
+	warningCreatorSys.id = "schoolalertdetailstextualiconimg";
+	warningCreatorSys.src = "asset/misc/oi_marker.png";
+	warningCreatorSys.style.width = "20px";
+	warningCreatorSys.style.height = "20px";
+	warningCreatorSys.style.verticalAlign = "sub";
+//	warningCreatorSys.innerHTML = "OI";
+	warningCreatorSysInto = document.getElementById("schoolalertdetailstextualicon");
+	warningCreatorSysInto.appendChild(warningCreatorSys);
+
+
+
+	warningCreatorSys = document.createElement("td");
+	warningCreatorSys.id = "schoolalertdetailstextualsum";
+	warningCreatorSys.innerHTML = "These webpages were created for a school project.";
+	warningCreatorSysInto = document.getElementById("schoolalertdetailstr");
+	warningCreatorSysInto.appendChild(warningCreatorSys);
+
+	warningCreatorSys = document.createElement("td");
+	warningCreatorSys.id = "schoolalertdetailstextualoutgradient";
+	warningCreatorSysInto = document.getElementById("schoolalertdetailstr");
+	warningCreatorSysInto.appendChild(warningCreatorSys);
+
+
+
+	warningCreatorSys = document.createElement("p");
+	warningCreatorSys.id = "schoolalertdetailstextual";
+	warningCreatorSys.innerHTML = "These webpages were created for a school project, and may be of low quality. Many Google Drive links are present, only viewable with a school email. While the public is free to explore the website, not all content is available.";
+	warningCreatorSysInto = document.getElementById("schoolalertdetailsdiv");
+	warningCreatorSysInto.appendChild(warningCreatorSys);
+
+	
+	//var textnode = document.createTextNode(text);
+	//menuObj.appendChild(textnode);
+//	elementThing = document.body;
+//	elementThing.appendChild(menuObj);
+
+//	document.getElementById("alertbar").innerHTML = "These webpages were created for a school-related project.";
+}
+
 function haoreuchSetup2() {
+	taoeutnaoetuhntohneauTEST();
+
 	c = document.getElementById("canvas_clock");
 	ctx = c.getContext("2d");
 

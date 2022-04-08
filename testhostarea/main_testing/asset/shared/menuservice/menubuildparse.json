@@ -1,0 +1,35 @@
+{
+"contents":
+	[
+		{
+			"id": 1,
+			"question": "What type of government does China have?",
+			"answers": [
+				{
+                    "id": 1,
+                    "show": 1,
+					"text":"Democratic",
+					"correct": 0
+				},
+				{
+                    "id": 2,
+                    "show": 1,
+					"text":"Communist",
+					"correct": 1
+				},
+				{
+                    "id": 3,
+                    "show": 1,
+					"text":"Dictatorship",
+					"correct": 0
+				},
+				{
+                    "id": 4,
+                    "show": 1,
+					"text":"None",
+					"correct": 0
+				},
+			]
+		}
+	]
+}
