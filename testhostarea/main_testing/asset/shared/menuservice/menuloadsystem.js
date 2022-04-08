@@ -64,6 +64,7 @@ function addBackBar() {
 }
 
 function createMenu(width, text, setid, depth, direction, position, xpos, ypos, showbg) {
+	window.console.log("build 1");
 	menuObj = document.createElement("div");
 	menuObj.id = setid;
 	//var textnode = document.createTextNode(text);
