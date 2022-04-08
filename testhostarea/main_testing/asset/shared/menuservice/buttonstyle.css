@@ -91,7 +91,7 @@
 #notification2 {
 	width: 400px;
 	height: 20px;
-	background-color: grey;
+	background-color: black;
 	position: fixed;
 	z-index: 50;
 	left: 150px;
@@ -122,7 +122,7 @@
 	z-index: -2;
 	background-color: black;
 	perspective: 300px;
-	perspective-origin: 600px 50%;
+	perspective-origin: 400px 50%;
 }
 
 #bgHider {
@@ -132,5 +132,5 @@
 	right: 0px;
 	bottom: 0px;
 	background-color: white;
-	z-index: -2;
+	z-index: 0;
 }
