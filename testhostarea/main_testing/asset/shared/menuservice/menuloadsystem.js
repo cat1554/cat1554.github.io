@@ -57,7 +57,6 @@ function addBackBar() {
 
 	menuObj = document.createElement("div");
 	menuObj.id = "bgHider";
-	menuObj.style = "position: absolute; top: 20px; left: 0px; right: 0px; bottom: 0px; background-color: white;";
 	elementThing = document.body;
 	elementThing.appendChild(menuObj);
 

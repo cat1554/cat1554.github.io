@@ -124,3 +124,13 @@
 	perspective: 300px;
 	perspective-origin: 400px 50%;
 }
+
+#bgHider {
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: white;
+	z-index: -2;
+}
