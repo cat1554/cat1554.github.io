@@ -84,6 +84,7 @@ function createMenu(width, text, setid, depth, direction, position, xpos, ypos, 
 	document.getElementById(setid).style.position = position;
 	document.getElementById(setid).style.left = String(xpos).concat("px");
 	document.getElementById(setid).style.top = String(ypos).concat("px");
+	document.getElementById(setid).style.zIndex = 512;
 	document.getElementById(setid).onmouseleave = function(){closeMenu(setid)};
 
 	//String(text).concat("back");
