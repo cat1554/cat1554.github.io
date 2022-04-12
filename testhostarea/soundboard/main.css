@@ -1,0 +1,186 @@
+#topnavbar {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 20px;
+	background-color: black;
+	perspective: 300px;
+	perspective-origin: 400px 50%;
+}
+
+.standardkey {
+	height: 20px;
+	width: 75px;
+}
+
+.onehalfkey {
+	height: 20px;
+	width: 112px;
+}
+
+.doublekey {
+	height: 20px;
+	width: 150px;
+}
+
+.spacekey {
+	height: 20px;
+	width: 300px;
+}
+
+.keyboardbutton {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+
+	width: 100%;
+	text-align: left;
+}
+
+.keyboardsound {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+
+	width: 100%;
+	text-align: right;
+}
+
+.notificationText {
+	position: fixed;
+	top: -15px;
+	left: 25px;
+	font-size: 15px;
+	color: white;
+	font-weight: 900;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.notificationCountText {
+	position: fixed;
+	top: -10px;
+	right: 10px;
+	font-size: 10px;
+	color: white;
+	font-weight: 900;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+
+	background-image: linear-gradient(#FAA, #A00);
+	border: 2px solid white;
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes openAlertMessage {
+	0% {
+		transform: rotateX(90deg);
+	}
+	100% {
+		transform: rotateX(0deg);
+	}
+}
+
+@keyframes closeAlertMessage {
+	0% {
+		transform: rotateX(0);
+	}
+	100% {
+		transform: rotateX(-90deg);
+	}
+}
+
+#mainlocation {
+	opacity: 1;
+	animation-name: fadein;
+	animation-duration: 500ms;
+}
+
+#mainlocation button {
+	background-color: transparent;
+	border: none;
+	font-weight: 900;
+}
+
+#mainlocation td {
+	position: relative;
+	border: 1px solid black;
+}
+
+#mainlocation p {
+	font-weight: 600;
+}
+
+.dstd {
+	background-color: lightgrey;
+	transition-property: all;
+	transition-duration: 500ms;
+	transition-timing-function: linear;
+}
+
+.dstd:active {
+	background-color: #FF9090;
+	transition-property: all;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
+.sbtd {
+	background-color: white;
+	transition-property: all;
+	transition-duration: 500ms;
+	transition-timing-function: linear;
+}
+
+.sbtd:active {
+	background-color: lightblue;
+	transition-property: all;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
+.sbtds:active {
+	background-color: lightgreen;
+	transition-property: all;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
+#notification1 {
+	width: 400px;
+	height: 20px;
+	position: fixed;
+	z-index: 50;
+	left: 200px;
+	animation-name: closeAlertMessage;
+	animation-duration: 500ms;
+  	animation-timing-function: ease-in-out;
+  	animation-iteration-count: 1;
+	transform-style: preserve-3d;
+	transform-origin: 50% 50% -10px;
+}
+
+#notification2 {
+	width: 400px;
+	height: 20px;
+	position: fixed;
+	z-index: 50;
+	left: 200px;
+	animation-name: openAlertMessage;
+	animation-duration: 500ms;
+  	animation-timing-function: ease-in-out;
+  	animation-iteration-count: 1;
+	transform-style: preserve-3d;
+	transform-origin: 50% 50% -10px;
+}
