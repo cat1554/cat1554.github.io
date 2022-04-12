@@ -26,7 +26,7 @@ function summonAudio2(obj) {
 
 function summonQuietAudio(assetSource) {
 	var eightAudio = document.createElement("audio");
-	audioSummonedID = String(fileSource + audioSummonerID);
+	audioSummonedID = String(audioSummonerID);
 	eightAudio.volume = 0;
 	eightAudio.id = audioSummonedID;
 	audioSummonerID++;
@@ -35,13 +35,13 @@ function summonQuietAudio(assetSource) {
 	}
 	document.head.appendChild(eightAudio);
 	summonAudio2(audioSummonedID);
-	eightAudio.src = assetSource;
+	eightAudio.src = String(fileSource + audioSummonerID + ".wav");
 	eightAudio.play();
 }
 
 function summonAudio(assetSource) {
 	var eightAudio = document.createElement("audio");
-	audioSummonedID = String(fileSource + audioSummonerID);
+	audioSummonedID = String(audioSummonerID);
 	eightAudio.id = audioSummonedID;
 	audioSummonerID++;
 	if (audioSummonerID > 511.5) {
@@ -49,7 +49,7 @@ function summonAudio(assetSource) {
 	}
 	document.head.appendChild(eightAudio);
 	summonAudio2(audioSummonedID);
-	eightAudio.src = assetSource;
+	eightAudio.src = String(fileSource + audioSummonerID + ".wav");
 	eightAudio.play();
 }
 
@@ -63,7 +63,7 @@ function notificationBarHandler() {
 	if (notificationCache.length > 0.5) {
 		if (notificationClock > 10 || notificationStatus == 0) {
 			if (notificationStatus == 0) {
-				summonAudio("sys_tritone.wav");
+				summonAudio("sys_tritone");
 				notificationStatus = 1;
 				notificationClock = 0;
 				document.getElementById("topnavbar_builtinnotificationone").innerHTML = document.getElementById("topnavbar_builtinnotificationtwo").innerHTML;
@@ -79,7 +79,7 @@ function notificationBarHandler() {
 				elm.parentNode.replaceChild(newone, elm);
 				notificationCache.shift();
 			} else {
-				summonAudio("sys_tritone.wav");
+				summonAudio("sys_tritone");
 				notificationStatus = 1;
 				notificationClock = 0;
 				document.getElementById("topnavbar_builtinnotificationone").innerHTML = document.getElementById("topnavbar_builtinnotificationtwo").innerHTML;
@@ -221,7 +221,7 @@ function addButton3(obj) {
 function addButton2(obj, src, key) {
 	document.getElementById(obj).addEventListener("click", function(ratios) {
 		if (ratios.getModifierState("Meta") == false) {
-			summonAudio(src + ".wav");
+			summonAudio(src);
 		}
 	});
 	document.body.addEventListener("keydown", function(ratios) {
@@ -234,7 +234,7 @@ function addButton2(obj, src, key) {
 			}
 		}
 	});
-	summonQuietAudio(src + ".wav");
+	summonQuietAudio(src);
 }
 
 function addSpecialButton3(obj) {
@@ -357,7 +357,6 @@ function setupSoundBoard() {
 			fileSource = "../../asset/other/soundboard/audio/";
 		}
 	}
-	window.console.log(fileSource);
 
 	addLyingButton(1,1);
 	addButton(2,1,"Bruh","bruh");
@@ -416,6 +415,6 @@ function setupSoundBoard() {
 	addButton(11,4,"","silent");
 	addLyingButton(12,4);
 
-	summonQuietAudio("sys_tritone.wav");
+	summonQuietAudio("sys_tritone");
 	setInterval(notificationBarHandler, 100);
 }
