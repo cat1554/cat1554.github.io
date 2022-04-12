@@ -18,16 +18,6 @@ var theme = 1;
 
 var fileSource = "";
 
-if (window.location.protocol == "file:") {
-	fileSource = "../../asset/other/soundboard/audio/";
-} else {
-	if (window.location.hostname == "cat1554.github.io") {
-		fileSource = "audio/";
-	} else {
-		fileSource = "../../asset/other/soundboard/audio/";
-	}
-}
-
 function summonAudio2(obj) {
 	document.getElementById(obj).addEventListener("ended", function() {
 		document.getElementById(obj).remove();
@@ -358,6 +348,15 @@ function addLyingButton(x,y) {
 }
 
 function setupSoundBoard() {
+	if (window.location.protocol == "file:") {
+		fileSource = "../../asset/other/soundboard/audio/";
+	} else {
+		if (window.location.hostname == "cat1554.github.io") {
+			fileSource = "audio/";
+		} else {
+			fileSource = "../../asset/other/soundboard/audio/";
+		}
+	}
 
 	addLyingButton(1,1);
 	addButton(2,1,"Bruh","bruh");
