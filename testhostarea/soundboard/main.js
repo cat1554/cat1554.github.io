@@ -26,7 +26,7 @@ function summonAudio2(obj) {
 
 function summonQuietAudio(assetSource) {
 	var eightAudio = document.createElement("audio");
-	audioSummonedID = String(fileSource) + String(audioSummonerID);
+	audioSummonedID = String(fileSource + audioSummonerID);
 	eightAudio.volume = 0;
 	eightAudio.id = audioSummonedID;
 	audioSummonerID++;
@@ -41,7 +41,7 @@ function summonQuietAudio(assetSource) {
 
 function summonAudio(assetSource) {
 	var eightAudio = document.createElement("audio");
-	audioSummonedID = String(fileSource) + String(audioSummonerID);
+	audioSummonedID = String(fileSource + audioSummonerID);
 	eightAudio.id = audioSummonedID;
 	audioSummonerID++;
 	if (audioSummonerID > 511.5) {
