@@ -16,7 +16,7 @@ var notificationCountStatus = 0;
 var summonMode = 0;
 var theme = 1;
 
-var fileSource = "";
+var fileSource;
 
 function summonAudio2(obj) {
 	document.getElementById(obj).addEventListener("ended", function() {
@@ -26,7 +26,7 @@ function summonAudio2(obj) {
 
 function summonQuietAudio(assetSource) {
 	var eightAudio = document.createElement("audio");
-	audioSummonedID = String(fileSource + audioSummonerID);
+	audioSummonedID = String(fileSource) + String(audioSummonerID);
 	eightAudio.volume = 0;
 	eightAudio.id = audioSummonedID;
 	audioSummonerID++;
@@ -41,7 +41,7 @@ function summonQuietAudio(assetSource) {
 
 function summonAudio(assetSource) {
 	var eightAudio = document.createElement("audio");
-	audioSummonedID = String(fileSource + audioSummonerID);
+	audioSummonedID = String(fileSource) + String(audioSummonerID);
 	eightAudio.id = audioSummonedID;
 	audioSummonerID++;
 	if (audioSummonerID > 511.5) {
