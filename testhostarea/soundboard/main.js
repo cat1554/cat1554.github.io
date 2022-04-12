@@ -357,6 +357,7 @@ function setupSoundBoard() {
 			fileSource = "../../asset/other/soundboard/audio/";
 		}
 	}
+	window.console.log(fileSource);
 
 	addLyingButton(1,1);
 	addButton(2,1,"Bruh","bruh");
@@ -380,7 +381,7 @@ function setupSoundBoard() {
 	addButton(5,2,"PIZZAH!","pizza");
 	addButton(6,2,"Nom Nom Nom","nom");
 	addButton(7,2,"Goodbye","bye");
-	addButton(8,2,"DINGA LINGA LINGA LINGA","dinga");
+	addButton(8,2,"Go yo chi","goyochi");
 	addButton(9,2,"Longhorn Critical","longhorncrit");
 	addButton(10,2,"GET","get");
 	addButton(11,2,"Secret Found","secret");
@@ -394,7 +395,7 @@ function setupSoundBoard() {
 	addButton(4,3,"8","eight");
 	addButton(5,3,"Bing Chilling!","bingchilling");
 	addButton(6,3,"","silent");
-	addButton(7,3,"","silent");
+	addButton(7,3,"DINGA LINGA LINGA LINGA","dinga");
 	addButton(8,3,"","silent");
 	addButton(9,3,"","silent");
 	addButton(10,3,"","silent");
