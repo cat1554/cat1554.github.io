@@ -35,7 +35,7 @@ function summonQuietAudio(assetSource) {
 	}
 	document.head.appendChild(eightAudio);
 	summonAudio2(audioSummonedID);
-	eightAudio.src = String(fileSource + audioSummonerID + ".wav");
+	eightAudio.src = String(fileSource + assetSource + ".wav");
 	eightAudio.play();
 }
 
@@ -49,7 +49,7 @@ function summonAudio(assetSource) {
 	}
 	document.head.appendChild(eightAudio);
 	summonAudio2(audioSummonedID);
-	eightAudio.src = String(fileSource + audioSummonerID + ".wav");
+	eightAudio.src = String(fileSource + assetSource + ".wav");
 	eightAudio.play();
 }
 
