@@ -31,7 +31,7 @@ function summonQuietAudio(assetSource) {
 	audioSummonedID = String(audioSummonerID);
 	eightAudio.volume = 0;
 	eightAudio.id = audioSummonedID;
-	eightAudio.className = "eightAudioClass";
+	eightAudio.className = "eightSilentAudioClass";
 	audioSummonerID++;
 	if (audioSummonerID > 511.5) {
 		audioSummonerID = 0;
@@ -318,6 +318,9 @@ function addSpecialButton2(obj, src, key) {
 						addToNotificationCache("Disabled overlap.");
 					}
 					break;
+				case "build":
+					addToNotificationCache("Build 1525-1304-2022");
+					break;
 				default:
 					addToNotificationCache("Invalid action error.");
 			}
@@ -486,7 +489,7 @@ function setupSoundBoard() {
 	addButton(10,2,"Yay","win");
 	addButton(11,2,"Secret Found","secret");
 	addLyingButton(12,2);
-	addLyingButton(13,2);
+	addSpecialButton(13,2,"Build info", "build");
 	addLyingButton(14,2);
 
 	addLyingButton(1,3);
