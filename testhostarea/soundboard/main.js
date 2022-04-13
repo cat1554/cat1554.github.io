@@ -57,6 +57,24 @@ function summonAudio(assetSource) {
 		summonAudio2(audioSummonedID);
 		eightAudio.src = String(fileSource + assetSource + ".wav");
 		eightAudio.play();
+	} else {
+		var moocow222 = audioCounter.length;
+		for (let moocow112 = 0; moocow112 < moocow222; moocow112++) {
+			audioCounter[moocow112].remove();
+		}
+
+		var eightAudio = document.createElement("audio");
+		audioSummonedID = String(audioSummonerID);
+		eightAudio.id = audioSummonedID;
+		eightAudio.className = "eightAudioClass";
+		audioSummonerID++;
+		if (audioSummonerID > 511.5) {
+			audioSummonerID = 0;
+		}
+		document.head.appendChild(eightAudio);
+		summonAudio2(audioSummonedID);
+		eightAudio.src = String(fileSource + assetSource + ".wav");
+		eightAudio.play();
 	}
 }
 
