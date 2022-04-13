@@ -78,6 +78,21 @@ function summonAudio(assetSource) {
 	}
 }
 
+function summonSystemAudio(assetSource) {
+		var eightAudio = document.createElement("audio");
+		audioSummonedID = String(audioSummonerID);
+		eightAudio.id = audioSummonedID;
+		eightAudio.className = "eightSystemAudioClass";
+		audioSummonerID++;
+		if (audioSummonerID > 511.5) {
+			audioSummonerID = 0;
+		}
+		document.head.appendChild(eightAudio);
+		summonAudio2(audioSummonedID);
+		eightAudio.src = String(fileSource + assetSource + ".wav");
+		eightAudio.play();
+}
+
 function addToNotificationCache(inp) {
 	notificationCache.push(inp);
 }
@@ -88,7 +103,7 @@ function notificationBarHandler() {
 	if (notificationCache.length > 0.5) {
 		if (notificationClock > 10 || notificationStatus == 0) {
 			if (notificationStatus == 0) {
-				summonAudio("sys_tritone");
+				summonSystemAudio("sys_tritone");
 				notificationStatus = 1;
 				notificationClock = 0;
 				document.getElementById("topnavbar_builtinnotificationone").innerHTML = document.getElementById("topnavbar_builtinnotificationtwo").innerHTML;
@@ -104,7 +119,7 @@ function notificationBarHandler() {
 				elm.parentNode.replaceChild(newone, elm);
 				notificationCache.shift();
 			} else {
-				summonAudio("sys_tritone");
+				summonSystemAudio("sys_tritone");
 				notificationStatus = 1;
 				notificationClock = 0;
 				document.getElementById("topnavbar_builtinnotificationone").innerHTML = document.getElementById("topnavbar_builtinnotificationtwo").innerHTML;
