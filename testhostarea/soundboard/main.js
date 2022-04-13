@@ -57,7 +57,10 @@ if (lmmDate.getMonth() < 8.5) {
 
 yrStrng = lmmDate.getFullYear();
 
-
+function scriptframecheck() {
+	var laDate = Date.parse(document.getElementById("scriptiframe").contentDocument.lastModified);
+	var laaDate = new Date(lmDate);
+}
 
 function summonAudio2(obj) {
 	document.getElementById(obj).addEventListener("ended", function() {
@@ -312,9 +315,9 @@ function addButton3(obj) {
 function addButton2(obj, src, key, volume) {
 	document.getElementById(obj).addEventListener("click", function(ratios) {
 		if (ratios.getModifierState("Meta") == false) {
-			for (let leCounterable = 0; leCounterable < volume; leCounterable++) {
+//			for (let leCounterable = 0; leCounterable < volume; leCounterable++) {
 				summonAudio(src);
-			}
+//			}
 		}
 	});
 	document.body.addEventListener("keydown", function(ratios) {
@@ -579,4 +582,6 @@ function setupSoundBoard() {
 	scriptUpdateFrame.id = "scriptiframe";
 	scriptUpdateFrame.src = ("main.js");
 	document.body.appendChild(scriptUpdateFrame);
+
+	setTimeout(scriptframecheck,500);
 }
