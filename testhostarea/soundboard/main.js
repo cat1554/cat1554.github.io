@@ -431,7 +431,7 @@ function addButton(x,y,text,source,volume) {
 	createdButton.innerHTML = String(text);
 	createdButton.id = "x" + String(x) + "y" + String(y) + "b";
 	document.getElementById("x" + String(x) + "y" + String(y)).appendChild(createdButton);
-	addButton2("x" + String(x) + "y" + String(y), String(source), key, volume);
+	addButton2("x" + String(x) + "y" + String(y), String(source), key, (volume + 1));
 
 	createdButton = document.createElement("p");
 	createdButton.className = "keyboardbutton";
