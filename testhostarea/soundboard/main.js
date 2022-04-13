@@ -225,6 +225,7 @@ function addButton2(obj, src, key) {
 		}
 	});
 	document.body.addEventListener("keydown", function(ratios) {
+		if (summonMode == 0) {
 		if (ratios.getModifierState("Meta") == false) {
 			if (ratios["key"] == key) {
 				document.getElementById(obj).click();
@@ -232,6 +233,19 @@ function addButton2(obj, src, key) {
 				document.getElementById(obj).style.transitionDuration = "0ms";
 			setTimeout(addButton3, 100, obj);
 			}
+		}
+		}
+	});
+	document.body.addEventListener("keyup", function(ratios) {
+		if (summonMode == 1) {
+		if (ratios.getModifierState("Meta") == false) {
+			if (ratios["key"] == key) {
+				document.getElementById(obj).click();
+				document.getElementById(obj).style.backgroundColor = "lightblue";
+				document.getElementById(obj).style.transitionDuration = "0ms";
+			setTimeout(addButton3, 100, obj);
+			}
+		}
 		}
 	});
 	summonQuietAudio(src);
@@ -262,6 +276,7 @@ function addSpecialButton2(obj, src, key) {
 		}
 	});
 	document.body.addEventListener("keydown", function(ratios) {
+		if (summonMode == 0) {
 		if (ratios.getModifierState("Meta") == false) {
 			if (ratios["key"] == key) {
 				document.getElementById(obj).click();
@@ -269,6 +284,19 @@ function addSpecialButton2(obj, src, key) {
 				document.getElementById(obj).style.transitionDuration = "0ms";
 			setTimeout(addSpecialButton3, 100, obj);
 			}
+		}
+		}
+	});
+	document.body.addEventListener("keyup", function(ratios) {
+		if (summonMode == 1) {
+		if (ratios.getModifierState("Meta") == false) {
+			if (ratios["key"] == key) {
+				document.getElementById(obj).click();
+				document.getElementById(obj).style.backgroundColor = "lightyellow";
+				document.getElementById(obj).style.transitionDuration = "0ms";
+			setTimeout(addSpecialButton3, 100, obj);
+			}
+		}
 		}
 	});
 }
