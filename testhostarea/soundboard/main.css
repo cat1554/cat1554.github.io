@@ -9,6 +9,22 @@
 	perspective-origin: 400px 50%;
 }
 
+.icon_indication {
+	position: fixed;
+	top: 0px;
+	width: 20px;
+	height: 20px;
+	border: none;
+}
+
+#icon_indication_pressmode {
+	right: 20px;
+}
+
+#icon_indication_repeatmode {
+	right: 0px;
+}
+
 .standardkey {
 	height: 20px;
 	width: 75px;
@@ -94,10 +110,28 @@
 
 @keyframes closeAlertMessage {
 	0% {
-		transform: rotateX(0);
+		transform: rotateX(0deg);
 	}
 	100% {
 		transform: rotateX(-90deg);
+	}
+}
+
+@keyframes themeChangeIn {
+	0% {
+		transform: rotateY(0deg);
+	}
+	100% {
+		transform: rotateY(-90deg);
+	}
+}
+
+@keyframes themeChangeOut {
+	0% {
+		transform: rotateY(90deg);
+	}
+	100% {
+		transform: rotateY(0deg);
 	}
 }
 
@@ -136,6 +170,20 @@
 	transition-timing-function: linear;
 }
 
+.dstdx {
+	background-color: darkgrey;
+	transition-property: all;
+	transition-duration: 500ms;
+	transition-timing-function: linear;
+}
+
+.dstdx:active {
+	background-color: #FF0000;
+	transition-property: all;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
 .sbtd {
 	background-color: white;
 	transition-property: all;
@@ -150,6 +198,20 @@
 	transition-timing-function: linear;
 }
 
+.sbtdx {
+	background-color: black;
+	transition-property: all;
+	transition-duration: 500ms;
+	transition-timing-function: linear;
+}
+
+.sbtdx:active {
+	background-color: blue;
+	transition-property: all;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
 .sbtds:active {
 	background-color: lightyellow;
 	transition-property: all;
@@ -159,6 +221,20 @@
 
 .sbtdc:active {
 	background-color: lightgreen;
+	transition-property: all;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
+.sbtdsx:active {
+	background-color: yellow;
+	transition-property: all;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
+.sbtdcx:active {
+	background-color: #0A0;
 	transition-property: all;
 	transition-duration: 0ms;
 	transition-timing-function: linear;
@@ -190,4 +266,20 @@
   	animation-iteration-count: 1;
 	transform-style: preserve-3d;
 	transform-origin: 50% 50% -10px;
+}
+
+.sbtdtra {
+	animation-name: themeChangeIn;
+	animation-duration: 100ms;
+  	animation-timing-function: ease-in;
+  	animation-iteration-count: 1;
+	transform-style: preserve-3d;
+}
+
+.sbtdtrb {
+	animation-name: themeChangeOut;
+	animation-duration: 100ms;
+  	animation-timing-function: ease-out;
+  	animation-iteration-count: 1;
+	transform-style: preserve-3d;
 }

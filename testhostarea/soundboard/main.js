@@ -15,6 +15,8 @@ var notificationCountStatus = 0;
 
 var summonMode = 0;
 var theme = 1;
+var themeTransition = 0;
+var currTheme = 1;
 
 var fileSource;
 
@@ -29,6 +31,7 @@ function summonQuietAudio(assetSource) {
 	audioSummonedID = String(audioSummonerID);
 	eightAudio.volume = 0;
 	eightAudio.id = audioSummonedID;
+	eightAudio.className = "eightAudioClass";
 	audioSummonerID++;
 	if (audioSummonerID > 511.5) {
 		audioSummonerID = 0;
@@ -40,17 +43,21 @@ function summonQuietAudio(assetSource) {
 }
 
 function summonAudio(assetSource) {
-	var eightAudio = document.createElement("audio");
-	audioSummonedID = String(audioSummonerID);
-	eightAudio.id = audioSummonedID;
-	audioSummonerID++;
-	if (audioSummonerID > 511.5) {
-		audioSummonerID = 0;
+	audioCounter = document.getElementsByClassName("eightAudioClass");
+	if (currTheme == 1 || audioCounter.length == 0) {
+		var eightAudio = document.createElement("audio");
+		audioSummonedID = String(audioSummonerID);
+		eightAudio.id = audioSummonedID;
+		eightAudio.className = "eightAudioClass";
+		audioSummonerID++;
+		if (audioSummonerID > 511.5) {
+			audioSummonerID = 0;
+		}
+		document.head.appendChild(eightAudio);
+		summonAudio2(audioSummonedID);
+		eightAudio.src = String(fileSource + assetSource + ".wav");
+		eightAudio.play();
 	}
-	document.head.appendChild(eightAudio);
-	summonAudio2(audioSummonedID);
-	eightAudio.src = String(fileSource + assetSource + ".wav");
-	eightAudio.play();
 }
 
 function addToNotificationCache(inp) {
@@ -269,9 +276,17 @@ function addSpecialButton2(obj, src, key) {
 						addToNotificationCache("Switched to KeyUp mode.");
 					}
 					break;
-				case "Theme":
+				case "Overlap":
+					if (currTheme == 0) {
+						currTheme = 1;
+						addToNotificationCache("Enabled overlap.");
+					} else {
+						currTheme = 0;
+						addToNotificationCache("Disabled overlap.");
+					}
 					break;
 				default:
+					addToNotificationCache("Invalid action error.");
 			}
 		}
 	});
@@ -423,7 +438,7 @@ function setupSoundBoard() {
 	addButton(10,1,"Nice Try Mate","nicetry");
 	addButton(11,1,"Frog","frog");
 	addSpecialButton(12,1,"Toggle Trigger Mode","HoldMode");
-	addSpecialButton(13,1,"Change Theme","Theme");
+	addSpecialButton(13,1,"Toggle Overlapping","Overlap");
 	addLyingButton(14,1);
 
 	addLyingButton(1,2);
