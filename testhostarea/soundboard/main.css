@@ -151,6 +151,13 @@
 }
 
 .sbtds:active {
+	background-color: lightyellow;
+	transition-property: all;
+	transition-duration: 0ms;
+	transition-timing-function: linear;
+}
+
+.sbtdc:active {
 	background-color: lightgreen;
 	transition-property: all;
 	transition-duration: 0ms;

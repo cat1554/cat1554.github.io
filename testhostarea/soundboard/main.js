@@ -265,7 +265,7 @@ function addSpecialButton2(obj, src, key) {
 		if (ratios.getModifierState("Meta") == false) {
 			if (ratios["key"] == key) {
 				document.getElementById(obj).click();
-				document.getElementById(obj).style.backgroundColor = "lightgreen";
+				document.getElementById(obj).style.backgroundColor = "lightyellow";
 				document.getElementById(obj).style.transitionDuration = "0ms";
 			setTimeout(addSpecialButton3, 100, obj);
 			}
@@ -280,12 +280,26 @@ function addLyingButton3(obj) {
 
 function addLyingButton2(obj, key) {
 	document.body.addEventListener("keydown", function(ratios) {
-		if ((ratios.getModifierState("Meta") == false) || (key == "Meta")) {
-			if (ratios["key"] == key) {
-				document.getElementById(obj).click();
-				document.getElementById(obj).style.backgroundColor = "#FF9090";
-				document.getElementById(obj).style.transitionDuration = "0ms";
-				setTimeout(addLyingButton3, 100, obj);
+		if (summonMode == 0) {
+			if ((ratios.getModifierState("Meta") == false) || (key == "Meta")) {
+				if (ratios["key"] == key) {
+					document.getElementById(obj).click();
+					document.getElementById(obj).style.backgroundColor = "#FF9090";
+					document.getElementById(obj).style.transitionDuration = "0ms";
+					setTimeout(addLyingButton3, 100, obj);
+				}
+			}
+		}
+	});
+	document.body.addEventListener("keyup", function(ratios) {
+		if (summonMode == 1) {
+			if ((ratios.getModifierState("Meta") == false) || (key == "Meta")) {
+				if (ratios["key"] == key) {
+					document.getElementById(obj).click();
+					document.getElementById(obj).style.backgroundColor = "#FF9090";
+					document.getElementById(obj).style.transitionDuration = "0ms";
+					setTimeout(addLyingButton3, 100, obj);
+				}
 			}
 		}
 	});
@@ -332,6 +346,27 @@ function addSpecialButton(x,y,text,source) {
 	
 }
 
+function addCapsButton() {
+	var key = String(window["y" + 3 + "map"][1 - 1]);
+
+	var createdButton = document.createElement("button");
+	createdButton.className = "keyboardsound";
+	createdButton.innerHTML = String(text);
+	createdButton.id = "x" + String(1) + "y" + String(3) + "b";
+	document.getElementById("x" + String(1) + "y" + String(3)).appendChild(createdButton);
+	addSpecialButton2("x" + String(1) + "y" + String(3), String(source), key);
+
+	createdButton = document.createElement("p");
+	createdButton.className = "keyboardbutton";
+	createdButton.innerHTML = String(key);
+	createdButton.id = "x" + String(1) + "y" + String(3) + "p";
+	document.getElementById("x" + String(1) + "y" + String(3)).appendChild(createdButton);
+
+	document.getElementById("x" + String(1) + "y" + String(3)).classList.add("sbtd");
+	document.getElementById("x" + String(1) + "y" + String(3)).classList.add("sbtdc");
+	
+}
+
 function addLyingButton(x,y) {
 	var key = String(window["y" + y + "map"][x - 1]);
 
@@ -358,6 +393,10 @@ function setupSoundBoard() {
 		}
 	}
 
+	//	document.body.addEventListener("keydown", function(ratios) {
+//		window.console.log(ratios["key"])
+//	});
+
 	addLyingButton(1,1);
 	addButton(2,1,"Bruh","bruh");
 	addButton(3,1,"Oof","oof");
@@ -365,7 +404,7 @@ function setupSoundBoard() {
 	addButton(5,1,"Whoopsie Doodle!","whoops");
 	addButton(6,1,"Bao","bass");
 	addButton(7,1,"Chord","chord");
-	addButton(8,1,"Vine Boom","vine");
+	addButton(8,1,"Agh","agh");
 	addButton(9,1,"*Cough*","cough");
 	addButton(10,1,"Nice Try Mate","nicetry");
 	addButton(11,1,"Frog","frog");
@@ -380,9 +419,9 @@ function setupSoundBoard() {
 	addButton(5,2,"PIZZAH!","pizza");
 	addButton(6,2,"Nom Nom Nom","nom");
 	addButton(7,2,"Goodbye","bye");
-	addButton(8,2,"Go yo chi","goyochi");
+	addButton(8,2,"DINGA LINGA LINGA LINGA","dinga");
 	addButton(9,2,"Longhorn Critical","longhorncrit");
-	addButton(10,2,"GET","get");
+	addButton(10,2,"Yay","win");
 	addButton(11,2,"Secret Found","secret");
 	addLyingButton(12,2);
 	addLyingButton(13,2);
@@ -393,8 +432,8 @@ function setupSoundBoard() {
 	addButton(3,3,"STOP!!","stop");
 	addButton(4,3,"8","eight");
 	addButton(5,3,"Bing Chilling!","bingchilling");
-	addButton(6,3,"","silent");
-	addButton(7,3,"DINGA LINGA LINGA LINGA","dinga");
+	addButton(6,3,"Vine Boom","vine");
+	addButton(7,3,"GET","get");
 	addButton(8,3,"","silent");
 	addButton(9,3,"","silent");
 	addButton(10,3,"","silent");
