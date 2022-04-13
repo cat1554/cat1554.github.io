@@ -68,7 +68,6 @@
 	top: -15px;
 	left: 25px;
 	font-size: 15px;
-	color: white;
 	font-weight: 900;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -101,18 +100,63 @@
 
 @keyframes openAlertMessage {
 	0% {
+		background-image: linear-gradient(black 0%, black 10%, dimgrey 20%, dimgrey 30%, black 100%);
+		background-position: 0% 20%;
+		color: grey;
 		transform: rotateX(90deg);
 	}
 	100% {
+		background-image: linear-gradient(black 0%, black 10%, dimgrey 20%, dimgrey 30%, black 100%);
+		background-position: 0% 0%;
+		color: white;
 		transform: rotateX(0deg);
 	}
 }
 
 @keyframes closeAlertMessage {
 	0% {
+		background-image: linear-gradient(black 0%, black 10%, dimgrey 20%, dimgrey 30%, black 40%, black 50%, black 100%);
+		background-position: 0% 60%;
+		color: white;
+		transform: rotateX(0deg);
+	}
+	50% {
+		background-position: 0% 30%;
+	}
+	100% {
+		background-image: linear-gradient(black 0%, black 10%, dimgrey 20%, dimgrey 30%, black 40%, black 50%, black 100%);
+		background-position: 0% 100%;
+		color: grey;
+		transform: rotateX(-90deg);
+	}
+}
+
+@keyframes openAlertToGreyMessage {
+	0% {
+		background-image: linear-gradient(black 0%, black 10%, darkgrey 20%, grey 30%, grey 80%, darkgrey 90%, black 100%);
+		background-position: 0% 10%;
+		color: grey;
+		transform: rotateX(90deg);
+	}
+	100% {
+		background-image: linear-gradient(black 0%, black 10%, darkgrey 20%, grey 30%, grey 80%, darkgrey 90%, black 100%);
+		background-position: 0% 30%;
+		color: white;
+		transform: rotateX(0deg);
+	}
+}
+
+@keyframes closeAlertFromGreyMessage {
+	0% {
+		background-image: linear-gradient(black 0%, black 10%, DimGrey 20%, grey 30%, grey 70%, DimGrey 80%, black 90%, black 100%);
+		background-position: 0% 70%;
+		color: white;
 		transform: rotateX(0deg);
 	}
 	100% {
+		background-image: linear-gradient(black 0%, black 10%, DimGrey 20%, grey 30%, grey 70%, DimGrey 80%, black 90%, black 100%);
+		background-position: 0% 90%;
+		color: grey;
 		transform: rotateX(-90deg);
 	}
 }
@@ -246,10 +290,6 @@
 	position: fixed;
 	z-index: 50;
 	left: 200px;
-	animation-name: closeAlertMessage;
-	animation-duration: 500ms;
-  	animation-timing-function: ease-in-out;
-  	animation-iteration-count: 1;
 	transform-style: preserve-3d;
 	transform-origin: 50% 50% -10px;
 }
@@ -260,13 +300,50 @@
 	position: fixed;
 	z-index: 50;
 	left: 200px;
+	transform-style: preserve-3d;
+	transform-origin: 50% 50% -10px;
+}
+
+.notificationAnim1 {
+	background-size: 100% 1000%;
+	color: white;
 	animation-name: openAlertMessage;
 	animation-duration: 500ms;
   	animation-timing-function: ease-in-out;
   	animation-iteration-count: 1;
-	transform-style: preserve-3d;
-	transform-origin: 50% 50% -10px;
 }
+
+.notificationAnim2 {
+	background-size: 100% 1000%;
+	color: white;
+	animation-name: closeAlertMessage;
+	animation-duration: 500ms;
+  	animation-timing-function: ease-in-out;
+  	animation-iteration-count: 1;
+}
+
+.notificationAnim3 {
+	background-size: 100% 1000%;
+	color: white;
+	animation-name: openAlertToGreyMessage;
+	animation-duration: 500ms;
+  	animation-timing-function: ease-in-out;
+  	animation-iteration-count: 1;
+}
+
+.notificationAnim4 {
+	background-size: 100% 1000%;
+	color: white;
+	animation-name: closeAlertFromGreyMessage;
+	animation-duration: 500ms;
+  	animation-timing-function: ease-in-out;
+  	animation-iteration-count: 1;
+}
+
+.notificationAnim0 {
+	color: white;
+}
+
 
 .sbtdtra {
 	animation-name: themeChangeIn;

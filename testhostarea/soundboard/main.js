@@ -20,6 +20,43 @@ var currTheme = 1;
 
 var fileSource;
 
+var lmDate = Date.parse(document.lastModified);
+var lmmDate = new Date(lmDate);
+
+var mnStrng = "";
+var hrStrng = "";
+var dyStrng = "";
+var moStrng = "";
+var yrStrng = "";
+
+if (lmmDate.getMinutes() < 9.5) {
+	mnStrng = "0" + lmmDate.getMinutes();
+} else {
+	mnStrng = lmmDate.getMinutes();
+}
+
+if (lmmDate.getHours() < 9.5) {
+	hrStrng = "0" + lmmDate.getHours();
+} else {
+	hrStrng = lmmDate.getHours();
+}
+
+if (lmmDate.getDate() < 9.5) {
+	dyStrng = "0" + lmmDate.getDate();
+} else {
+	dyStrng = lmmDate.getDate();
+}
+
+if (lmmDate.getMonth() < 8.5) {
+	moStrng = "0" + (lmmDate.getMonth() + 1);
+} else {
+	moStrng = (lmmDate.getMonth() + 1);
+}
+
+yrStrng = lmmDate.getFullYear();
+
+
+
 function summonAudio2(obj) {
 	document.getElementById(obj).addEventListener("ended", function() {
 		document.getElementById(obj).remove();
@@ -107,13 +144,17 @@ function notificationBarHandler() {
 				notificationStatus = 1;
 				notificationClock = 0;
 				document.getElementById("topnavbar_builtinnotificationone").innerHTML = document.getElementById("topnavbar_builtinnotificationtwo").innerHTML;
+				document.getElementById("topnavbar_builtinnotificationone").className = "notificationText";
 				document.getElementById("notification1").style.backgroundColor = "black";
+				document.getElementById("notification1").className = "notificationAnim2";
 				elm = document.getElementById("notification1");
 				newone = elm.cloneNode(true);
 				elm.parentNode.replaceChild(newone, elm);
 
 				document.getElementById("topnavbar_builtinnotificationtwo").innerHTML = notificationCache[0];
+				document.getElementById("topnavbar_builtinnotificationtwo").className = "notificationText";
 				document.getElementById("notification2").style.backgroundColor = "grey";
+				document.getElementById("notification2").className = "notificationAnim3";
 				elm = document.getElementById("notification2");
 				newone = elm.cloneNode(true);
 				elm.parentNode.replaceChild(newone, elm);
@@ -123,13 +164,17 @@ function notificationBarHandler() {
 				notificationStatus = 1;
 				notificationClock = 0;
 				document.getElementById("topnavbar_builtinnotificationone").innerHTML = document.getElementById("topnavbar_builtinnotificationtwo").innerHTML;
+				document.getElementById("topnavbar_builtinnotificationone").className = "notificationText";
 				document.getElementById("notification1").style.backgroundColor = "grey";
+				document.getElementById("notification1").className = "notificationAnim4";
 				elm = document.getElementById("notification1");
 				newone = elm.cloneNode(true);
 				elm.parentNode.replaceChild(newone, elm);
 
 				document.getElementById("topnavbar_builtinnotificationtwo").innerHTML = notificationCache[0];
+				document.getElementById("topnavbar_builtinnotificationtwo").className = "notificationText";
 				document.getElementById("notification2").style.backgroundColor = "grey";
+				document.getElementById("notification2").className = "notificationAnim3";
 				elm = document.getElementById("notification2");
 				newone = elm.cloneNode(true);
 				elm.parentNode.replaceChild(newone, elm);
@@ -140,13 +185,17 @@ function notificationBarHandler() {
 		if (notificationClock > 60 && notificationStatus == 1) {
 			notificationStatus = 0;
 			document.getElementById("topnavbar_builtinnotificationone").innerHTML = document.getElementById("topnavbar_builtinnotificationtwo").innerHTML;
+			document.getElementById("topnavbar_builtinnotificationone").className = "notificationText";
 			document.getElementById("notification1").style.backgroundColor = "grey";
+			document.getElementById("notification1").className = "notificationAnim4";
 			elm = document.getElementById("notification1");
 			newone = elm.cloneNode(true);
 			elm.parentNode.replaceChild(newone, elm);
 
 			document.getElementById("topnavbar_builtinnotificationtwo").innerHTML = "tlw/other/soundboard/";
+			document.getElementById("topnavbar_builtinnotificationtwo").className = "notificationText";
 			document.getElementById("notification2").style.backgroundColor = "black";
+			document.getElementById("notification2").className = "notificationAnim1";
 			elm = document.getElementById("notification2");
 			newone = elm.cloneNode(true);
 			elm.parentNode.replaceChild(newone, elm);
@@ -319,7 +368,7 @@ function addSpecialButton2(obj, src, key) {
 					}
 					break;
 				case "build":
-					addToNotificationCache("Build 1525-1304-2022");
+					addToNotificationCache("Build " + hrStrng + mnStrng + "-" + moStrng + dyStrng + "-" + yrStrng);
 					break;
 				default:
 					addToNotificationCache("Invalid action error.");
