@@ -29,6 +29,8 @@ var dyStrng = "";
 var moStrng = "";
 var yrStrng = "";
 
+
+
 if (lmmDate.getMinutes() < 9.5) {
 	mnStrng = "0" + lmmDate.getMinutes();
 } else {
@@ -307,10 +309,12 @@ function addButton3(obj) {
 	document.getElementById(obj).style.transitionDuration = "";
 }
 
-function addButton2(obj, src, key) {
+function addButton2(obj, src, key, volume) {
 	document.getElementById(obj).addEventListener("click", function(ratios) {
 		if (ratios.getModifierState("Meta") == false) {
-			summonAudio(src);
+			for (let leCounterable = 0; leCounterable < volume; leCounterable++) {
+				summonAudio(src);
+			}
 		}
 	});
 	document.body.addEventListener("keydown", function(ratios) {
@@ -419,7 +423,7 @@ function addLyingButton2(obj, key) {
 	});
 }
 
-function addButton(x,y,text,source) {
+function addButton(x,y,text,source,volume) {
 	var key = String(window["y" + y + "map"][x - 1]);
 
 	var createdButton = document.createElement("button");
@@ -427,7 +431,7 @@ function addButton(x,y,text,source) {
 	createdButton.innerHTML = String(text);
 	createdButton.id = "x" + String(x) + "y" + String(y) + "b";
 	document.getElementById("x" + String(x) + "y" + String(y)).appendChild(createdButton);
-	addButton2("x" + String(x) + "y" + String(y), String(source), key);
+	addButton2("x" + String(x) + "y" + String(y), String(source), key, volume);
 
 	createdButton = document.createElement("p");
 	createdButton.className = "keyboardbutton";
@@ -512,62 +516,67 @@ function setupSoundBoard() {
 //	});
 
 	addLyingButton(1,1);
-	addButton(2,1,"Bruh","bruh");
-	addButton(3,1,"Oof","oof");
-	addButton(4,1,"No","no");
-	addButton(5,1,"Whoopsie Doodle!","whoops");
-	addButton(6,1,"Bao","bass");
-	addButton(7,1,"Chord","chord");
-	addButton(8,1,"Agh","agh");
-	addButton(9,1,"*Cough*","cough");
-	addButton(10,1,"Nice Try Mate","nicetry");
-	addButton(11,1,"Frog","frog");
+	addButton(2,1,"Bruh","bruh",0);
+	addButton(3,1,"Oof","oof",0);
+	addButton(4,1,"No","no",0);
+	addButton(5,1,"Whoopsie Doodle!","whoops",0);
+	addButton(6,1,"Bao","bass",1);
+	addButton(7,1,"Chord","chord",0);
+	addButton(8,1,"Agh","agh",0);
+	addButton(9,1,"*Cough*","cough",1);
+	addButton(10,1,"Nice Try Mate","nicetry",0);
+	addButton(11,1,"Frog","frog",1);
 	addSpecialButton(12,1,"Toggle Trigger Mode","HoldMode");
 	addSpecialButton(13,1,"Toggle Overlapping","Overlap");
 	addLyingButton(14,1);
 
 	addLyingButton(1,2);
 	addLyingButton(2,2);
-	addButton(3,2,"Laugh Track","warai");
-	addButton(4,2,"*Cough*","cough");
-	addButton(5,2,"PIZZAH!","pizza");
-	addButton(6,2,"Nom Nom Nom","nom");
-	addButton(7,2,"Goodbye","bye");
-	addButton(8,2,"DINGA LINGA LINGA LINGA","dinga");
-	addButton(9,2,"Longhorn Critical","longhorncrit");
-	addButton(10,2,"Yay","win");
-	addButton(11,2,"Secret Found","secret");
+	addButton(3,2,"Laugh Track","warai",0);
+	addButton(4,2,"*Cough*","cough",1);
+	addButton(5,2,"PIZZAH!","pizza",1);
+	addButton(6,2,"Nom Nom Nom","nom",0);
+	addButton(7,2,"Goodbye","bye",0);
+	addButton(8,2,"DINGA LINGA LINGA LINGA","dinga",1);
+	addButton(9,2,"Longhorn Critical","longhorncrit",1);
+	addButton(10,2,"Yay","win",1);
+	addButton(11,2,"Secret Found","secret",1);
 	addLyingButton(12,2);
 	addSpecialButton(13,2,"Build info", "build");
 	addLyingButton(14,2);
 
 	addLyingButton(1,3);
-	addButton(2,3,"Oh no...","ohno");
-	addButton(3,3,"STOP!!","stop");
-	addButton(4,3,"8","eight");
-	addButton(5,3,"Bing Chilling!","bingchilling");
-	addButton(6,3,"Vine Boom","vine");
-	addButton(7,3,"GET","get");
-	addButton(8,3,"","silent");
-	addButton(9,3,"","silent");
-	addButton(10,3,"","silent");
-	addButton(11,3,"","silent");
+	addButton(2,3,"Oh no...","ohno",1);
+	addButton(3,3,"STOP!!","stop",4);
+	addButton(4,3,"8","eight",1);
+	addButton(5,3,"Bing Chilling!","bingchilling",1);
+	addButton(6,3,"Vine Boom","vine",0);
+	addButton(7,3,"GET","get",1);
+	addButton(8,3,"","silent",0);
+	addButton(9,3,"","silent",0);
+	addButton(10,3,"","silent",0);
+	addButton(11,3,"","silent",0);
 	addLyingButton(12,3);
 	addLyingButton(13,3);
 
 	addLyingButton(1,4);
-	addButton(2,4,"","silent");
-	addButton(3,4,"","silent");
-	addButton(4,4,"","silent");
-	addButton(5,4,"","silent");
-	addButton(6,4,"","silent");
-	addButton(7,4,"","silent");
-	addButton(8,4,"","silent");
-	addButton(9,4,"","silent");
-	addButton(10,4,"","silent");
-	addButton(11,4,"","silent");
+	addButton(2,4,"","silent",0);
+	addButton(3,4,"","silent",0);
+	addButton(4,4,"","silent",0);
+	addButton(5,4,"","silent",0);
+	addButton(6,4,"","silent",0);
+	addButton(7,4,"","silent",0);
+	addButton(8,4,"","silent",0);
+	addButton(9,4,"","silent",0);
+	addButton(10,4,"","silent",0);
+	addButton(11,4,"","silent",0);
 	addLyingButton(12,4);
 
 	summonQuietAudio("sys_tritone");
 	setInterval(notificationBarHandler, 100);
+	
+	var scriptUpdateFrame = document.createElement("iframe");
+	scriptUpdateFrame.id = "scriptiframe";
+	scriptUpdateFrame.src = ("main.js");
+	document.body.appendChild(scriptUpdateFrame);
 }
