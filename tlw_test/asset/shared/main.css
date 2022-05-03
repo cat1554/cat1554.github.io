@@ -1,0 +1,103 @@
+
+@font-face{
+	font-family: 'LCD';
+	src: url("osd.ttf") format('truetype');
+	font-style: normal;
+	font-weight: 300;
+}
+
+body {
+	background-color: white;
+}
+
+* {
+	font-family: "LCD", "Courier New", "Helvetica";
+}
+
+.headbar {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 20px;
+	background-color: black;
+	z-index: 32;
+}
+
+#contentframe {
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width: 100%;
+}
+
+#contentbuffer1 {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 16px;
+	height: 100%;
+	background-color: white;
+}
+
+#contentbuffer2 {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	width: 64px;
+	height: 100%;
+	background-image: linear-gradient(to left, black, white);
+}
+
+#content {
+	position: absolute;
+	top: 0px;
+	left: 16px;
+	right: 64px;
+	background-color: white;
+}
+
+@keyframes buttonFlashAnim {
+	0% {
+		color: #FFFFFF;
+		background-color: #AAAAFF;
+	}
+	49% {
+		color: #FFFFFF;
+		background-color: #AAAAFF;
+	}
+	50% {
+		color: #000000;
+		background-color: #FFFFFF;
+	}
+	99% {
+		color: #000000;
+		background-color: #FFFFFF;
+	}
+	100% {
+		color: #FFFFFF;
+		background-color: #AAAAFF;
+	}
+}
+
+.menuButtonStyle {
+	border-style: solid;
+	border-width: 1px;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+.menuButtonStyleDisable {
+	border-style: solid;
+	border-width: 1px;
+	color: #000000;
+	background-color: #999999;
+}
+
+.menuButtonStyle:hover {
+	border-style: solid;
+	border-width: 1px;
+	color: #FFFFFF;
+	border-color: #FFFFFF;
+	background-color: #AAAAFF;
+}

@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="main.js" id="script1"></script>
 	<link rel="stylesheet" href="main.css">
+	<link rel="icon" type="image/x-icon" href="sbfavi.ico">
 </head>
 
 <body onLoad="setupSoundBoard()">
@@ -21,6 +22,35 @@
 	</div>
 
 	<div id="bgHider" style="position: absolute; top: 20px; left: 0px; right: 0px; bottom: 0px; background-color: white;">
+	</div>
+
+	<img src="keypressanimmat.png" id="internal_keyprompts" style="display: none;">
+
+	<div id="identifiyPrompt" style="display: none;">
+		<div id="idPrmptAnimBox">
+			<h1 class="kb kbhead">Keyboard Identification</h1>
+			<h3 class="kb" id="kbinfo1" style="opacity: 1">Please press the key to the right of the left Shift key.</h3>
+			<h3 class="kb" id="kbinfo2" style="opacity: 0">Please press the key to the left of the right Shift key.</h3>
+			<div id="idPrmptAnimBox2">
+				<div id="idPrmptAnimKey1" class="promptkeyb1">
+					<div id="idPrmptAnimKey1Top" class="promptkeyb1 promptkey1">
+					</div>
+				</div>
+				<div id="idPrmptAnimKey2">
+				</div>
+				<div id="idPrmptAnimKey2B">
+				</div>
+				<div id="idPrmptAnimKey2C">
+				</div>
+				<div id="idPrmptAnimKey2D">
+H
+				</div>
+				<div id="idPrmptAnimKey3" class="promptkeyb3">
+					<div id="idPrmptAnimKey3Top" class="promptkeyb3 promptkey3">
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<table style="position: absolute; top: 20px; left: 0px; height: 300px; z-index: 80" id="mainlocation">

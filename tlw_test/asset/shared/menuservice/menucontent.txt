@@ -1,0 +1,56 @@
+{
+    "contents": [
+	{
+		"title": "Navigate",
+		"direction": "down",
+		"width": 100,
+		"depth": 4,
+		"id": "NavMenu",
+		"position": "absolute",
+		"x": 0,
+		"y": 0,
+		"menuContents": [
+			{
+				"text": "Procrastinate",
+				"style": "button",
+				"behaviour": "procrastinate"
+			},
+			{
+				"text": "Procrastinate",
+				"style": "button",
+				"behaviour": "function",
+				"function": ""
+			},
+			{
+				"text": "Other",
+				"style": "submenu",
+				"behaviour": "submenu",
+				"subDirection": 1,
+				"subContents": [
+					{
+						"text": "Zombo",
+						"style": "button",
+						"behaviour": "link",
+						"page": "/other/zombo/"
+					}
+				]
+			},
+			{
+				"text": "Pawkin",
+				"style": "submenu",
+				"behaviour": "submenulink",
+				"subDirection": 1,
+				"page": "/pawkin/",
+				"subContents": [
+					{
+						"text": "Sozo",
+						"style": "button",
+						"behaviour": "link",
+						"page": "/pawkin/sozo/"
+					}
+				]
+			}
+		]
+	}
+    ]
+}

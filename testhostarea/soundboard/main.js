@@ -3,6 +3,8 @@ var targetY = 0;
 var audioSummonedID = 0;
 var audioSummonerID = 0;
 
+var detectdb = "0";
+
 var elm;
 var newone;
 
@@ -19,6 +21,152 @@ var themeTransition = 0;
 var currTheme = 1;
 
 var fileSource;
+
+const keymapping = [
+	"`",
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9",
+	"0",
+	"[",
+	"]",
+	"Backspace",
+	"Tab",
+	"'",
+	",",
+	".",
+	"p",
+	"y",
+	"f",
+	"g",
+	"c",
+	"r",
+	"l",
+	"/",
+	"=",
+	"Slash",
+	"Caps",
+	"a",
+	"o",
+	"e",
+	"u",
+	"i",
+	"d",
+	"h",
+	"t",
+	"n",
+	"s",
+	"-",
+	"Enter",
+	"Shift",
+	";",
+	"q",
+	"j",
+	"k",
+	"x",
+	"b",
+	"m",
+	"w",
+	"v",
+	"z",
+	"Shift",
+	"Up",
+	"Function",
+	"Control",
+	"Alt",
+	"Meta",
+	"Space",
+	"Meta",
+	"Alt",
+	"Left",
+	"Right",
+	"Down"
+];
+
+var y1map = [
+	"`",
+	"1",
+	"2",
+	"3",
+	"4",
+	"5",
+	"6",
+	"7",
+	"8",
+	"9",
+	"0",
+	"[",
+	"]",
+	"Backspace"
+];
+
+var y2map = [
+	"Tab",
+	"'",
+	",",
+	".",
+	"p",
+	"y",
+	"f",
+	"g",
+	"c",
+	"r",
+	"l",
+	"/",
+	"=",
+	"Slash"
+];
+
+var y3map = [
+	"Caps",
+	"a",
+	"o",
+	"e",
+	"u",
+	"i",
+	"d",
+	"h",
+	"t",
+	"n",
+	"s",
+	"-",
+	"Enter"
+];
+
+var y4map = [
+	"Shift",
+	";",
+	"q",
+	"j",
+	"k",
+	"x",
+	"b",
+	"m",
+	"w",
+	"v",
+	"z",
+	"Shift"
+];
+
+var y5map = [
+	"Function",
+	"Control",
+	"Alt",
+	"Meta",
+	"Space",
+	"Meta",
+	"Alt",
+	"Up",
+	"Down",
+	"Left",
+	"Right"
+];
 
 var lmDate = Date.parse(document.lastModified);
 var lmmDate = new Date(lmDate);
@@ -228,85 +376,6 @@ function notificationBarHandler() {
 	notificationClock++;
 }
 
-var y1map = [
-	"`",
-	"1",
-	"2",
-	"3",
-	"4",
-	"5",
-	"6",
-	"7",
-	"8",
-	"9",
-	"0",
-	"[",
-	"]",
-	"Backspace"
-];
-
-var y2map = [
-	"Tab",
-	"'",
-	",",
-	".",
-	"p",
-	"y",
-	"f",
-	"g",
-	"c",
-	"r",
-	"l",
-	"/",
-	"=",
-	"Slash"
-];
-
-var y3map = [
-	"Caps",
-	"a",
-	"o",
-	"e",
-	"u",
-	"i",
-	"d",
-	"h",
-	"t",
-	"n",
-	"s",
-	"-",
-	"Enter"
-];
-
-var y4map = [
-	"Shift",
-	";",
-	"q",
-	"j",
-	"k",
-	"x",
-	"b",
-	"m",
-	"w",
-	"v",
-	"z",
-	"Shift"
-];
-
-var y5map = [
-	"Function",
-	"Control",
-	"Alt",
-	"Meta",
-	"Space",
-	"Meta",
-	"Alt",
-	"Up",
-	"Down",
-	"Left",
-	"Right"
-];
-
 function addButton3(obj) {
 	document.getElementById(obj).style.backgroundColor = "";
 	document.getElementById(obj).style.transitionDuration = "";
@@ -514,6 +583,8 @@ function setupSoundBoard() {
 		}
 	}
 
+	fileSource = "audio/";
+
 //	document.body.addEventListener("keydown", function(ratios) {
 //		window.console.log(ratios["key"])
 //	});
@@ -583,5 +654,72 @@ function setupSoundBoard() {
 	scriptUpdateFrame.src = ("main.js");
 	document.body.appendChild(scriptUpdateFrame);
 
-	setTimeout(scriptframecheck,500);
+	setTimeout(scriptframecheck, 500);
 }
+
+function identityPromptPhase3(a, b) {
+	window.console.log(a, b);
+
+	document.getElementById("idPrmptAnimKey2D").style.color = "#FFF0";
+}
+
+function identityPromptPhase2(whatwas) {
+	document.getElementById("kbinfo1").style.opacity = "0";
+	document.getElementById("kbinfo2").style.opacity = "1";
+
+	document.getElementById("idPrmptAnimKey1").className = "promptkeyb2";
+	document.getElementById("idPrmptAnimKey1Top").className = "promptkeyb2 promptkey2";
+	document.getElementById("idPrmptAnimKey3").className = "promptkeyb3";
+	document.getElementById("idPrmptAnimKey3Top").className = "promptkeyb3 promptkey3";
+
+	document.getElementById("idPrmptAnimKey2D").style.color = "#FFF0";
+				document.getElementById("idPrmptAnimKey2C").style.filter = "opacity(100%)";
+
+	document.body.addEventListener("keydown", function(ratios) {
+		if (detectdb == "1") {
+			detectdb = "2";
+				document.getElementById("idPrmptAnimKey2C").style.filter = "opacity(0%)";
+			document.getElementById("idPrmptAnimKey2D").innerHTML = ratios["key"];
+			document.getElementById("idPrmptAnimKey2D").style.color = "#FFFF";
+			setTimeout(identityPromptPhase3, 1000, whatwas, ratios["key"]);
+		}
+	});
+}
+
+function identityPrompt() {
+	var search1 = ((window.location.search).search("kb=dv"));
+	var search2 = ((window.location.search).search("kb=qw"));
+	var search3 = ((window.location.search).search("kb=az"));
+	var search4 = ((window.location.search).search("kb=co"));
+	window.console.log(search1 + ", " + search2 + ", " + search3 + ", " + search4);
+	if (search1 == -1 && search2 == -1 && search3 == -1 && search4 == -1) {
+		document.getElementById("identifiyPrompt").style.display = "initial";
+		document.getElementById("identifiyPrompt").style.opacity = "1";
+
+		document.getElementById("idPrmptAnimKey1").className = "promptkeyb1";
+		document.getElementById("idPrmptAnimKey1Top").className = "promptkeyb1 promptkey1";
+		document.getElementById("idPrmptAnimKey3").className = "promptkeyb2";
+		document.getElementById("idPrmptAnimKey3Top").className = "promptkeyb2 promptkey2";
+		document.getElementById("idPrmptAnimKey2D").style.color = "#FFF0";
+				document.getElementById("idPrmptAnimKey2C").style.filter = "opacity(100%)";
+
+		detectdb = "0";
+
+		document.body.addEventListener("keydown", function(ratios) {
+			if (detectdb == "0") {
+				detectdb = "1";
+				document.getElementById("idPrmptAnimKey2C").style.filter = "opacity(0%)";
+				document.getElementById("idPrmptAnimKey2D").innerHTML = ratios["key"];
+				document.getElementById("idPrmptAnimKey2D").style.color = "#FFFF";
+				setTimeout(identityPromptPhase2, 1000, ratios["key"]);
+			}
+		});
+	}
+//	var canvas = document.getElementById("idPrmptAnim");
+//	var ctx = canvas.getContext("2d");
+//	var img = document.getElementById("internal_keyprompts");
+//	ctx.drawImage(img, 0,0, 1200,640, 0,0, 240,128);
+//	ctx.drawImage(img, 1800,0, 600,640, 128,0, 120,128);
+//	ctx.drawImage(img, 1200,0, 600,640, 128,0, 120,128);
+}
+
