@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>cat1554 soundboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="../../asset/other/soundboard/pagemain.js" id="script1"></script>
+	<link rel="stylesheet" href="../../asset/other/soundboard/pagemain.css">
+
+	<script src="../../asset/shared/main.js" id="script0"></script>
+	<link rel="stylesheet" href="../../asset/shared/main.css">
+
+	<link rel="icon" type="image/x-icon" href="../../asset/other/soundboard/pagefavi.ico">
+</head>
+
+<body onLoad="beginSB()">
+	<div id="topnavbar">
+		<div id="notification1">
+			<p id="topnavbar_builtinnotificationone" class="notificationText notificationAnim0">tlw/other/soundboard/</p>
+			<p id="topnavbar_builtinnotificationcounterone" class="notificationCountText">1^</p>
+		</div>
+		<div id="notification2">
+			<p id="topnavbar_builtinnotificationtwo" class="notificationText notificationAnim0">tlw/other/soundboard/</p>
+			<p id="topnavbar_builtinnotificationcountertwo" class="notificationCountText">1^</p>
+		</div>
+	</div>
+
+	<div id="bgHider" style="position: absolute; top: 20px; left: 0px; right: 0px; bottom: 0px; background-color: white;">
+	</div>
+
+	<img src="keypressanimmat.png" id="internal_keyprompts" style="display: none;">
+
+	<div id="identifiyPrompt" style="display: none;">
+		<div id="idPrmptAnimBox">
+			<h1 class="kb kbhead">Keyboard Identification</h1>
+			<h3 class="kb" id="kbinfo1" style="opacity: 1">Please press the key to the right of the left Shift key.</h3>
+			<h3 class="kb" id="kbinfo2" style="opacity: 0">Please press the key to the left of the right Shift key.</h3>
+			<div id="idPrmptAnimBox2">
+				<div id="idPrmptAnimKey1" class="promptkeyb1">
+					<div id="idPrmptAnimKey1Top" class="promptkeyb1 promptkey1">
+					</div>
+				</div>
+				<div id="idPrmptAnimKey2">
+				</div>
+				<div id="idPrmptAnimKey2B">
+				</div>
+				<div id="idPrmptAnimKey2C">
+				</div>
+				<div id="idPrmptAnimKey2D">
+H
+				</div>
+				<div id="idPrmptAnimKey3" class="promptkeyb3">
+					<div id="idPrmptAnimKey3Top" class="promptkeyb3 promptkey3">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<table style="position: absolute; top: 20px; left: 0px; height: 300px; z-index: 80" id="mainlocation">
+		<tr>
+			<td class="standardkey" id="x1y1">
+			</td>
+			<td class="standardkey" id="x2y1">
+			</td>
+			<td class="standardkey" id="x3y1">
+			</td>
+			<td class="standardkey" id="x4y1">
+			</td>
+			<td class="standardkey" id="x5y1">
+			</td>
+			<td class="standardkey" id="x6y1">
+			</td>
+			<td class="standardkey" id="x7y1">
+			</td>
+			<td class="standardkey" id="x8y1">
+			</td>
+			<td class="standardkey" id="x9y1">
+			</td>
+			<td class="standardkey" id="x10y1">
+			</td>
+			<td class="standardkey" id="x11y1">
+			</td>
+			<td class="standardkey" id="x12y1">
+			</td>
+			<td class="standardkey" id="x13y1">
+			</td>
+			<td class="onehalfkey" id="x14y1">
+			</td>
+		</tr>
+		<tr>
+			<td class="onehalfkey" id="x1y2">
+			</td>
+			<td class="standardkey" id="x2y2">
+			</td>
+			<td class="standardkey" id="x3y2">
+			</td>
+			<td class="standardkey" id="x4y2">
+			</td>
+			<td class="standardkey" id="x5y2">
+			</td>
+			<td class="standardkey" id="x6y2">
+			</td>
+			<td class="standardkey" id="x7y2">
+			</td>
+			<td class="standardkey" id="x8y2">
+			</td>
+			<td class="standardkey" id="x9y2">
+			</td>
+			<td class="standardkey" id="x10y2">
+			</td>
+			<td class="standardkey" id="x11y2">
+			</td>
+			<td class="standardkey" id="x12y2">
+			</td>
+			<td class="standardkey" id="x13y2">
+			</td>
+			<td class="standardkey" id="x14y2">
+			</td>
+		</tr>
+		<tr>
+			<td class="standardkey" id="x1y3">
+			</td>
+			<td class="standardkey" id="x2y3">
+			</td>
+			<td class="standardkey" id="x3y3">
+			</td>
+			<td class="standardkey" id="x4y3">
+			</td>
+			<td class="standardkey" id="x5y3">
+			</td>
+			<td class="standardkey" id="x6y3">
+			</td>
+			<td class="standardkey" id="x7y3">
+			</td>
+			<td class="standardkey" id="x8y3">
+			</td>
+			<td class="standardkey" id="x9y3">
+			</td>
+			<td class="standardkey" id="x10y3">
+			</td>
+			<td class="standardkey" id="x11y3">
+			</td>
+			<td class="standardkey" id="x12y3">
+			</td>
+			<td class="onehalfkey" id="x13y3">
+			</td>
+		</tr>
+		<tr>
+			<td class="doublekey" id="x1y4">
+			</td>
+			<td class="standardkey" id="x2y4">
+			</td>
+			<td class="standardkey" id="x3y4">
+			</td>
+			<td class="standardkey" id="x4y4">
+			</td>
+			<td class="standardkey" id="x5y4">
+			</td>
+			<td class="standardkey" id="x6y4">
+			</td>
+			<td class="standardkey" id="x7y4">
+			</td>
+			<td class="standardkey" id="x8y4">
+			</td>
+			<td class="standardkey" id="x9y4">
+			</td>
+			<td class="standardkey" id="x10y4">
+			</td>
+			<td class="standardkey" id="x11y4">
+			</td>
+			<td class="doublekey" id="x12y4">
+			</td>
+		</tr>
+	</table>
+
+	<img src="" width="20px" height="20px" id="icon_indication_pressmode" class="icon_indication">
+	<img src="" width="20px" height="20px" id="icon_indication_repeatmode" class="icon_indication">
+</body>
+</html>

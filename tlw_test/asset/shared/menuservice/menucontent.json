@@ -12,42 +12,82 @@
 		"menuContents": [
 			{
 				"text": "Procrastinate",
-				"style": "button",
-				"behaviour": "procrastinate"
+				"id": "procrast",
+				"type": "button",
+				"behaviour": "Procrastinate"
 			},
 			{
-				"text": "Procrastinate",
-				"style": "button",
-				"behaviour": "function",
-				"function": ""
+				"text": "Games",
+				"id": "game",
+				"type": "submenu",
+				"behaviour": "Link",
+				"link": "game/",
+				"sub": [
+				]
+			},
+			{
+				"text": "Get Centre",
+				"id": "get",
+				"type": "submenu",
+				"behaviour": "Link",
+				"link": "get/",
+				"sub": [
+				]
+			},
+			{
+				"text": "NekoPage",
+				"id": "nekocity",
+				"type": "button",
+				"behaviour": "ExtLink",
+				"link": "nekopage.totallylegitwebsite.online"
 			},
 			{
 				"text": "Other",
-				"style": "submenu",
-				"behaviour": "submenu",
-				"subDirection": 1,
-				"subContents": [
-					{
-						"text": "Zombo",
-						"style": "button",
-						"behaviour": "link",
-						"page": "/other/zombo/"
-					}
+				"id": "other",
+				"type": "submenu",
+				"behaviour": "Link",
+				"link": "other/",
+				"sub": [
+                    {
+                        "text": "Soundboard",
+                        "id": "sb",
+                        "type": "button",
+                        "behaviour": "Link",
+                        "link": "soundboard/"
+                    },
+                    {
+                        "text": "Zombo",
+                        "id": "zombo",
+                        "type": "button",
+                        "behaviour": "Link",
+                        "link": "zombo/"
+                    }
 				]
 			},
 			{
 				"text": "Pawkin",
-				"style": "submenu",
-				"behaviour": "submenulink",
-				"subDirection": 1,
-				"page": "/pawkin/",
-				"subContents": [
-					{
-						"text": "Sozo",
-						"style": "button",
-						"behaviour": "link",
-						"page": "/pawkin/sozo/"
-					}
+				"id": "paw",
+				"type": "submenu",
+				"behaviour": "Link",
+				"link": "pawkin/",
+				"sub": [
+				]
+			},
+			{
+				"text": "Utility",
+				"id": "util",
+				"type": "submenu",
+				"behaviour": "Link",
+				"link": "util/",
+				"sub": [
+				]
+			},
+			{
+				"text": "Social",
+				"id": "social",
+				"type": "submenu",
+				"behaviour": "Label",
+				"sub": [
 				]
 			}
 		]

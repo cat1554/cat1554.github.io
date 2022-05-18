@@ -306,5 +306,5 @@ xmlhttp.onload = function() {
 	const myObj = JSON.parse(this.responseText);
 	window.console.log(myObj.name);
 };
-xmlhttp.open("GET", "asset/shared/menuservice/menucontent.txt");
+xmlhttp.open("GET", "asset/shared/menuservice/menucontent.json");
 xmlhttp.send();
