@@ -22,6 +22,8 @@
 	var pme_error_btn2_targ = "close";
 	var pme_error_btn3_targ = "close";
 
+	var xmlobj;
+
 	//window.location.assign("http://www.twitter.com/cat1554official")
 
 	function closeError() {
@@ -589,6 +591,7 @@ const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
 	const myObj = JSON.parse(this.responseText);
 	window.console.log(myObj.name);
+	xmlobj = myObj;
 };
 xmlhttp.open("GET", "asset/shared/menuservice/menucontent.json");
 xmlhttp.send();
