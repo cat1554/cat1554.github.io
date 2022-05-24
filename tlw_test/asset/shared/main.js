@@ -22,6 +22,7 @@ var errorCache = [];
 var notifCache = [];
 
 function press(){
+//	pageglobal_contentframe
 }
 
 function hovered(){
@@ -81,9 +82,9 @@ function initMenu(xml) {
 	elementThing = document.getElementById("menubox_" + xml.id);
 	elementThing.appendChild(replace_c);
 
-//	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
-//		buildMenu(xml.menuContents[menusLoop]);
-//	}
+	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
+		buildMenu(xml.menuContents[menusLoop]);
+	}
 }
 
 function parseMenu(xml) {
@@ -120,6 +121,7 @@ function initPage() {
 
 	replace_a = document.createElement("div");
 	replace_a.id = "pageglobal_contentframe";
+	replace_a.style.zIndex = 32;
 	elementThing = document.body;
 	elementThing.appendChild(replace_a);
 
