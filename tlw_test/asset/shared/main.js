@@ -1,3 +1,5 @@
+var debugMode = 0;
+
 var pageContent;
 
 var xmlobj;
@@ -101,6 +103,13 @@ xmlhttp.onload = function() {
 };
 
 function initPage() {
+	debugMode = ((window.location.search).indexOf("debug=1"));
+
+	window.console.log(debugMode);
+	if (debugMode != -1) {
+		window.console.log(document.lastModified);
+	}
+
 	pageContent = document.body.innerHTML;
 	document.body.innerHTML = "";
 
