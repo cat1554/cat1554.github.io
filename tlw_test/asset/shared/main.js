@@ -63,6 +63,17 @@ function parseMenu(xml) {
 	}
 }
 
+const xmlhttp = new XMLHttpRequest();
+xmlhttp.onload = function() {
+	const myObj = JSON.parse(this.responseText);
+	window.console.log(myObj);
+	window.console.log(myObj.name);
+	xmlobj = myObj;
+	parseMenu(xmlobj);
+
+//	xmlobj["contents"][0];
+};
+
 function initPage() {
 	pageContent = document.body.innerHTML;
 	document.body.innerHTML = "";
@@ -96,15 +107,6 @@ function initPage() {
 
 	document.title = "tlw" + window.location.pathname;
 
-	const xmlhttp = new XMLHttpRequest();
-	xmlhttp.onload = function() {
-		const myObj = JSON.parse(this.responseText);
-		window.console.log(myObj.name);
-		xmlobj = myObj;
-		parseMenu(xmlobj);
-
-	//	xmlobj["contents"][0];
-	};
 	xmlhttp.open("GET", "asset/shared/menuservice/menucontent.json");
 	xmlhttp.send();
 }
