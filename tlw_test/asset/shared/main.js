@@ -65,10 +65,10 @@ function buildMenu(xml, parent, order) {
 	window.console.log(xml);
 	switch(xml.type) {
 		case "button":
-			createButton(xml, (parent + "_" + xml.id), order);
+			createButton(xml, parent, order);
 			break;
 		case "submenu":
-			createSubMenu(xml, (parent + "_" + xml.id), order);
+			createSubMenu(xml, parent, order);
 			break;
 	}
 }
