@@ -190,8 +190,8 @@ function initPage() {
 
 	document.title = "tlw" + window.location.pathname;
 
-	setTimeout(debugTest, 1000);
-
 	xmlhttp.open("GET", "asset/shared/menuservice/menucontent.json");
 	xmlhttp.send();
+
+	setTimeout(debugTest, 1000);
 }
