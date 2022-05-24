@@ -53,10 +53,10 @@ function initMenu(xml) {
 	replace_a.id = "menubox_" + xml.id;
 	replace_a.className = "menubox";
 	replace_a.style.position = "absolute";
-	replace_a.style.top = (xml.y + 18) + "px";
+	replace_a.style.top = xml.y + "px";
 	replace_a.style.left = xml.x + "px";
 	replace_a.style.width = xml.width + "px";
-	replace_a.style.height = ((xml.depth * 20) + 2) + "px";
+	replace_a.style.height = ((xml.depth * 20) + 20) + "px";
 
 	elementThing = document.body;
 	elementThing.appendChild(replace_a);
@@ -64,8 +64,20 @@ function initMenu(xml) {
 	replace_b = document.createElement("button");
 	replace_b.id = "menubox_" + xml.id + "_opener";
 	replace_b.className = "menuopenbutton";
+	replace_b.innerHTML = xml.title;
 	elementThing = document.getElementById("menubox_" + xml.id);
 	elementThing.appendChild(replace_b);
+
+	replace_c = document.createElement("div");
+	replace_c.id = "menubox_" + xml.id + "_container";
+	replace_c.className = "menucont";
+	replace_c.style.position = "absolute";
+	replace_c.style.top = "20px";
+	replace_c.style.bottom = "0px";
+	replace_c.style.left = "0px";
+	replace_c.style.width = "100%";
+	elementThing = document.getElementById("menubox_" + xml.id);
+	elementThing.appendChild(replace_c);
 
 //	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
 //		buildMenu(xml.menuContents[menusLoop]);
