@@ -21,6 +21,14 @@ var loop8;
 var errorCache = [];
 var notifCache = [];
 
+function debugTest(){
+	if (debugMode != -1) {
+		window.console.log("HTML modified: " + document.lastModified);
+		window.console.log("Main JS modified: " + document.getElementById("script_lastedited").lastModified);
+		window.console.log("Main CSS modified: " + document.getElementById("style_lastedited").lastModified);
+	}
+}
+
 function press(item, func){
 //	pageglobal_contentframe
 }
@@ -181,11 +189,7 @@ function initPage() {
 
 	document.title = "tlw" + window.location.pathname;
 
-	if (debugMode != -1) {
-		window.console.log("HTML modified: " + document.lastModified);
-		window.console.log("Main JS modified: " + document.getElementById("script_lastedited").lastModified);
-		window.console.log("Main CSS modified: " + document.getElementById("style_lastedited").lastModified);
-	}
+	setTimeout(debugTest, 1000);
 
 	xmlhttp.open("GET", "asset/shared/menuservice/menucontent.json");
 	xmlhttp.send();
