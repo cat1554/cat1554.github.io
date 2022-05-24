@@ -6,7 +6,6 @@
 		"width": 100,
 		"depth": 4,
 		"id": "NavMenu",
-		"position": "absolute",
 		"x": 0,
 		"y": 0,
 		"menuContents": [
@@ -28,7 +27,7 @@
 			{
 				"text": "Get Centre",
 				"id": "get",
-				"type": "submenu",
+				"type": "button",
 				"behaviour": "Link",
 				"link": "get/",
 				"sub": [

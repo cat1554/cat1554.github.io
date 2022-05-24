@@ -49,8 +49,23 @@ function initMenu(xml) {
 //	Main frame
 	replace_a = document.createElement("div");
 	replace_a.id = "menubox_" + xml.id;
+	replace_a.className = "menubox";
+	replace_a.style.position = "absolute";
+	replace_a.style.top = (xml.y + 18) + "px";
+	replace_a.style.left = xml.x + "px";
+	replace_a.style.width = xml.width + "px";
+	replace_a.style.height = ((xml.depth * 20) + 2) + "px";
+
 	elementThing = document.body;
 	elementThing.appendChild(replace_a);
+
+	replace_b = document.createElement("button");
+	replace_b.id = "menubox_" + xml.id + "_opener";
+	replace_b.className = "menubutton";
+	elementThing = replace_a;
+	elementThing.appendChild(replace_b);
+
+	window.console.log(xml);
 
 //	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
 //		buildMenu(xml.menuContents[menusLoop]);
@@ -67,9 +82,8 @@ const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
 	const myObj = JSON.parse(this.responseText);
 	window.console.log(myObj);
-	window.console.log(myObj.name);
 	xmlobj = myObj;
-	parseMenu(xmlobj);
+	parseMenu(myObj);
 
 //	xmlobj["contents"][0];
 };
