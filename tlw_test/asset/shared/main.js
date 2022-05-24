@@ -33,6 +33,7 @@ function createButton(xml, parent, order){
 	replace_d.id = "menubox_" + parent + "_" + xml.id;
 	replace_d.className = "menubutton";
 	replace_d.innerHTML = xml.text;
+	window.console.log(parent);
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
 
@@ -107,7 +108,7 @@ function initMenu(xml) {
 	elementThing.appendChild(replace_c);
 
 	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
-		buildMenu(xml.menuContents[menusLoop], xml.id, menusLoop);
+		buildMenu(xml.menuContents[menusLoop], xml.id + "_container", menusLoop);
 	}
 }
 
