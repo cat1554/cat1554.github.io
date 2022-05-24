@@ -47,6 +47,8 @@ function buildMenu(xml) {
 
 function initMenu(xml) {
 //	Main frame
+	window.console.log(xml);
+
 	replace_a = document.createElement("div");
 	replace_a.id = "menubox_" + xml.id;
 	replace_a.className = "menubox";
@@ -61,11 +63,9 @@ function initMenu(xml) {
 
 	replace_b = document.createElement("button");
 	replace_b.id = "menubox_" + xml.id + "_opener";
-	replace_b.className = "menubutton";
-	elementThing = replace_a;
+	replace_b.className = "menuopenbutton";
+	elementThing = document.getElementById("menubox_" + xml.id);
 	elementThing.appendChild(replace_b);
-
-	window.console.log(xml);
 
 //	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
 //		buildMenu(xml.menuContents[menusLoop]);
