@@ -2,9 +2,8 @@
     "contents": [
 	{
 		"title": "Navigate",
-		"direction": "down",
-		"width": 100,
-		"depth": 4,
+		"width": 150,
+		"depth": 8,
 		"id": "NavMenu",
 		"x": 32,
 		"y": 0,
@@ -21,6 +20,9 @@
 				"type": "submenu",
 				"behaviour": "Link",
 				"link": "game/",
+                "direction": "right",
+                "width": 150,
+                "depth": 2,
 				"sub": [
 				]
 			},
@@ -46,6 +48,9 @@
 				"type": "submenu",
 				"behaviour": "Link",
 				"link": "other/",
+                "direction": "right",
+                "width": 150,
+                "depth": 4,
 				"sub": [
                     {
                         "text": "Soundboard",
@@ -69,6 +74,9 @@
 				"type": "submenu",
 				"behaviour": "Link",
 				"link": "pawkin/",
+                "direction": "right",
+                "width": 150,
+                "depth": 2,
 				"sub": [
 				]
 			},
@@ -78,6 +86,9 @@
 				"type": "submenu",
 				"behaviour": "Link",
 				"link": "util/",
+                "direction": "right",
+                "width": 150,
+                "depth": 2,
 				"sub": [
 				]
 			},
@@ -86,6 +97,9 @@
 				"id": "social",
 				"type": "submenu",
 				"behaviour": "Label",
+                "direction": "right",
+                "width": 150,
+                "depth": 2,
 				"sub": [
 				]
 			}
