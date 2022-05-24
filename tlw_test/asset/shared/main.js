@@ -41,6 +41,7 @@ function createButton(xml, parent, order){
 	replace_d.id = "menubox_" + parent + "_" + xml.id;
 	replace_d.className = "menubutton";
 	replace_d.innerHTML = xml.text;
+	replace_d.style.top = ((order + 1) * 20) + "px";
 	window.console.log(parent);
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
