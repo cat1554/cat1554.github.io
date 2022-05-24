@@ -1,0 +1,275 @@
+@font-face{
+	font-family: 'LCD';
+	src: url("osd.ttf") format('truetype');
+	font-style: normal;
+	font-weight: 300;
+}
+
+body {
+	background-color: white;
+}
+
+* {
+	font-family: "LCD", "Courier New", "Helvetica";
+	cursor: url(core/arrow.cur), default;
+	image-rendering: pixelated;
+	overscroll-behavior: none;
+}
+
+.helppoint {
+	cursor: url(core/help.cur), help;
+}
+
+.nopepoint {
+	cursor: url(core/no.cur), not-allowed;
+}
+
+a {
+	cursor: url(core/link.cur), pointer;
+}
+
+#pme_errorbox_container1 {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	background-color: #000a;
+	z-index: 512;
+}
+
+#pme_errorbox_container2 {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	margin: auto;
+	width: 100%;
+	height: 50%;
+	background-color: transparent;
+	z-index: 512;
+}
+
+#pme_errorbox_container3 {
+	position: absolute;
+	left: 0px;
+	bottom: -100px;
+	margin: auto;
+	width: 100%;
+	height: 200px;
+	background-color: transparent;
+	z-index: 512;
+}
+
+#pme_errorbox_container {
+	position: relative;
+	margin: auto;
+	width: 300px;
+	height: 200px;
+	background-color: #ccc;
+	z-index: 512;
+	border: 1px solid red;
+}
+
+#pme_errorbox_text {
+	position: absolute;
+	width: 190px;
+	height: 150px;
+	right: 10px;
+	top: 0px;
+	color: black;
+}
+
+#pme_errorbox_iconcontainer {
+	position: absolute;
+	width: 98px;
+	height: 98px;
+	left: 0px;
+	top: 0px;
+	z-index: 512;
+}
+
+#pme_errorbox_icon {
+	position: absolute;
+	top: 17px;
+	left: 17px;
+	width: 64px;
+	height: 64px;
+}
+
+.pme_errorbox_buttonmain {
+	position: absolute;
+	bottom: 8px;
+	height: 28px;
+	right: 8px;
+	width: 58px;
+	border: 1px solid black;
+	border-radius: 4px;
+	background-color: #888;
+	padding: none;
+}
+
+.pme_errorbox_buttonmain:active {
+	position: absolute;
+	bottom: 8px;
+	height: 28px;
+	right: 8px;
+	width: 58px;
+	border: 1px solid black;
+	border-radius: 4px;
+	background-color: #AAA;
+	padding: none;
+}
+
+.pme_errorbox_buttonmain p {
+	position: relative;
+	top: -12px;
+	right: 2px;
+	height: 20px;
+	width: 50px;
+	border: 1px solid black;
+	border-radius: 4px;
+	background-color: #AAA;
+	line-height: 1;
+}
+
+.pme_errorbox_buttonmain:active p {
+	background-color: #888;
+}
+
+
+
+.pme_errorbox_button2 {
+	position: absolute;
+	bottom: 12px;
+	height: 20px;
+	right: 78px;
+	width: 50px;
+	border: 1px solid black;
+	border-radius: 4px;
+	background-color: #AAA;
+	padding: none;
+}
+
+.pme_errorbox_button2:active {
+	position: absolute;
+	bottom: 12px;
+	height: 20px;
+	right: 78px;
+	width: 50px;
+	border: 1px solid black;
+	border-radius: 4px;
+	background-color: #888;
+	padding: none;
+}
+.pme_errorbox_button3 {
+	position: absolute;
+	bottom: 12px;
+	height: 20px;
+	right: 138px;
+	width: 50px;
+	border: 1px solid black;
+	border-radius: 4px;
+	background-color: #AAA;
+	padding: none;
+}
+
+.pme_errorbox_button3:active {
+	position: absolute;
+	bottom: 12px;
+	height: 20px;
+	right: 138px;
+	width: 50px;
+	border: 1px solid black;
+	border-radius: 4px;
+	background-color: #888;
+	padding: none;
+}
+
+.headbar {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 20px;
+	background-color: black;
+	z-index: 32;
+}
+
+#contentframe {
+	position: absolute;
+	top: 20px;
+	left: 0px;
+	width: 100%;
+}
+
+#contentbuffer1 {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 16px;
+	height: 100%;
+	background-color: white;
+}
+
+#contentbuffer2 {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	width: 64px;
+	height: 100%;
+	background-image: linear-gradient(to left, black, white);
+}
+
+#content {
+	position: absolute;
+	top: 0px;
+	left: 16px;
+	right: 64px;
+	background-color: white;
+}
+
+@keyframes buttonFlashAnim {
+	0% {
+		color: #FFFFFF;
+		background-color: #AAAAFF;
+	}
+	49% {
+		color: #FFFFFF;
+		background-color: #AAAAFF;
+	}
+	50% {
+		color: #000000;
+		background-color: #FFFFFF;
+	}
+	99% {
+		color: #000000;
+		background-color: #FFFFFF;
+	}
+	100% {
+		color: #FFFFFF;
+		background-color: #AAAAFF;
+	}
+}
+
+.menuButtonStyle {
+	border-style: solid;
+	border-width: 1px;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+.menuButtonStyleDisable {
+	border-style: solid;
+	border-width: 1px;
+	color: #000000;
+	background-color: #999999;
+}
+
+.menuButtonStyle:hover {
+	border-style: solid;
+	border-width: 1px;
+	color: #FFFFFF;
+	border-color: #FFFFFF;
+	background-color: #AAAAFF;
+}
