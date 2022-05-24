@@ -21,17 +21,33 @@ var loop8;
 var errorCache = [];
 var notifCache = [];
 
-function press(){
+function press(item, func){
 //	pageglobal_contentframe
 }
 
-function hovered(){
+function hovered(item, type){
 }
 
-function createButton(){
+function createButton(xml, parent, order){
+	replace_d = document.createElement("button");
+	replace_d.id = "menubox_" + parent + "_" + xml.id;
+	replace_d.className = "menubutton";
+	replace_d.innerHTML = xml.text;
+	elementThing = document.getElementById("menubox_" + parent);
+	elementThing.appendChild(replace_d);
+
+	switch(xml.behaviour) {
+		case "Link":
+			break;
+		case "ExtLink":
+			break;
+		case "Procrastinate":
+			break;
+		default:
+	}
 }
 
-function createSubMenu(){
+function createSubMenu(xml, parent, order){
 }
 
 function createMenu(){
@@ -43,9 +59,17 @@ function editMessage(){
 function createMessage(){
 }
 
-function buildMenu(xml) {
+function buildMenu(xml, parent, order) {
 	// Top button
 	window.console.log(xml);
+	switch(xml.type) {
+		case "button":
+			createButton(xml, (parent + "_" + xml.id), order);
+			break;
+		case "submenu":
+			createSubMenu(xml, (parent + "_" + xml.id), order);
+			break;
+	}
 }
 
 function initMenu(xml) {
@@ -83,7 +107,7 @@ function initMenu(xml) {
 	elementThing.appendChild(replace_c);
 
 	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
-		buildMenu(xml.menuContents[menusLoop]);
+		buildMenu(xml.menuContents[menusLoop], xml.id, menusLoop);
 	}
 }
 
@@ -139,12 +163,14 @@ function initPage() {
 
 	replace_c = document.createElement("iframe");
 	replace_c.id = "script_lastedited";
+	replace_c.style.display = "none";
 	replace_c.src = "asset/shared/main.js";
 	elementThing = replace_a;
 	elementThing.appendChild(replace_c);
 
 	replace_c = document.createElement("iframe");
 	replace_c.id = "style_lastedited";
+	replace_c.style.display = "none";
 	replace_c.src = "asset/shared/main.css";
 	elementThing = replace_a;
 	elementThing.appendChild(replace_c);
