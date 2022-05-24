@@ -59,6 +59,10 @@ a {
 	right: 32px;
 }
 
+.menubox {
+	z-index: 16;
+}
+
 .menuopenbutton {
 	position: absolute;
 	top: -18px;
