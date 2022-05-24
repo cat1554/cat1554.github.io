@@ -106,11 +106,6 @@ xmlhttp.onload = function() {
 function initPage() {
 	debugMode = ((window.location.search).indexOf("debug=1"));
 
-	window.console.log(debugMode);
-	if (debugMode != -1) {
-		window.console.log(document.lastModified);
-	}
-
 	pageContent = document.body.innerHTML;
 	document.body.innerHTML = "";
 
@@ -142,7 +137,28 @@ function initPage() {
 
 	replace_b.innerHTML = pageContent;
 
+	replace_c = document.createElement("iframe");
+	replace_c.id = "script_lastedited";
+	replace_c.src = "asset/shared/main.js";
+	elementThing = replace_a;
+	elementThing.appendChild(replace_c);
+
+	replace_c = document.createElement("iframe");
+	replace_c.id = "style_lastedited";
+	replace_c.src = "asset/shared/main.css";
+	elementThing = replace_a;
+	elementThing.appendChild(replace_c);
+
+
+	window.console.log("debug: " + debugMode);
+
 	document.title = "tlw" + window.location.pathname;
+
+	if (debugMode != -1) {
+		window.console.log("HTML modified: " + document.lastModified);
+		window.console.log("Main JS modified: " + document.getElementById("script_lastedited").lastModified);
+		window.console.log("Main CSS modified: " + document.getElementById("style_lastedited").lastModified);
+	}
 
 	xmlhttp.open("GET", "asset/shared/menuservice/menucontent.json");
 	xmlhttp.send();
