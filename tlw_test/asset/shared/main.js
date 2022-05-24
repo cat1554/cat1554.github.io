@@ -24,8 +24,8 @@ var notifCache = [];
 function debugTest(){
 	if (debugMode != -1) {
 		window.console.log("HTML modified: " + document.lastModified);
-		window.console.log("Main JS modified: " + document.getElementById("script_lastedited").lastModified);
-		window.console.log("Main CSS modified: " + document.getElementById("style_lastedited").lastModified);
+		window.console.log("Main JS modified: " + document.getElementById("script_lastedited").contentDocument.lastModified);
+		window.console.log("Main CSS modified: " + document.getElementById("style_lastedited").contentDocument.lastModified);
 	}
 }
 
