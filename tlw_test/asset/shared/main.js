@@ -11,6 +11,7 @@ var replace_c;
 var replace_d;
 var replace_e;
 var replace_f;
+var replace_h;
 
 var sys_aud_id_1 = 0;
 var sys_aud_id_2 = "0";
@@ -154,6 +155,16 @@ function createMessage(){
 	replace_f.id = "pageglobal_errortxt";
 	elementThing = replace_e;
 	elementThing.appendChild(replace_f);
+
+	replace_f = document.createElement("button");
+	replace_f.id = "pageglobal_errorbutton1";
+	elementThing = replace_e;
+	elementThing.appendChild(replace_f);
+
+	replace_h = document.createElement("p");
+	replace_h.id = "pageglobal_errorbutton1txt";
+	elementThing = replace_f;
+	elementThing.appendChild(replace_h);
 
 	document.getElementById("pageglobal_errorbg").addEventListener("click", function(a){
 		if (a.target.id == "pageglobal_errorbg") {

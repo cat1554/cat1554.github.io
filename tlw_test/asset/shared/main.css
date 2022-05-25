@@ -197,3 +197,25 @@ a {
 	background-color: grey;
 	bottom: 64px;
 }
+
+#pageglobal_errorbutton1 {
+	position: absolute;
+	right: 16px;
+	bottom: 16px;
+	width: 100px;
+	height: 30px;
+	background-color: grey;
+	border: 1px solid black;
+	border-radius: 4px;
+}
+
+#pageglobal_errorbutton1txt {
+	position: absolute;
+	right: 16px;
+	bottom: 16px;
+	width: 100px;
+	height: 30px;
+	background-color: grey;
+	border: 1px solid black;
+	border-radius: 4px;
+}
