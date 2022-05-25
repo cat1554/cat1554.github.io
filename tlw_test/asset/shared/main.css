@@ -204,7 +204,7 @@ a {
 	bottom: 16px;
 	width: 100px;
 	height: 30px;
-	background-color: #BBB;
+	background-color: #AAA;
 	border: 1px solid black;
 	border-radius: 4px;
 	padding: none;
@@ -240,8 +240,56 @@ a {
 	bottom: -10px;
 	width: 90px;
 	height: 20px;
-	background-color: #BBB;
+	background-color: #AAA;
 	border: 1px solid black;
 	border-radius: 4px;
 	line-height: 18px;
+}
+
+#pageglobal_errorbutton2 {
+	position: absolute;
+	right: 124px;
+	bottom: 21px;
+	width: 80px;
+	height: 20px;
+	background-color: #CCC;
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: none;
+}
+
+#pageglobal_errorbutton2:active {
+	position: absolute;
+	right: 124px;
+	bottom: 21px;
+	width: 80px;
+	height: 20px;
+	background-color: #AAA;
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: none;
+}
+
+#pageglobal_errorbutton3 {
+	position: absolute;
+	right: 212px;
+	bottom: 21px;
+	width: 80px;
+	height: 20px;
+	background-color: #CCC;
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: none;
+}
+
+#pageglobal_errorbutton3:active {
+	position: absolute;
+	right: 212px;
+	bottom: 21px;
+	width: 80px;
+	height: 20px;
+	background-color: #AAA;
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: none;
 }
