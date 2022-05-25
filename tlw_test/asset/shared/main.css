@@ -204,18 +204,44 @@ a {
 	bottom: 16px;
 	width: 100px;
 	height: 30px;
-	background-color: grey;
+	background-color: #BBB;
 	border: 1px solid black;
 	border-radius: 4px;
+	padding: none;
 }
 
 #pageglobal_errorbutton1txt {
+	position: absolute;
+	right: 3px;
+	bottom: -10px;
+	width: 90px;
+	height: 20px;
+	background-color: #CCC;
+	border: 1px solid black;
+	border-radius: 4px;
+	line-height: 18px;
+}
+
+#pageglobal_errorbutton1:active {
 	position: absolute;
 	right: 16px;
 	bottom: 16px;
 	width: 100px;
 	height: 30px;
-	background-color: grey;
+	background-color: #CCC;
 	border: 1px solid black;
 	border-radius: 4px;
+	padding: none;
+}
+
+#pageglobal_errorbutton1:active > p {
+	position: absolute;
+	right: 3px;
+	bottom: -10px;
+	width: 90px;
+	height: 20px;
+	background-color: #BBB;
+	border: 1px solid black;
+	border-radius: 4px;
+	line-height: 18px;
 }
