@@ -9,6 +9,8 @@ var replace_a;
 var replace_b;
 var replace_c;
 var replace_d;
+var replace_e;
+var replace_f;
 
 var sys_aud_id_1 = 0;
 var sys_aud_id_2 = "0";
@@ -105,7 +107,7 @@ function createButton(xml, parent, order, menu){
 				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
 				summonAudio("menu_sel");
 
-				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 1000, xml, parent, menu);
+				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 1000, xml, menu);
 			}
 		}
 	});
@@ -127,6 +129,20 @@ function editMessage(){
 }
 
 function createMessage(){
+	replace_e = document.createElement("div");
+	replace_e.id = "pageglobal_errorbg";
+	elementThing = document.body;
+	elementThing.appendChild(replace_e);
+
+	replace_f = document.createElement("div");
+	replace_f.id = "pageglobal_errorwidth";
+	elementThing = replace_e;
+	elementThing.appendChild(replace_f);
+
+	replace_e = document.createElement("div");
+	replace_e.id = "pageglobal_errorbox";
+	elementThing = replace_f;
+	elementThing.appendChild(replace_e);
 }
 
 function buildMenu(xml, parent, order, menu) {
@@ -247,6 +263,8 @@ function initPage() {
 	replace_c.src = "asset/shared/main.css";
 	elementThing = replace_a;
 	elementThing.appendChild(replace_c);
+
+	createMessage();
 
 
 	window.console.log("debug: " + debugMode);
