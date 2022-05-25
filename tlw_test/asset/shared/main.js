@@ -87,7 +87,7 @@ function press(xml, ancestry){
 				document.getElementById("pageglobal_errorbg").style.display = "none";
 				break;
 			default:
-				window.location.assign(xml);
+				window.location.assign("http://" + xml);
 		}
 	}
 }
@@ -119,7 +119,7 @@ function createButton(xml, parent, order, menu){
 				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
 				summonAudio("menu_sel");
 
-				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 1000, xml, menu);
+				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 1000, xml, parent);
 			}
 		}
 	});
@@ -132,6 +132,39 @@ function createButton(xml, parent, order, menu){
 }
 
 function createSubMenu(xml, parent, order){
+	replace_d = document.createElement("button");
+	replace_d.id = "menubox_" + parent + "_" + xml.id;
+	replace_d.className = "menubutton";
+	replace_d.innerHTML = xml.text;
+	replace_d.style.top = ((order + 1) * 20) + "px";
+	window.console.log(parent);
+	elementThing = document.getElementById("menubox_" + parent);
+	elementThing.appendChild(replace_d);
+
+	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(){
+		if (buttonLock == false){
+			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonlight";
+			summonAudio("menu_pop");
+		}
+	});
+
+	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("click", function(){
+		if (xml.behaviour != "Label") {
+			if (buttonLock == false){
+				buttonLock = true;
+				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
+				summonAudio("menu_sel");
+
+				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 1000, xml, parent);
+			}
+		}
+	});
+
+	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseleave", function(){
+		if (buttonLock == false){
+			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubutton";
+		}
+	});
 }
 
 function createMenu(){
