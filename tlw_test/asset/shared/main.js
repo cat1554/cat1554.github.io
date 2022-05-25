@@ -120,7 +120,7 @@ function createButton(xml, parent, order, menu){
 				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
 				summonAudio("menu_sel");
 
-				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 1000, xml, parent);
+				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 500, xml, parent);
 			}
 		}
 	});
