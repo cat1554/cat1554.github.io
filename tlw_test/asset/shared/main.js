@@ -100,7 +100,7 @@ function createButton(xml, parent, order, menu){
 	replace_d.id = "menubox_" + parent + "_" + xml.id;
 	replace_d.className = "menubutton";
 	replace_d.innerHTML = xml.text;
-	replace_d.style.top = ((order + 1) * 20) + "px";
+	replace_d.style.top = (order * 20) + "px";
 	window.console.log(parent);
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
@@ -136,7 +136,7 @@ function createSubMenu(xml, parent, order){
 	replace_d.id = "menubox_" + parent + "_" + xml.id;
 	replace_d.className = "menubutton";
 	replace_d.innerHTML = xml.text;
-	replace_d.style.top = ((order + 1) * 20) + "px";
+	replace_d.style.top = (order * 20) + "px";
 	window.console.log(parent);
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
@@ -144,7 +144,7 @@ function createSubMenu(xml, parent, order){
 	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(){
 		if (buttonLock == false){
 			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonlight";
-			summonAudio("menu_pop");
+			summonAudio("menu_opn");
 		}
 	});
 
@@ -155,7 +155,7 @@ function createSubMenu(xml, parent, order){
 				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
 				summonAudio("menu_sel");
 
-				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 1000, xml, parent);
+				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 500, xml, parent);
 			}
 		}
 	});
