@@ -73,6 +73,7 @@ function press(xml, ancestry){
 	if (ancestry != "error") {
 		switch(xml.behaviour) {
 			case "Link":
+				window.location.assign("http://www.totallylegitwebsite.online/" + xml.link);
 				break;
 			case "ExtLink":
 				editMessage("You will be taken to:\n" + xml.link + "\nContinue?", {txt: "No", func: "close"}, {txt: "Yes", func: xml.link}, null);
@@ -145,6 +146,7 @@ function createSubMenu(xml, parent, order){
 		if (buttonLock == false){
 			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonlight";
 			summonAudio("menu_opn");
+			summonAudio("menu_sel");
 		}
 	});
 
