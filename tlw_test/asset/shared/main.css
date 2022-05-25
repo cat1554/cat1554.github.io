@@ -192,7 +192,7 @@ a {
 #pageglobal_errortxt {
 	position: absolute;
 	left: 64px;
-	top: 16px;
+	top: 0px;
 	right: 16px;
 	background-color: grey;
 	bottom: 64px;
