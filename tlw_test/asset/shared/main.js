@@ -66,6 +66,7 @@ function summonAudio(obj) {
 }
 
 function press(xml, ancestry){
+	window.console.log(xml, ancestry);
 	switch(xml.behaviour) {
 		case "Link":
 			break;
