@@ -57,7 +57,7 @@ function summonAudio(obj) {
 	}
 	document.head.appendChild(sys_audio);
 	summonAudio2(sys_aud_id_2);
-	sys_audio.src = String("asset/shared/" + sys_aud_src[obj] + ".wav");
+	sys_audio.src = sys_aud_src[obj];
 	sys_audio.play();
 }
 
