@@ -63,6 +63,25 @@ a {
 	z-index: 16;
 }
 
+@keyframes buttonFlashAnim {
+	0% {
+		color: #000;
+		background-color: #33F;
+	}
+	49% {
+		color: #000;
+		background-color: #33F;
+	}
+	50% {
+		color: #000;
+		background-color: #FFF;
+	}
+	100% {
+		color: #000;
+		background-color: #FFF;
+	}
+}
+
 .menuopenbutton {
 	text-align: left;
 	position: absolute;
@@ -72,6 +91,19 @@ a {
 	height: 20px;
 
 	background-color: white;
+	border: none;
+	border-radius: 0px;
+}
+
+.menuopenbuttonlight {
+	text-align: left;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 20px;
+
+	background-color: #33F;
 	border: none;
 	border-radius: 0px;
 }
@@ -86,4 +118,32 @@ a {
 	background-color: white;
 	border: none;
 	border-radius: 0px;
+}
+
+.menubuttonlight {
+	text-align: left;
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 20px;
+
+	background-color: #33F;
+	border: none;
+	border-radius: 0px;
+}
+
+.menubuttonselect {
+	text-align: left;
+	position: absolute;
+	left: 0px;
+	width: 100%;
+	height: 20px;
+
+	background-color: #33F;
+	border: none;
+	border-radius: 0px;
+
+	animation-name: buttonFlashAnim;
+	animation-duration: 100ms;
+	animation-iteration-count: infinite;
 }

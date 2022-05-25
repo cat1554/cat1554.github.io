@@ -1,4 +1,5 @@
 var debugMode = 0;
+var buttonLock = false;
 
 var pageContent;
 
@@ -45,6 +46,18 @@ function createButton(xml, parent, order){
 	window.console.log(parent);
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
+
+	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(){
+		if (buttonLock == false){
+			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonlight";
+		}
+	});
+
+	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseleave", function(){
+		if (buttonLock == false){
+			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubutton";
+		}
+	});
 
 	switch(xml.behaviour) {
 		case "Link":
