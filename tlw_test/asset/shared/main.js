@@ -70,14 +70,25 @@ function summonAudio(obj) {
 
 function press(xml, ancestry){
 	window.console.log(xml, ancestry);
-	switch(xml.behaviour) {
-		case "Link":
-			break;
-		case "ExtLink":
-			break;
-		case "Procrastinate":
-			break;
-		default:
+	if (ancestry != "error") {
+		switch(xml.behaviour) {
+			case "Link":
+				break;
+			case "ExtLink":
+				editMessage("You will be taken to:\n" + xml.link + "\nContinue?", {txt: "No", func: "close"}, {txt: "Yes", func: xml.link}, null);
+				break;
+			case "Procrastinate":
+				break;
+			default:
+		}
+	} else {
+		switch(xml){
+			case "close":
+				document.getElementById("pageglobal_errorbg").style.display = "none";
+				break;
+			default:
+				window.location.assign(xml);
+		}
 	}
 }
 
@@ -126,7 +137,38 @@ function createSubMenu(xml, parent, order){
 function createMenu(){
 }
 
-function editMessage(){
+function editMessage(p,e1,e2,e3){
+	document.getElementById("pageglobal_errortxt").innerHTML = p;
+	if (e2 != null) {
+		document.getElementById("pageglobal_errorbutton2").style.display = "initial";
+		document.getElementById("pageglobal_errorbutton2").innerHTML = e2.txt;
+
+		document.getElementById("pageglobal_errorbutton2").addEventListener("click", function(a){
+			press(e2.func, "error");
+		});
+	} else {
+		document.getElementById("pageglobal_errorbutton2").style.display = "none";
+	}
+	if (e3 != null) {
+		document.getElementById("pageglobal_errorbutton3").style.display = "initial";
+		document.getElementById("pageglobal_errorbutton3").innerHTML = e3.txt;
+
+		document.getElementById("pageglobal_errorbutton3").addEventListener("click", function(a){
+			press(e3.func, "error");
+		});
+	} else {
+		document.getElementById("pageglobal_errorbutton3").style.display = "none";
+	}
+	if (e1 != null) {
+		document.getElementById("pageglobal_errorbutton1txt").innerHTML = e1.txt;
+
+		document.getElementById("pageglobal_errorbutton1").addEventListener("click", function(a){
+			press(e1.func, "error");
+		});
+		document.getElementById("pageglobal_errorbg").style.display = "initial";
+	
+		summonAudio("menu_err");
+	}
 }
 
 function createMessage(){
@@ -134,6 +176,8 @@ function createMessage(){
 	replace_e.id = "pageglobal_errorbg";
 	elementThing = document.body;
 	elementThing.appendChild(replace_e);
+
+	document.getElementById("pageglobal_errorbg").style.display = "none";
 
 	replace_f = document.createElement("div");
 	replace_f.id = "pageglobal_errorwidth";
