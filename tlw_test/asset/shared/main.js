@@ -80,7 +80,7 @@ function press(xml, ancestry){
 function hovered(item, type){
 }
 
-function createButton(xml, parent, order){
+function createButton(xml, parent, order, menu){
 	replace_d = document.createElement("button");
 	replace_d.id = "menubox_" + parent + "_" + xml.id;
 	replace_d.className = "menubutton";
@@ -104,7 +104,7 @@ function createButton(xml, parent, order){
 				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
 				summonAudio("menu_sel");
 
-				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 1000, xml, parent);
+				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 1000, xml, parent, menu);
 			}
 		}
 	});
@@ -128,15 +128,15 @@ function editMessage(){
 function createMessage(){
 }
 
-function buildMenu(xml, parent, order) {
+function buildMenu(xml, parent, order, menu) {
 	// Top button
 	window.console.log(xml);
 	switch(xml.type) {
 		case "button":
-			createButton(xml, parent, order);
+			createButton(xml, parent, order, menu);
 			break;
 		case "submenu":
-			createSubMenu(xml, parent, order);
+			createSubMenu(xml, parent, order, menu);
 			break;
 	}
 }
@@ -179,7 +179,7 @@ function initMenu(xml) {
 	elementThing.appendChild(replace_c);
 
 	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
-		buildMenu(xml.menuContents[menusLoop], xml.id + "_container", menusLoop);
+		buildMenu(xml.menuContents[menusLoop], xml.id + "_container", menusLoop, xml.id);
 	}
 }
 
