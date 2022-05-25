@@ -45,6 +45,10 @@ function summonAudio2(obj) {
 	document.getElementById(obj).addEventListener("ended", function() {
 		document.getElementById(obj).remove();
 	});
+	document.getElementById(obj).addEventListener("error", function() {
+		window.console.log("Failed to load file " + document.getElementById(obj).src + " for item: " + obj);
+		document.getElementById(obj).remove();
+	});
 }
 
 function summonAudio(obj) {
@@ -61,8 +65,16 @@ function summonAudio(obj) {
 	sys_audio.play();
 }
 
-function press(item, func){
-//	pageglobal_contentframe
+function press(xml, ancestry){
+	switch(xml.behaviour) {
+		case "Link":
+			break;
+		case "ExtLink":
+			break;
+		case "Procrastinate":
+			break;
+		default:
+	}
 }
 
 function hovered(item, type){
@@ -85,21 +97,23 @@ function createButton(xml, parent, order){
 		}
 	});
 
+	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("click", function(){
+		if (xml.behaviour != "Label") {
+			if (buttonLock == false){
+				buttonLock = true;
+				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
+				summonAudio("menu_sel");
+
+				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 1000, xml, parent);
+			}
+		}
+	});
+
 	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseleave", function(){
 		if (buttonLock == false){
 			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubutton";
 		}
 	});
-
-	switch(xml.behaviour) {
-		case "Link":
-			break;
-		case "ExtLink":
-			break;
-		case "Procrastinate":
-			break;
-		default:
-	}
 }
 
 function createSubMenu(xml, parent, order){
@@ -139,6 +153,9 @@ function initMenu(xml) {
 	replace_a.style.left = xml.x + "px";
 	replace_a.style.width = xml.width + "px";
 	replace_a.style.height = ((xml.depth * 20) + 20) + "px";
+	if (debugMode != -1) {
+		replace_a.style.zIndex = 128;
+	}
 
 	elementThing = document.body;
 	elementThing.appendChild(replace_a);
