@@ -150,6 +150,11 @@ function createMessage(){
 	elementThing = replace_e;
 	elementThing.appendChild(replace_f);
 
+	replace_f = document.createElement("p");
+	replace_f.id = "pageglobal_errortxt";
+	elementThing = replace_e;
+	elementThing.appendChild(replace_f);
+
 	document.getElementById("pageglobal_errorbg").addEventListener("click", function(a){
 		if (a.target.id == "pageglobal_errorbg") {
 			summonAudio("menu_err");
