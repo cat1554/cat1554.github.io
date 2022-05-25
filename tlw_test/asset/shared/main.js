@@ -143,6 +143,23 @@ function createMessage(){
 	replace_e.id = "pageglobal_errorbox";
 	elementThing = replace_f;
 	elementThing.appendChild(replace_e);
+
+	replace_f = document.createElement("img");
+	replace_f.id = "pageglobal_errorimg";
+	replace_f.src = "asset/shared/error_icon.svg";
+	elementThing = replace_e;
+	elementThing.appendChild(replace_f);
+
+	document.getElementById("pageglobal_errorbg").addEventListener("click", function(a){
+		if (a.target.id == "pageglobal_errorbg") {
+			summonAudio("menu_err");
+		}
+	});
+	document.getElementById("pageglobal_errorwidth").addEventListener("click", function(a){
+		if (a.target.id == "pageglobal_errorwidth") {
+			summonAudio("menu_err");
+		}
+	});
 }
 
 function buildMenu(xml, parent, order, menu) {
