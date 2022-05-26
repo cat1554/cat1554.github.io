@@ -177,7 +177,9 @@ function createSubMenu(xml, parent, order, topmenu){
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
 
-	createSubMenuContent(xml, parent)
+	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
+		createSubMenuContent(xml.menuContents[menusLoop], "menubox_" + parent + "_" + xml.id, topmenu);
+	}
 
 	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(){
 		if (buttonLock == false){
