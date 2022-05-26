@@ -172,7 +172,7 @@ function createSubMenu(xml, parent, order, topmenu){
 	for (let menusLoopSubMenuTop = 0; menusLoopSubMenuTop < xml.menuContents.length; menusLoopSubMenuTop++) {
 //		createSubMenuContent(xml.menuContents[menusLoopSubMenuTop], "menubox_" + parent + "_container_" + xml.id, topmenu, menusLoopSubMenuTop);
 
-		buildMenu(xml.menuContents[menusLoop], parent + "_" + xml.id + "_container", menusLoop, topmenu);
+		buildMenu(xml.menuContents[menusLoopSubMenuTop], parent + "_" + xml.id + "_container", menusLoopSubMenuTop, topmenu);
 	}
 
 
