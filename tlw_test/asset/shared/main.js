@@ -187,6 +187,8 @@ function createSubMenu(xml, parent, order, topmenu){
 			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonlight";
 			document.getElementById("menubox_" + parent + "_" + xml.id + "_container").style.display = "initial";
 			if (a.target.id == "menubox_" + parent + "_" + xml.id) {
+				window.console.log("menubox_" + parent + "_" + xml.id);
+				window.console.log(a.target.id);
 				summonAudio("menu_opn");
 				summonAudio("menu_pop");
 			}
@@ -369,9 +371,11 @@ function initMenu(xml) {
 
 	document.getElementById("menubox_" + xml.id).addEventListener("mouseleave", function(){
 		if (buttonLock == false){
+			if (document.getElementById("menubox_" + xml.id + "_container").style.display != "none") {
+				summonAudio("menu_cls");
+			}
 			document.getElementById("menubox_" + xml.id + "_container").style.display = "none";
 			document.getElementById("menubox_" + xml.id).style.zIndex = 16;
-			summonAudio("menu_cls");
 		}
 	});
 
