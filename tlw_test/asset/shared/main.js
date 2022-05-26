@@ -17,6 +17,13 @@ var replace_j;
 var replace_k;
 var replace_l;
 
+var notreplace_a;
+var notreplace_b;
+var notreplace_c;
+var notreplace_d;
+var notreplace_e;
+var notreplace_f;
+
 var sys_aud_id_1 = 0;
 var sys_aud_id_2 = "0";
 
@@ -396,12 +403,32 @@ function parseMenu(xml) {
 	}
 }
 
+function notifSys() {
+	
+}
+
+function initNotif() {
+	notreplace_a = document.createElement("div");
+	notreplace_a.id = "pageglobal_headbar_notificationbox";
+	elementThing = document.getElementById("pageglobal_headbar");
+	elementThing.appendChild(notreplace_a);
+
+/*	notreplace_b = document.createElement("div");
+	notreplace_b.id = "pageglobal_headbar_notificationbox";
+	elementThing = document.getElementById("pageglobal_headbar");
+	elementThing.appendChild(notreplace_a);
+*/
+
+	document.getElementById("style_lastedited").contentWindow.setInterval(notifSys, 1000);
+}
+
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
 	const myObj = JSON.parse(this.responseText);
 //	window.console.log(myObj);
 	xmlobj = myObj;
 	parseMenu(myObj);
+	initNotif();
 
 //	xmlobj["contents"][0];
 };

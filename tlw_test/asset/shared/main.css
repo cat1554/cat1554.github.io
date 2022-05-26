@@ -292,3 +292,12 @@ a {
 	border-radius: 4px;
 	padding: none;
 }
+
+#pageglobal_headbar_notificationbox {
+	position: absolute;
+	left: 182px;
+	top: 0px;
+	width: 200px;
+	height: 20px;
+	background-color: #888;
+}
