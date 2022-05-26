@@ -169,12 +169,12 @@ function createSubMenu(xml, parent, order, topmenu){
 
 	window.console.log(topmenu);
 
-/*	for (let menusLoopSubMenuTop = 0; menusLoopSubMenuTop < xml.menuContents.length; menusLoopSubMenuTop++) {
-		createSubMenuContent(xml.menuContents[menusLoopSubMenuTop], "menubox_" + parent + "_" + xml.id, topmenu, menusLoopSubMenuTop);
+	for (let menusLoopSubMenuTop = 0; menusLoopSubMenuTop < xml.menuContents.length; menusLoopSubMenuTop++) {
+//		createSubMenuContent(xml.menuContents[menusLoopSubMenuTop], "menubox_" + parent + "_container_" + xml.id, topmenu, menusLoopSubMenuTop);
 
 		buildMenu(xml.menuContents[menusLoop], parent + "_" + xml.id + "_container", menusLoop, topmenu);
 	}
-*/
+
 
 	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(){
 		if (buttonLock == false){
