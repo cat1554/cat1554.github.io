@@ -1,4 +1,5 @@
 {
+    
     "contents": [
 	{
 		"title": "Navigate",
@@ -23,7 +24,47 @@
                 "direction": "right",
                 "width": 150,
                 "depth": 2,
-				"sub": [
+				"menuContents": [
+                    {
+                        "text": "Minecraft Server",
+                        "id": "mc_server",
+                        "type": "submenu",
+                        "behaviour": "Label",
+                        "link": "game/mc/",
+                        "direction": "right",
+                        "width": 150,
+                        "depth": 2,
+                        "menuContents": [
+                            {
+                                "text": "Status",
+                                "id": "state",
+                                "type": "button",
+                                "behaviour": "Link",
+                                "link": "game/mc/state"
+                            },
+                            {
+                                "text": "Train Tools",
+                                "id": "server",
+                                "type": "button",
+                                "behaviour": "Link",
+                                "link": "game/mc/train"
+                            },
+                            {
+                                "text": "Connection",
+                                "id": "connect",
+                                "type": "button",
+                                "behaviour": "Link",
+                                "link": "game/mc/connect"
+                            }
+                        ]
+                    },
+                    {
+                        "text": "Netris",
+                        "id": "netris",
+                        "type": "button",
+                        "behaviour": "Link",
+                        "link": "game/netris/"
+                    }
 				]
 			},
 			{
@@ -32,7 +73,7 @@
 				"type": "button",
 				"behaviour": "Link",
 				"link": "get/",
-				"sub": [
+				"menuContents": [
 				]
 			},
 			{
@@ -51,20 +92,70 @@
                 "direction": "right",
                 "width": 150,
                 "depth": 4,
-				"sub": [
+				"menuContents": [
+                    {
+                        "text": "Chipost",
+                        "id": "chipost",
+                        "type": "button",
+                        "behaviour": "Link",
+                        "link": "other/chipost/"
+                    },
+                    {
+                        "text": "Recursion",
+                        "id": "recursive",
+                        "type": "submenu",
+                        "behaviour": "Label",
+                        "link": "other/",
+                        "direction": "right",
+                        "width": 150,
+                        "depth": 1,
+                        "menuContents": [
+                            {
+                                "text": "Recursion",
+                                "id": "recursive",
+                                "type": "submenu",
+                                "behaviour": "Label",
+                                "link": "other/",
+                                "direction": "right",
+                                "width": 150,
+                                "depth": 1,
+                                "menuContents": [
+                                    {
+                                        "text": "Recursion",
+                                        "id": "recursive",
+                                        "type": "submenu",
+                                        "behaviour": "Label",
+                                        "link": "other/",
+                                        "direction": "right",
+                                        "width": 300,
+                                        "depth": 1,
+                                        "menuContents": [
+                                            {
+                                                "text": "Okay stop that",
+                                                "id": "recursive_cease",
+                                                "type": "button",
+                                                "behaviour": "Label",
+                                                "link": "other/"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
                     {
                         "text": "Soundboard",
                         "id": "sb",
                         "type": "button",
                         "behaviour": "Link",
-                        "link": "soundboard/"
+                        "link": "other/soundboard/"
                     },
                     {
                         "text": "Zombo",
                         "id": "zombo",
                         "type": "button",
                         "behaviour": "Link",
-                        "link": "zombo/"
+                        "link": "other/zombo/"
                     }
 				]
 			},
@@ -77,7 +168,7 @@
                 "direction": "right",
                 "width": 150,
                 "depth": 2,
-				"sub": [
+				"menuContents": [
 				]
 			},
 			{
@@ -89,7 +180,7 @@
                 "direction": "right",
                 "width": 150,
                 "depth": 2,
-				"sub": [
+				"menuContents": [
 				]
 			},
 			{
@@ -99,8 +190,43 @@
 				"behaviour": "Label",
                 "direction": "right",
                 "width": 150,
-                "depth": 2,
-				"sub": [
+                "depth": 4,
+				"menuContents": [
+                    {
+                        "text": "Reddit",
+                        "id": "reddit",
+                        "type": "button",
+                        "behaviour": "ExtLink",
+                        "link": "www.reddit.com/u/cat1554"
+                    },
+                    {
+                        "text": "Steam",
+                        "id": "stem",
+                        "type": "button",
+                        "behaviour": "ExtLink",
+                        "link": "www.steamcommunity.com/id/cat1554YT"
+                    },
+                    {
+                        "text": "TRUTH",
+                        "id": "truth",
+                        "type": "button",
+                        "behaviour": "ExtLink",
+                        "link": "www.truthsocial.com/@cat1554"
+                    },
+                    {
+                        "text": "Twitter",
+                        "id": "twitter",
+                        "type": "button",
+                        "behaviour": "ExtLink",
+                        "link": "www.twitter.com/cat1554official"
+                    },
+                    {
+                        "text": "YouTube",
+                        "id": "yt",
+                        "type": "button",
+                        "behaviour": "ExtLink",
+                        "link": "www.youtube.com/cat1554"
+                    }
 				]
 			}
 		]
