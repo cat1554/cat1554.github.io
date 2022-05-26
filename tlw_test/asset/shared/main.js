@@ -29,6 +29,8 @@ var loop6;
 var loop7;
 var loop8;
 
+var menuOpen;
+
 var errorCache = [];
 var notifCache = [];
 
@@ -363,6 +365,7 @@ function initMenu(xml) {
 
 	document.getElementById("menubox_" + xml.id + "_opener").addEventListener("click", function(){
 		if (buttonLock == false){
+			menuOpen = 1;
 			summonAudio("menu_opn");
 			document.getElementById("menubox_" + xml.id).style.zIndex = 128;
 			document.getElementById("menubox_" + xml.id + "_container").style.display = "initial";
@@ -371,9 +374,10 @@ function initMenu(xml) {
 
 	document.getElementById("menubox_" + xml.id).addEventListener("mouseleave", function(){
 		if (buttonLock == false){
-			if (document.getElementById("menubox_" + xml.id + "_container").style.display != "none") {
+			if (menuOpen == 1) {
 				summonAudio("menu_cls");
 			}
+			menuOpen = 0;
 			document.getElementById("menubox_" + xml.id + "_container").style.display = "none";
 			document.getElementById("menubox_" + xml.id).style.zIndex = 16;
 		}
