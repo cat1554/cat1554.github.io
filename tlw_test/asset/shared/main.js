@@ -30,6 +30,7 @@ var loop7;
 var loop8;
 
 var menuOpen;
+var mouseLeaver = new Event("mouseleave");
 
 var errorCache = [];
 var notifCache = [];
@@ -99,7 +100,8 @@ function press(xml, ancestry){
 	}
 }
 
-function hovered(item, type){
+function closeMenu(menu, resetItem){
+	buttonLock == false;
 }
 
 function createButton(xml, parent, order, menu){
