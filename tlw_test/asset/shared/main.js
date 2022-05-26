@@ -12,6 +12,10 @@ var replace_d;
 var replace_e;
 var replace_f;
 var replace_h;
+var replace_i;
+var replace_j;
+var replace_k;
+var replace_l;
 
 var sys_aud_id_1 = 0;
 var sys_aud_id_2 = "0";
@@ -132,24 +136,26 @@ function createButton(xml, parent, order, menu){
 	});
 }
 
-function createSubMenuContent(xml, source, topmenu){
+function createSubMenuContent(xml, source, topmenu, order){
 //	Main frame
-	window.console.log(xml, source, topmenu);
+	window.console.log(xml, source, topmenu, order);
 
-/*	replace_a = document.createElement("div");
-	replace_a.id = "menubox_" + ancestry + "_" + xml.id;
-	replace_a.className = "menubox";
-	replace_a.style.position = "absolute";
-	replace_a.style.top = "0px";
-	replace_a.style.left = 100%;
-	replace_a.style.width = xml.width + "px";
-	replace_a.style.height = (xml.depth * 20) + "px";
+/*	replace_i = document.createElement("div");
+	replace_i.id = "menubox_" + ancestry + "_" + xml.id;
+	replace_i.className = "menubox";
+	replace_i.style.position = "absolute";
+	replace_i.style.top = "0px";
+	replace_i.style.left = 100%;
+	replace_i.style.width = xml.width + "px";
+	replace_i.style.height = (xml.depth * 20) + "px";
 	if (debugMode != -1) {
-		replace_a.style.zIndex = 128;
+		replace_i.style.zIndex = 128;
 	}
-
 	elementThing = source;
-	elementThing.appendChild(replace_a);
+	elementThing.appendChild(replace_i);
+
+	
+
 
 	replace_c = document.createElement("div");
 	replace_c.id = "menubox_" + ancestry + "_" + xml.id + "_container";
@@ -162,8 +168,8 @@ function createSubMenuContent(xml, source, topmenu){
 	elementThing = document.getElementById("menubox_" + ancestry + "_" + xml.id);
 	elementThing.appendChild(replace_c);
 
-	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
-		buildMenu(xml.menuContents[menusLoop], ancestry + "_" + xml.id + "_container", menusLoop, xml.id);
+	for (let menusLoopSubMenu = 0; menusLoopSubMenu < xml.menuContents.length; menusLoopSubMenu++) {
+		buildMenu(xml.menuContents[menusLoopSubMenu], ancestry + "_" + xml.id + "_container", menusLoopSubMenu, xml.id);
 	} */
 }
 
@@ -177,8 +183,8 @@ function createSubMenu(xml, parent, order, topmenu){
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
 
-	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
-		createSubMenuContent(xml.menuContents[menusLoop], "menubox_" + parent + "_" + xml.id, topmenu);
+	for (let menusLoopSubMenuTop = 0; menusLoopSubMenuTop < xml.menuContents.length; menusLoopSubMenuTop++) {
+		createSubMenuContent(xml.menuContents[menusLoopSubMenuTop], "menubox_" + parent + "_" + xml.id, topmenu, menusLoopSubMenuTop);
 	}
 
 	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(){
