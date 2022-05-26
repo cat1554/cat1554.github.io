@@ -73,7 +73,7 @@ function summonAudio(obj) {
 }
 
 function press(xml, ancestry){
-//	window.console.log(xml, ancestry);
+	window.console.log(xml, ancestry);
 	if (ancestry != "error") {
 		switch(xml.behaviour) {
 			case "Link":
