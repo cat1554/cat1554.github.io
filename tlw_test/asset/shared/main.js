@@ -132,11 +132,11 @@ function createButton(xml, parent, order, menu){
 	});
 }
 
-function createSubMenuContent(xml, source, ancestry){
+function createSubMenuContent(xml, source, topmenu){
 //	Main frame
-	window.console.log(xml);
+	window.console.log(xml, source);
 
-	replace_a = document.createElement("div");
+/*	replace_a = document.createElement("div");
 	replace_a.id = "menubox_" + ancestry + "_" + xml.id;
 	replace_a.className = "menubox";
 	replace_a.style.position = "absolute";
@@ -164,10 +164,10 @@ function createSubMenuContent(xml, source, ancestry){
 
 	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
 		buildMenu(xml.menuContents[menusLoop], ancestry + "_" + xml.id + "_container", menusLoop, xml.id);
-	}
+	} */
 }
 
-function createSubMenu(xml, parent, order){
+function createSubMenu(xml, parent, order, topmenu){
 	replace_d = document.createElement("button");
 	replace_d.id = "menubox_" + parent + "_" + xml.id;
 	replace_d.className = "menubutton";
@@ -176,6 +176,8 @@ function createSubMenu(xml, parent, order){
 	window.console.log(parent);
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
+
+	createSubMenuContent(xml, parent)
 
 	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(){
 		if (buttonLock == false){
