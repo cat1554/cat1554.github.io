@@ -139,7 +139,7 @@ function createButton(xml, parent, order, menu){
 function createSubMenuContent(xml, source, topmenu, order){
 //	Main frame
 
-	window.console.log("xml=" + xml + "\nsrc=" + source + "\ntop=" + topmenu + "\nord=" + order);
+	window.console.log("xml=", xml, "\nsrc=" + source + "\ntop=" + topmenu + "\nord=" + order);
 /*
 	for (let menusLoopSubMenu = 0; menusLoopSubMenu < xml.menuContents.length; menusLoopSubMenu++) {
 		buildMenu(xml.menuContents[menusLoopSubMenu], ancestry + "_" + xml.id + "_container", menusLoopSubMenu, xml.id);
