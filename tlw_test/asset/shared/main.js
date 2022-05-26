@@ -73,7 +73,7 @@ function summonAudio(obj) {
 }
 
 function press(xml, ancestry){
-	window.console.log(xml, ancestry);
+//	window.console.log(xml, ancestry);
 	if (ancestry != "error") {
 		switch(xml.behaviour) {
 			case "Link":
@@ -106,7 +106,7 @@ function createButton(xml, parent, order, menu){
 	replace_d.className = "menubutton";
 	replace_d.innerHTML = xml.text;
 	replace_d.style.top = (order * 20) + "px";
-	window.console.log(parent);
+//	window.console.log(parent);
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
 
@@ -139,7 +139,7 @@ function createButton(xml, parent, order, menu){
 function createSubMenuContent(xml, source, topmenu, order){
 //	Main frame
 
-	window.console.log("xml=", xml, "\nsrc=" + source + "\ntop=" + topmenu + "\nord=" + order);
+//	window.console.log("xml=", xml, "\nsrc=" + source + "\ntop=" + topmenu + "\nord=" + order);
 /*
 	for (let menusLoopSubMenu = 0; menusLoopSubMenu < xml.menuContents.length; menusLoopSubMenu++) {
 		buildMenu(xml.menuContents[menusLoopSubMenu], ancestry + "_" + xml.id + "_container", menusLoopSubMenu, xml.id);
@@ -152,7 +152,7 @@ function createSubMenu(xml, parent, order, topmenu){
 	replace_d.className = "menubutton";
 	replace_d.innerHTML = xml.text;
 	replace_d.style.top = (order * 20) + "px";
-	window.console.log(parent);
+//	window.console.log(parent);
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
 
@@ -167,7 +167,9 @@ function createSubMenu(xml, parent, order, topmenu){
 	elementThing = document.getElementById("menubox_" + parent + "_" + xml.id);
 	elementThing.appendChild(replace_i);
 
-	window.console.log(topmenu);
+//	window.console.log(topmenu);
+
+	document.getElementById("menubox_" + parent + "_" + xml.id + "_container").style.display = "none";
 
 	for (let menusLoopSubMenuTop = 0; menusLoopSubMenuTop < xml.menuContents.length; menusLoopSubMenuTop++) {
 //		createSubMenuContent(xml.menuContents[menusLoopSubMenuTop], "menubox_" + parent + "_container_" + xml.id, topmenu, menusLoopSubMenuTop);
@@ -304,7 +306,7 @@ function createMessage(){
 
 function buildMenu(xml, parent, order, menu) {
 	// Top button
-	window.console.log(xml);
+//	window.console.log(xml);
 	switch(xml.type) {
 		case "button":
 			createButton(xml, parent, order, menu);
@@ -317,7 +319,7 @@ function buildMenu(xml, parent, order, menu) {
 
 function initMenu(xml) {
 //	Main frame
-	window.console.log(xml);
+//	window.console.log(xml);
 
 	replace_a = document.createElement("div");
 	replace_a.id = "menubox_" + xml.id;
@@ -327,9 +329,6 @@ function initMenu(xml) {
 	replace_a.style.left = xml.x + "px";
 	replace_a.style.width = xml.width + "px";
 	replace_a.style.height = ((xml.depth * 20) + 20) + "px";
-	if (debugMode != -1) {
-		replace_a.style.zIndex = 128;
-	}
 
 	elementThing = document.body;
 	elementThing.appendChild(replace_a);
@@ -351,6 +350,24 @@ function initMenu(xml) {
 	replace_c.style.width = "100%";
 	elementThing = document.getElementById("menubox_" + xml.id);
 	elementThing.appendChild(replace_c);
+	
+	document.getElementById("menubox_" + xml.id + "_container").style.display = "none";
+
+	document.getElementById("menubox_" + xml.id + "_opener").addEventListener("click", function(){
+		if (buttonLock == false){
+			summonAudio("menu_opn");
+			document.getElementById("menubox_" + xml.id).style.zIndex = 128;
+			document.getElementById("menubox_" + xml.id + "_container").style.display = "initial";
+		}
+	});
+
+	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseleave", function(){
+		if (buttonLock == false){
+			document.getElementById("menubox_" + xml.id + "_container").style.display = "none";
+			document.getElementById("menubox_" + xml.id).style.zIndex = 16;
+			summonAudio("menu_cls");
+		}
+	});
 
 	for (let menusLoop = 0; menusLoop < xml.menuContents.length; menusLoop++) {
 		buildMenu(xml.menuContents[menusLoop], xml.id + "_container", menusLoop, xml.id);
@@ -366,7 +383,7 @@ function parseMenu(xml) {
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
 	const myObj = JSON.parse(this.responseText);
-	window.console.log(myObj);
+//	window.console.log(myObj);
 	xmlobj = myObj;
 	parseMenu(myObj);
 
