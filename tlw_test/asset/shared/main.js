@@ -361,7 +361,7 @@ function initMenu(xml) {
 		}
 	});
 
-	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseleave", function(){
+	document.getElementById("menubox_" + xml.id).addEventListener("mouseleave", function(){
 		if (buttonLock == false){
 			document.getElementById("menubox_" + xml.id + "_container").style.display = "none";
 			document.getElementById("menubox_" + xml.id).style.zIndex = 16;
