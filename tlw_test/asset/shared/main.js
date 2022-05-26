@@ -167,9 +167,14 @@ function createSubMenu(xml, parent, order, topmenu){
 	elementThing = document.getElementById("menubox_" + parent + "_" + xml.id);
 	elementThing.appendChild(replace_i);
 
-	for (let menusLoopSubMenuTop = 0; menusLoopSubMenuTop < xml.menuContents.length; menusLoopSubMenuTop++) {
+	window.console.log(topmenu);
+
+/*	for (let menusLoopSubMenuTop = 0; menusLoopSubMenuTop < xml.menuContents.length; menusLoopSubMenuTop++) {
 		createSubMenuContent(xml.menuContents[menusLoopSubMenuTop], "menubox_" + parent + "_" + xml.id, topmenu, menusLoopSubMenuTop);
+
+		buildMenu(xml.menuContents[menusLoop], parent + "_" + xml.id + "_container", menusLoop, topmenu);
 	}
+*/
 
 	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(){
 		if (buttonLock == false){
@@ -179,14 +184,16 @@ function createSubMenu(xml, parent, order, topmenu){
 		}
 	});
 
-	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("click", function(){
+	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("click", function(a){
 		if (xml.behaviour != "Label") {
-			if (buttonLock == false){
-				buttonLock = true;
-				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
-				summonAudio("menu_sel");
+			if (a.target.id == "menubox_" + parent + "_" + xml.id) {
+				if (buttonLock == false){
+					buttonLock = true;
+					document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
+					summonAudio("menu_sel");
 
-				document.getElementById("script_lastedited").contentWindow.setTimeout(press, 500, xml, parent);
+					document.getElementById("script_lastedited").contentWindow.setTimeout(press, 500, xml, parent);
+				}
 			}
 		}
 	});
