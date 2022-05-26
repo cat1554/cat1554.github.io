@@ -14,7 +14,6 @@ body {
 	font-family: "LCD", "Courier New", "Helvetica";
 	cursor: url(core/arrow.cur), default;
 	image-rendering: pixelated;
-	overscroll-behavior: none;
 }
 
 a {
