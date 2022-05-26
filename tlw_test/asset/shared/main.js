@@ -140,35 +140,7 @@ function createSubMenuContent(xml, source, topmenu, order){
 //	Main frame
 
 	window.console.log("xml=" + xml + "\nsrc=" + source + "\ntop=" + topmenu + "\nord=" + order);
-
-/*	replace_i = document.createElement("div");
-	replace_i.id = "menubox_" + ancestry + "_" + xml.id;
-	replace_i.className = "menubox";
-	replace_i.style.position = "absolute";
-	replace_i.style.top = "0px";
-	replace_i.style.left = 100%;
-	replace_i.style.width = xml.width + "px";
-	replace_i.style.height = (xml.depth * 20) + "px";
-	if (debugMode != -1) {
-		replace_i.style.zIndex = 128;
-	}
-	elementThing = source;
-	elementThing.appendChild(replace_i);
-
-	
-
-
-	replace_c = document.createElement("div");
-	replace_c.id = "menubox_" + ancestry + "_" + xml.id + "_container";
-	replace_c.className = "menucont";
-	replace_c.style.position = "absolute";
-	replace_c.style.top = "20px";
-	replace_c.style.bottom = "0px";
-	replace_c.style.left = "0px";
-	replace_c.style.width = "100%";
-	elementThing = document.getElementById("menubox_" + ancestry + "_" + xml.id);
-	elementThing.appendChild(replace_c);
-
+/*
 	for (let menusLoopSubMenu = 0; menusLoopSubMenu < xml.menuContents.length; menusLoopSubMenu++) {
 		buildMenu(xml.menuContents[menusLoopSubMenu], ancestry + "_" + xml.id + "_container", menusLoopSubMenu, xml.id);
 	} */
@@ -183,6 +155,17 @@ function createSubMenu(xml, parent, order, topmenu){
 	window.console.log(parent);
 	elementThing = document.getElementById("menubox_" + parent);
 	elementThing.appendChild(replace_d);
+
+	replace_i = document.createElement("div");
+	replace_i.id = "menubox_" + parent + "_" + xml.id + "_container";
+	replace_i.className = "menucont";
+	replace_i.style.position = "absolute";
+	replace_i.style.top = "0px";
+	replace_i.style.left = "100%";
+	replace_i.style.width = xml.width + "px";
+	replace_i.style.height = (xml.depth * 20) + "px";
+	elementThing = document.getElementById("menubox_" + parent + "_" + xml.id);
+	elementThing.appendChild(replace_i);
 
 	for (let menusLoopSubMenuTop = 0; menusLoopSubMenuTop < xml.menuContents.length; menusLoopSubMenuTop++) {
 		createSubMenuContent(xml.menuContents[menusLoopSubMenuTop], "menubox_" + parent + "_" + xml.id, topmenu, menusLoopSubMenuTop);
