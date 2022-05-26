@@ -139,7 +139,7 @@ function createButton(xml, parent, order, menu){
 function createSubMenuContent(xml, source, topmenu, order){
 //	Main frame
 
-	window.console.log(xml, source, topmenu, order);
+	window.console.log("xml=" + xml + "\nsrc=" + source + "\ntop=" + topmenu + "\nord=" + order);
 
 /*	replace_i = document.createElement("div");
 	replace_i.id = "menubox_" + ancestry + "_" + xml.id;
