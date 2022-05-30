@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>tlw/</title>
+
+<!--	<base href="http://www.totallylegitwebsite.online/" target="_self"> -->
+	<base href="https://cat1554.github.io/tlw_test/" target="_self">
+
+	<link rel="stylesheet" href="asset/shared/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="asset/shared/faviconservice/favi.ico">
+
+	<link rel="manifest" href="asset/shared/manifest.json">
+	<link rel="icon" type="image/png" href="asset/shared/faviconservice/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="asset/shared/faviconservice/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="asset/shared/faviconservice/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="asset/shared/faviconservice/favicon-16x16.png">
+
+	<meta property="og:title" content="MyRail Planner - TotallyLegitWebsite" />
+	<meta property="og:description" content="Have the direction sense of a rock? Use this tool to plan out a trip on the server's very large train system!" />
+
+	<script src="asset/shared/main.js"></script>
+	<script src="asset/game/mc/metro/page.js"></script>
+</head>
+<body onLoad="initGlobal(); initPage();">
+	<div class="map_toolbar"></div>
+
+	<canvas id="train_map" width="1200" height="1200" style="position: fixed; left: 0px; bottom: 0px; width: 150px; height: 150px; display: block; object-fit: contain; transition: all 0.1s">
+	</canvas>
+</body>
+</html>
