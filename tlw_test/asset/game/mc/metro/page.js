@@ -180,7 +180,7 @@ xmlhttp.onload = function() {
 
 function initPage(){
 	c = document.getElementById("train_map");
-	ctx = canvas.getContext("2d");
+	ctx = c.getContext("2d");
 
 	originalHeight = c.height;
 	originalWidth = c.width;
