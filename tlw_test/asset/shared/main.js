@@ -403,7 +403,7 @@ function global_parseMenu(xml) {
 	}
 }
 
-function notifSys() {
+function global_notifSys() {
 	
 }
 
