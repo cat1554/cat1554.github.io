@@ -465,7 +465,7 @@ function initGlobal() {
 	global_elementThing = global_replace_a;
 	global_elementThing.appendChild(global_replace_b);
 
-	global_replace_b.innerHTML = pageContent;
+	global_replace_b.innerHTML = global_pageContent;
 
 	global_replace_c = document.createElement("iframe");
 	global_replace_c.id = "script_lastedited";
