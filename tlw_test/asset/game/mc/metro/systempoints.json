@@ -1,107 +1,103 @@
 {
     
-    "contents": [
+    "lines": [
 	{
 		"line": "Brown",
+        "id": 0,
 		"colour": "#884400",
 		"points": [
             {
-                "type": "stop",
-                "label": "Kimball",
                 "x": -1169,
                 "z": -961
             },
             {
-                "type": "point",
                 "x": -1169,
                 "z": -843
             },
             {
-                "type": "point",
                 "x": -1109,
                 "z": -780
             },
             {
-                "type": "stop",
-                "label": "Monroe",
-                "x": -1109,
-                "z": -703
-            },
-            {
-                "type": "stop",
-                "label": "Convention Centre",
-                "x": -1109,
-                "z": -504
-            },
-            {
-                "type": "stop",
-                "label": "Roosevelt",
-                "x": -1109,
-                "z": -401
-            },
-            {
-                "type": "stop",
-                "label": "Boxy Square",
-                "x": -1109,
-                "z": -269
-            },
-            {
-                "type": "stop",
-                "label": "Damen",
-                "x": -1109,
-                "z": -178
-            },
-            {
-                "type": "stop",
-                "label": "State",
-                "x": -1109,
-                "z": -51
-            },
-            {
-                "type": "stop",
-                "label": "King",
-                "x": -1109,
-                "z": 25
-            },
-            {
-                "type": "point",
                 "x": -1109,
                 "z": 46
             },
             {
-                "type": "stop",
-                "label": "Pulaski",
-                "x": -1046,
-                "z": 46
-            },
-            {
-                "type": "point",
                 "x": -983,
                 "z": 46
             },
             {
-                "type": "stop",
-                "label": "Quincy",
-                "x": -983,
-                "z": -13
-            },
-            {
-                "type": "point",
                 "x": -983,
                 "z": -72
             },
             {
-                "type": "stop",
-                "label": "Merchandise Mart",
-                "x": -1046,
-                "z": -72
-            },
-            {
-                "type": "point",
                 "x": -1109,
                 "z": -72
             }
 		]
 	}
+    ],
+    "stops": [
+    {
+        "line": "Brown",
+        "colour": "#884400",
+        "points": [
+            {
+                "label": "Kimball",
+                "x": -1169,
+                "z": -961
+            },
+            {
+                "label": "Monroe",
+                "x": -1109,
+                "z": -703
+            },
+            {
+                "label": "Convention Centre",
+                "x": -1109,
+                "z": -504
+            },
+            {
+                "label": "Roosevelt",
+                "x": -1109,
+                "z": -401
+            },
+            {
+                "label": "Boxy Square",
+                "x": -1109,
+                "z": -269
+            },
+            {
+                "label": "Damen",
+                "x": -1109,
+                "z": -178
+            },
+            {
+                "label": "State",
+                "x": -1109,
+                "z": -51
+            },
+            {
+                "label": "King",
+                "x": -1109,
+                "z": 25
+            },
+            {
+                "label": "Pulaski",
+                "x": -1046,
+                "z": 46
+            },
+            {
+                "label": "Quincy",
+                "x": -983,
+                "z": -13
+            },
+            {
+                "label": "Merchandise Mart",
+                "x": -1046,
+                "z": -72
+            }
+        ]
+    }
     ]
 }
