@@ -55,6 +55,7 @@ function mapRenderLine(x, z, clr){
 }
 
 function mapRenderStep(){
+	window.console.log("step");
 	for (let lineLoop = 0; lineLoop < xmlobj.lines.length; lineLoop++) {
 		for (let lineRenderLoop = 0; lineRenderLoop < (xmlobj.lines[lineLoop].length - 1); lineRenderLoop++) {
 			mapRenderLine(xmlobj.lines[lineRenderLoop][lineRenderLoop], xmlobj.lines[lineRenderLoop][lineRenderLoop + 1], xmlobj.lines[lineRenderLoop].colour);
