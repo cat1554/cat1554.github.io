@@ -7,9 +7,9 @@ var originalWidth;
 var originalHeight;
 var xmlobj;
 
-var x;
-var y;
-var z;
+var pan_x;
+var pan_y;
+var pan_z;
 
 var imageScale = 8;
 
@@ -50,10 +50,17 @@ function getObjectFitSize(
   	};
 }
 
+function mapRenderLine(x, z, clr){
+	window.console.log(x, z, clr);
+}
+
 function mapRenderStep(){
-	for (let lineRenderLoop = 0; lineRenderLoop < xmlobj.lines.length; lineRenderLoop++) {
-		window.console.log(xmlobj.lines[lineRenderLoop]);
+	for (let lineLoop = 0; lineLoop < xmlobj.lines.length; lineLoop++) {
+		for (let lineRenderLoop = 0; lineRenderLoop < (xmlobj.lines[lineLoop].length - 1); lineRenderLoop++) {
+			mapRenderLine(xmlobj.lines[lineRenderLoop][lineRenderLoop], xmlobj.lines[lineRenderLoop][lineRenderLoop + 1], xmlobj.lines[lineRenderLoop].colour);
+		}
 	}
+
 /*	clockable = new Date();
 
 	ctx.beginPath();
@@ -175,7 +182,7 @@ xmlhttp.onload = function() {
 	window.console.log(myObj);
 	xmlobj = myObj;
 
-	setInterval(mapRenderStep, 500);
+	setInterval(mapRenderStep, 5000);
 };
 
 function initPage(){
