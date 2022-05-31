@@ -6,10 +6,9 @@
 	height: 50%;
 }
 
-
 #train_map {
 	position: absolute;
-	bottom: -50%;
+	bottom: -240px;
 	left: 200px;
 	background-color: grey;
 }
