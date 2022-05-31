@@ -69,18 +69,20 @@ function mapRenderStop(x, z, lne, lbl){
 	ctx.beginPath();
 	ctx.lineWidth = Math.max((pan_y * 16), 16);
 	ctx.strokeStyle = "black";
-	ctx.fillStyle = "white";
+//	ctx.fillStyle = "white";
 	ctx.arc(
 		( ((x + pan_x) * pan_y) + 2560),
 		( ((z + pan_z) * pan_y) + 1920), 
-		(pan_y * 8),
+		(pan_y * 16),
 		0,
 		2 * Math.PI
 	);
-	ctx.fill(); 
+	ctx.stroke(); 
 }
 
 function mapRenderStep(){
+	ctx.clearRect(0, 0, 5120, 3840)
+;
 	for (let lineLoop = 0; lineLoop < xmlobj.lines.length; lineLoop++) {
 		for (let lineRenderLoop = 0; lineRenderLoop < (xmlobj.lines[lineLoop].points.length - 1); lineRenderLoop++) {
 			mapRenderLine(xmlobj.lines[lineLoop].points[lineRenderLoop], xmlobj.lines[lineLoop].points[lineRenderLoop + 1], xmlobj.lines[lineLoop].colour);
