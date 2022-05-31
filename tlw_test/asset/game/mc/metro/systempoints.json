@@ -38,66 +38,99 @@
 	}
     ],
     "stops": [
-    {
-        "line": "Brown",
-        "colour": "#884400",
-        "points": [
-            {
-                "label": "Kimball",
-                "x": -1169,
-                "z": -961
-            },
-            {
-                "label": "Monroe",
-                "x": -1109,
-                "z": -703
-            },
-            {
-                "label": "Convention Centre",
-                "x": -1109,
-                "z": -504
-            },
-            {
-                "label": "Roosevelt",
-                "x": -1109,
-                "z": -401
-            },
-            {
-                "label": "Boxy Square",
-                "x": -1109,
-                "z": -269
-            },
-            {
-                "label": "Damen",
-                "x": -1109,
-                "z": -178
-            },
-            {
-                "label": "State",
-                "x": -1109,
-                "z": -51
-            },
-            {
-                "label": "King",
-                "x": -1109,
-                "z": 25
-            },
-            {
-                "label": "Pulaski",
-                "x": -1046,
-                "z": 46
-            },
-            {
-                "label": "Quincy",
-                "x": -983,
-                "z": -13
-            },
-            {
-                "label": "Merchandise Mart",
-                "x": -1046,
-                "z": -72
-            }
-        ]
-    }
+        {
+            "label": "Kimball",
+            "lines": [
+                "#884400"
+            ],
+            "x": -1169,
+            "z": -961
+        },
+        {
+            "label": "Monroe",
+            "lines": [
+                "#884400"
+            ],
+            "x": -1109,
+            "z": -703
+        },
+        {
+            "label": "Convention Centre",
+            "lines": [
+                "#884400"
+            ],
+            "x": -1109,
+            "z": -504
+        },
+        {
+            "label": "Roosevelt",
+            "lines": [
+                "#884400"
+            ],
+            "x": -1109,
+            "z": -401
+        },
+        {
+            "label": "Boxy Square",
+            "lines": [
+                "#884400",
+                "#880088"
+            ],
+            "x": -1109,
+            "z": -269
+        },
+        {
+            "label": "Damen",
+            "lines": [
+                "#884400"
+            ],
+            "x": -1109,
+            "z": -178
+        },
+        {
+            "label": "State",
+            "lines": [
+                "#884400",
+                "#008800"
+            ],
+            "x": -1109,
+            "z": -51
+        },
+        {
+            "label": "King",
+            "lines": [
+                "#884400",
+                "#008800"
+            ],
+            "x": -1109,
+            "z": 25
+        },
+        {
+            "label": "Pulaski",
+            "lines": [
+                "#884400",
+                "#008800"
+            ],
+            "x": -1046,
+            "z": 46
+        },
+        {
+            "label": "Quincy",
+            "lines": [
+                "#884400",
+                "#008800"
+            ],
+            "x": -983,
+            "z": -13
+        },
+        {
+            "label": "Merchandise Mart",
+            "lines": [
+                "#884400",
+                "#008800"
+            ],
+            "x": -1046,
+            "z": -72
+        }
     ]
 }
