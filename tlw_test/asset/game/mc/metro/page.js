@@ -56,12 +56,12 @@ function mapRenderLine(x, z, clr){
 	ctx.lineWidth = Math.max((pan_y * 16), 16);
 	ctx.strokeStyle = clr;
 	ctx.moveTo(
-		(0 + 2560),
-		(0 + 1920)
+		( ((x.x + pan_x) * pan_y) + 2560),
+		( ((x.z + pan_z) * pan_y) + 1920)
 	);
 	ctx.lineTo(
-		((z.x + pan_x) * pan_y),
-		((z.z + pan_z) * pan_y)
+		( ((z.x + pan_x) * pan_y) + 2560),
+		( ((z.z + pan_z) * pan_y) + 1920)
 	);
 	ctx.stroke();
 }
