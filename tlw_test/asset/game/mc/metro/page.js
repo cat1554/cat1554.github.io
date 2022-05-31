@@ -60,8 +60,8 @@ function mapRenderLine(x, z, clr){
 		((x.z + pan_z) * pan_y)
 	);
 	ctx.lineTo(
-		((y.x + pan_x) * pan_y),
-		((y.z + pan_z) * pan_y)
+		((z.x + pan_x) * pan_y),
+		((z.z + pan_z) * pan_y)
 	);
 	ctx.stroke();
 }
