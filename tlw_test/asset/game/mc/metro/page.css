@@ -1,7 +1,7 @@
 #train_map {
 	position: absolute;
 	top: 32px;
-	left: 128px;
+	right: 128px;
 	background-color: grey;
 }
 
@@ -10,6 +10,6 @@
 	top: 0px;
 	bottom: 0px;
 	left: 0px;
-	width: 128px;
+	right: 768px;
 	background-color: #ffddaa;
 }
