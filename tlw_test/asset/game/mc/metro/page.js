@@ -69,7 +69,7 @@ function mapRenderLine(x, z, clr){
 	ctx.arc(
 		( ((x.x + pan_x) * pan_y) + 2560),
 		( ((x.z + pan_z) * pan_y) + 1920),
-		Math.max((pan_y * 16), 16),
+		Math.max((pan_y * 8), 8),
 		0,
 		2 * Math.PI
 	);
@@ -80,7 +80,7 @@ function mapRenderLine(x, z, clr){
 	ctx.arc(
 		( ((z.x + pan_x) * pan_y) + 2560),
 		( ((z.z + pan_z) * pan_y) + 1920),
-		Math.max((pan_y * 16), 16),
+		Math.max((pan_y * 8), 8),
 		0,
 		2 * Math.PI
 	);
