@@ -7,9 +7,9 @@ var originalWidth;
 var originalHeight;
 var xmlobj;
 
-var pan_x;
-var pan_y;
-var pan_z;
+var pan_x = -1100;
+var pan_y = 1;
+var pan_z = 0;
 
 var imageScale = 8;
 
@@ -51,15 +51,24 @@ function getObjectFitSize(
 }
 
 function mapRenderLine(x, z, clr){
-	window.console.log(x, z, clr);
+//	window.console.log(x.x, x.z, z.x, z.z, clr);
+	ctx.beginPath();
+	ctx.lineWidth = Math.max(pan_y, 2);
+	ctx.strokeStyle = clr;
+	ctx.moveTo(
+		((x.x + pan_x) * pan_y),
+		((x.z + pan_z) * pan_y)
+	);
+	ctx.lineTo(
+		((y.x + pan_x) * pan_y),
+		((y.z + pan_z) * pan_y)
+	);
+	ctx.stroke();
 }
 
 function mapRenderStep(){
 	for (let lineLoop = 0; lineLoop < xmlobj.lines.length; lineLoop++) {
-		window.console.log("lineLoop=" + lineLoop);
-		window.console.log(xmlobj.lines[lineLoop]);
 		for (let lineRenderLoop = 0; lineRenderLoop < (xmlobj.lines[lineLoop].points.length - 1); lineRenderLoop++) {
-			window.console.log("lineRenderLoop=" + lineRenderLoop);
 			mapRenderLine(xmlobj.lines[lineLoop].points[lineRenderLoop], xmlobj.lines[lineLoop].points[lineRenderLoop + 1], xmlobj.lines[lineLoop].colour);
 		}
 	}
