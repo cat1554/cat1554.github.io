@@ -53,7 +53,7 @@ function getObjectFitSize(
 function mapRenderLine(x, z, clr){
 //	window.console.log(x.x, x.z, z.x, z.z, clr);
 	ctx.beginPath();
-	ctx.lineWidth = Math.max(pan_y, 2);
+	ctx.lineWidth = Math.max((pan_y * 16), 16);
 	ctx.strokeStyle = clr;
 	ctx.moveTo(
 		((x.x + pan_x) * pan_y),
