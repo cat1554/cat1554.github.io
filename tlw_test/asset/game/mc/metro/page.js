@@ -69,7 +69,7 @@ function mapRenderStop(x, z, lne, lbl){
 	ctx.beginPath();
 	ctx.lineWidth = Math.max((pan_y * 16), 16);
 	ctx.strokeStyle = "black";
-//	ctx.fillStyle = "white";
+	ctx.fillStyle = "white";
 	ctx.arc(
 		( ((x + pan_x) * pan_y) + 2560),
 		( ((z + pan_z) * pan_y) + 1920), 
@@ -77,6 +77,7 @@ function mapRenderStop(x, z, lne, lbl){
 		0,
 		2 * Math.PI
 	);
+	ctx.fill(); 
 	ctx.stroke(); 
 }
 
