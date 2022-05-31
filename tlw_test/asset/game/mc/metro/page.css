@@ -56,3 +56,10 @@
 	width: 100%;
 	height: 64px;
 }
+
+.label {
+	color: red;
+	position: absolute;
+	right: 32px;
+	text-align: right;
+}
