@@ -60,6 +60,13 @@
 .label {
 	color: red;
 	position: absolute;
-	right: 32px;
-	text-align: right;
+	left: 8px;
+	text-align: left;
+}
+
+.toolbar_value {
+	color: red;
+	position: absolute;
+	right: 8px;
+	text-align: left;
 }
