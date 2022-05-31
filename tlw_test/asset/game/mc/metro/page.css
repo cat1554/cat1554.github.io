@@ -1,4 +1,4 @@
-.train_map_position{
+.train_map_position {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -39,6 +39,8 @@
 	width: 100%;
 	height: 64px;
 	background-color: black;
+
+	line-height: 0px;
 }
 
 .map_toolbar_controls_2 {
@@ -64,9 +66,41 @@
 	text-align: left;
 }
 
+.label_xpos {
+	top: 0px;
+}
+
+.label_zpos {
+	top: 32px;
+}
+
+.label_ypos {
+	top: 64px;
+}
+
+.label_near {
+	top: 96px;
+}
+
 .toolbar_value {
 	color: red;
 	position: absolute;
 	right: 8px;
-	text-align: left;
+	text-align: right;
+}
+
+#toolbar_xpos {
+	top: 16px;
+}
+
+#toolbar_zpos {
+	top: 48px;
+}
+
+#toolbar_ypos {
+	top: 80px;
+}
+
+#toolbar_near {
+	top: 112px;
 }
