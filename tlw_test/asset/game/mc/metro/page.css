@@ -5,7 +5,7 @@
 	background-color: grey;
 }
 
-#map_toolbar {
+.map_toolbar {
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
