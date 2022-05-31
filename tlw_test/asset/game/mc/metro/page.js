@@ -60,7 +60,7 @@ function mapRenderStep(){
 		window.console.log(xmlobj.lines[lineLoop]);
 		for (let lineRenderLoop = 0; lineRenderLoop < (xmlobj.lines[lineLoop].points.length - 1); lineRenderLoop++) {
 			window.console.log("lineRenderLoop=" + lineRenderLoop);
-			mapRenderLine(xmlobj.lines[lineRenderLoop].points[lineRenderLoop], xmlobj.lines[lineRenderLoop].points[lineRenderLoop + 1], xmlobj.lines[lineRenderLoop].colour);
+			mapRenderLine(xmlobj.lines[lineLoop].points[lineRenderLoop], xmlobj.lines[lineLoop].points[lineRenderLoop + 1], xmlobj.lines[lineLoop].colour);
 		}
 	}
 
