@@ -8,7 +8,7 @@ var originalHeight;
 var xmlobj;
 
 var pan_x = -1100;
-var pan_y = 4;
+var pan_y = 1;
 var pan_z = 0;
 
 var imageScale = 8;
@@ -194,7 +194,7 @@ xmlhttp.onload = function() {
 	window.console.log(myObj);
 	xmlobj = myObj;
 
-	setInterval(mapRenderStep, 50);
+	setInterval(mapRenderStep, 100);
 };
 
 function initPage(){
