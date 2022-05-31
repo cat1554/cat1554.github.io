@@ -67,6 +67,7 @@ function mapRenderLine(x, z, clr){
 }
 
 function mapRenderStep(){
+	window.console.log("step");
 	for (let lineLoop = 0; lineLoop < xmlobj.lines.length; lineLoop++) {
 		for (let lineRenderLoop = 0; lineRenderLoop < (xmlobj.lines[lineLoop].points.length - 1); lineRenderLoop++) {
 			mapRenderLine(xmlobj.lines[lineLoop].points[lineRenderLoop], xmlobj.lines[lineLoop].points[lineRenderLoop + 1], xmlobj.lines[lineLoop].colour);
