@@ -1,15 +1,15 @@
 #train_map {
 	position: absolute;
-	top: 32px;
-	right: 128px;
+	top: -50%;
+	left: 200px;
 	background-color: grey;
 }
 
 .map_toolbar {
 	position: absolute;
 	top: 0px;
-	bottom: 0px;
+	height: 100%;
 	left: 0px;
-	right: 768px;
+	width: 200px;
 	background-color: #ffddaa;
 }
