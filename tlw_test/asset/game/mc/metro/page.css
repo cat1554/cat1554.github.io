@@ -3,5 +3,13 @@
 	top: 32px;
 	left: 128px;
 	background-color: grey;
-	border: 2px solid black;
+}
+
+#map_toolbar {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 128px;
+	background-color: #ffddaa;
 }
