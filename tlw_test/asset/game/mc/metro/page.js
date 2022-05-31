@@ -8,7 +8,7 @@ var originalHeight;
 var xmlobj;
 
 var pan_x = -1100;
-var pan_y = 1;
+var pan_y = 4;
 var pan_z = 0;
 
 var imageScale = 8;
@@ -56,8 +56,8 @@ function mapRenderLine(x, z, clr){
 	ctx.lineWidth = Math.max((pan_y * 16), 16);
 	ctx.strokeStyle = clr;
 	ctx.moveTo(
-		((x.x + pan_x) * pan_y),
-		((x.z + pan_z) * pan_y)
+		(0 + 2560),
+		(0 + 1920)
 	);
 	ctx.lineTo(
 		((z.x + pan_x) * pan_y),
@@ -67,7 +67,6 @@ function mapRenderLine(x, z, clr){
 }
 
 function mapRenderStep(){
-	window.console.log("step");
 	for (let lineLoop = 0; lineLoop < xmlobj.lines.length; lineLoop++) {
 		for (let lineRenderLoop = 0; lineRenderLoop < (xmlobj.lines[lineLoop].points.length - 1); lineRenderLoop++) {
 			mapRenderLine(xmlobj.lines[lineLoop].points[lineRenderLoop], xmlobj.lines[lineLoop].points[lineRenderLoop + 1], xmlobj.lines[lineLoop].colour);
@@ -195,7 +194,7 @@ xmlhttp.onload = function() {
 	window.console.log(myObj);
 	xmlobj = myObj;
 
-	setInterval(mapRenderStep, 5000);
+	setInterval(mapRenderStep, 50);
 };
 
 function initPage(){
