@@ -9,6 +9,9 @@ var clearType = 0;
 
 var scene = 0;
 
+var screenTimer = 6560;
+var transitionTimer = 0;
+
 const clockScaleMultiplier = 4;
 
 function getObjectFitSize(
@@ -103,80 +106,161 @@ function returnHome() {
 	setTimeout(returnHome2, 500);
 }
 
-function transition() {
-	if (clearLoops < 300) {
-		switch(clearType) {
-			case 0:
-				ctx.fillRect(0, 0, 2560, 1920);
-				fixBorder();
-				clearLoops = 300;
-				break;
-			case 1:
-				if (((clearLoops / 15) % 2) < 1) {
-					// Down
-					setBlock(((clearLoops * 20) % 300) + Math.floor(clearLoops / 15));
-				} else {
-					// Up
-					setBlock(Math.floor(clearLoops / 15) + (280 - ((clearLoops * 20) % 300)));
-				}
-				break;
-			case 2:
-				setBlock(clearLoops);
-				break;
-			case 3:
-				if (((clearLoops / 15) % 2) < 1) {
-					// Right
-					setBlock(((clearLoops * 20) % 300) + Math.floor(clearLoops / 15));
-				} else {
-					// Left
-					setBlock(300 - (((clearLoops * 20) % 300) + Math.floor(clearLoops / 15)));
-				}
-				break;
-			case 4:
-				if (((clearLoops / 20) % 2) < 1) {
-					// Right
+function transition(minTime) {
+	if (minTime != undefined) {
+		if (document.getElementById("music").currentTime >= minTime) {
+if (clearLoops < 300) {
+			switch(clearType) {
+				case 0:
+					ctx.fillRect(0, 0, 2560, 1920);
+					fixBorder();
+					clearLoops = 300;
+					break;
+				case 1:
+					if (((clearLoops / 15) % 2) < 1) {
+						// Down
+						setBlock(((clearLoops * 20) % 300) + Math.floor(clearLoops / 15));
+					} else {
+						// Up
+						setBlock(Math.floor(clearLoops / 15) + (280 - ((clearLoops * 20) % 300)));
+					}
+					break;
+				case 2:
 					setBlock(clearLoops);
-				} else {
-					// Left
-					setBlock((280 - (Math.floor(clearLoops / 20) * 20) + (19 - (clearLoops % 20))));
-				}
-				break;
-			case 5:
-				if (((clearLoops / 20) % 2) < 1) {
-					// Right
-					setBlock((clearLoops % 20) + (Math.floor(clearLoops / 40) * 20));
-				} else {
-					// Left
-					setBlock(299 - ((clearLoops % 20) + (Math.floor(clearLoops / 40) * 20)));
-				}
-				break;
-			case 6:
-				if (((clearLoops / 15) % 2) < 1) {
-					// Right
-					setBlock(((clearLoops * 20) % 300) + Math.floor(clearLoops / 30));
-				} else {
-					// Left
-					setBlock(300 - (((clearLoops * 20) % 300) + Math.floor((clearLoops + 30) / 30)));
-				}
-				break;
-			default:
-				if (((clearLoops / 20) % 2) < 1) {
-					// Right
-					setBlock(clearLoops);
-				} else {
-					// Left
-					setBlock((Math.floor(clearLoops / 20) * 20) + (19 - (clearLoops % 20)));
-				}
-		}
-		clearLoops++;
-		if ((clearLoops % 5) == 4) {
-			setTimeout(transition, 20);
+					break;
+				case 3:
+					if (((clearLoops / 15) % 2) < 1) {
+						// Right
+						setBlock(((clearLoops * 20) % 300) + Math.floor(clearLoops / 15));
+					} else {
+						// Left
+						setBlock(300 - (((clearLoops * 20) % 300) + Math.floor(clearLoops / 15)));
+					}
+					break;
+				case 4:
+					if (((clearLoops / 20) % 2) < 1) {
+						// Right
+						setBlock(clearLoops);
+					} else {
+						// Left
+						setBlock((280 - (Math.floor(clearLoops / 20) * 20) + (19 - (clearLoops % 20))));
+					}
+					break;
+				case 5:
+					if (((clearLoops / 20) % 2) < 1) {
+						// Right
+						setBlock((clearLoops % 20) + (Math.floor(clearLoops / 40) * 20));
+					} else {
+						// Left
+						setBlock(299 - ((clearLoops % 20) + (Math.floor(clearLoops / 40) * 20)));
+					}
+					break;
+				case 6:
+					if (((clearLoops / 15) % 2) < 1) {
+						// Right
+						setBlock(((clearLoops * 20) % 300) + Math.floor(clearLoops / 30));
+					} else {
+						// Left
+						setBlock(300 - (((clearLoops * 20) % 300) + Math.floor((clearLoops + 30) / 30)));
+					}
+					break;
+				default:
+					if (((clearLoops / 20) % 2) < 1) {
+						// Right
+						setBlock(clearLoops);
+					} else {
+						// Left
+						setBlock((Math.floor(clearLoops / 20) * 20) + (19 - (clearLoops % 20)));
+					}
+			}
+			clearLoops++;
+			if ((clearLoops % 3) == 2) {
+				setTimeout(transition, 15);
+			} else {
+				transition();
+			}
 		} else {
-			transition();
+			scene++;
+			title();
+		}
+		} else {
+			setTimeout(transition, 15, minTime);
 		}
 	} else {
-		scene++;
-		title();
+		if (clearLoops < 300) {
+			switch(clearType) {
+				case 0:
+					ctx.fillRect(0, 0, 2560, 1920);
+					fixBorder();
+					clearLoops = 300;
+					break;
+				case 1:
+					if (((clearLoops / 15) % 2) < 1) {
+						// Down
+						setBlock(((clearLoops * 20) % 300) + Math.floor(clearLoops / 15));
+					} else {
+						// Up
+						setBlock(Math.floor(clearLoops / 15) + (280 - ((clearLoops * 20) % 300)));
+					}
+					break;
+				case 2:
+					setBlock(clearLoops);
+					break;
+				case 3:
+					if (((clearLoops / 15) % 2) < 1) {
+						// Right
+						setBlock(((clearLoops * 20) % 300) + Math.floor(clearLoops / 15));
+					} else {
+						// Left
+						setBlock(300 - (((clearLoops * 20) % 300) + Math.floor(clearLoops / 15)));
+					}
+					break;
+				case 4:
+					if (((clearLoops / 20) % 2) < 1) {
+						// Right
+						setBlock(clearLoops);
+					} else {
+						// Left
+						setBlock((280 - (Math.floor(clearLoops / 20) * 20) + (19 - (clearLoops % 20))));
+					}
+					break;
+				case 5:
+					if (((clearLoops / 20) % 2) < 1) {
+						// Right
+						setBlock((clearLoops % 20) + (Math.floor(clearLoops / 40) * 20));
+					} else {
+						// Left
+						setBlock(299 - ((clearLoops % 20) + (Math.floor(clearLoops / 40) * 20)));
+					}
+					break;
+				case 6:
+					if (((clearLoops / 15) % 2) < 1) {
+						// Right
+						setBlock(((clearLoops * 20) % 300) + Math.floor(clearLoops / 30));
+					} else {
+						// Left
+						setBlock(300 - (((clearLoops * 20) % 300) + Math.floor((clearLoops + 30) / 30)));
+					}
+					break;
+				default:
+					if (((clearLoops / 20) % 2) < 1) {
+						// Right
+						setBlock(clearLoops);
+					} else {
+						// Left
+						setBlock((Math.floor(clearLoops / 20) * 20) + (19 - (clearLoops % 20)));
+					}
+			}
+			clearLoops++;
+			if ((clearLoops % 3) == 2) {
+				setTimeout(transition, 15);
+			} else {
+				transition();
+			}
+		} else {
+			scene++;
+			title();
+		}
 	}
 	fixBorder();
 }
@@ -218,7 +302,7 @@ function title() {
 
 			clearType = 2;
 			ctx.fillStyle="#00F";
-			setTimeout(transition, 4000);
+			setTimeout(transition, screenTimer);
 			break;
 
 
@@ -254,7 +338,7 @@ function title() {
 
 			clearType = 3;
 			ctx.fillStyle="#808";
-			setTimeout(transition, 4000);
+			setTimeout(transition, screenTimer);
 			break;
 
 
@@ -289,7 +373,7 @@ function title() {
 
 			clearType = 4;
 			ctx.fillStyle="#FF0";
-			setTimeout(transition, 4000);
+			setTimeout(transition, screenTimer);
 			break;
 
 
@@ -323,7 +407,7 @@ function title() {
 
 			clearType = 5;
 			ctx.fillStyle="#88F";
-			setTimeout(transition, 4000);
+			setTimeout(transition, screenTimer);
 			break;
 
 
@@ -357,7 +441,7 @@ function title() {
 
 			clearType = 6;
 			ctx.fillStyle="#AAA";
-			setTimeout(transition, 4000);
+			setTimeout(transition, screenTimer);
 			break;
 
 
@@ -393,7 +477,7 @@ function title() {
 
 			clearType = 0;
 			ctx.fillStyle="#AAA";
-			setTimeout(transition, 4000);
+			setTimeout(transition, screenTimer);
 			break;
 
 
@@ -429,7 +513,7 @@ function title() {
 
 			clearType = 0;
 			ctx.fillStyle="#AAA";
-			setTimeout(transition, 4000);
+			setTimeout(transition, screenTimer);
 			break;
 
 
@@ -461,12 +545,12 @@ function title() {
 			ctx.font = "900 " + (30 * clockScaleMultiplier) + "px monospace";
 			ctx.fillText("MDN Web Docs", ((c.width/2) + 1000), ((c.height/2) - 300));
 
-			ctx.fillStyle="#FA0";
+			ctx.fillStyle="#F00";
 			ctx.fillText("You", ((c.width/2) + 1000), ((c.height/2) + 100));
 
 			clearType = 0;
 			ctx.fillStyle="#AAA";
-			setTimeout(transition, 4000);
+			setTimeout(transition, screenTimer);
 			break;
 
 
@@ -586,6 +670,7 @@ function title() {
 		case 44:
 			clearType = 0;
 			ctx.fillStyle="#AAA";
+			window.console.log("AAA");
 			setTimeout(transition, 1000);
 			break;
 		case 45:
@@ -760,7 +845,7 @@ function title() {
 
 			clearType = 1;
 			ctx.fillStyle="#F80";
-			setTimeout(transition, 4000);
+			setTimeout(transition, 5000);
 	}
 }
 
@@ -796,10 +881,12 @@ function haoreuchSetup2() {
 	ctx.fillRect(0, 0, 2560, 1920);
 	fixBorder();
 	c.style.opacity = "1";
-	setTimeout(title, 500);
+	document.getElementById("music").addEventListener("play", title);
+	document.getElementById("music").play();
 }
 
 function a() {
 	document.getElementById("playText").style.display = "none";
+
 	setTimeout(haoreuchSetup2, 100);
 }

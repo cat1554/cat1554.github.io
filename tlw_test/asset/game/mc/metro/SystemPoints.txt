@@ -1,6 +1,8 @@
 World border size: 20,000 blocks
 World border centre: 0, 0
 
+/dmarker add id:genlake_purp icon:PurpleLine label:"Genesis Lake - Purple Line" set:"Rail - Regional"
+
 Brown:
 	Kimball: -1169, -961
 	-1169, -843
