@@ -58,11 +58,17 @@ function fixBorder() {
 	}
 }
 
+function debugText(){
+	document.getElementById("debug_text1").innerHTML = document.getElementById("music").currentTime;
+	document.getElementById("debug_text2").innerHTML = scene;
+}
+
 function setBlock(what){
 	what2 = (what % 300);
 	ctx.fillRect(((what2 % 20) * 128), (Math.floor(what2 / 20) * 128), 128, 128);
 	fixBorder();
 }
+
 function setBlockLogo(){
 	setBlock(88);
 	setBlock(91);
@@ -961,6 +967,8 @@ function a() {
 	document.getElementById("playText").style.display = "none";
 	document.body.style.cursor = "none";
 	document.body.requestFullscreen();
+
+	setInterval(debugText, 10);
 
 	setTimeout(haoreuchSetup2, 1000);
 }
