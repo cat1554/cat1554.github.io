@@ -103,7 +103,7 @@ function returnHome2() {
 function returnHome1() {
 	document.getElementById("backHomeText").style.opacity = "1";
 	document.getElementById("sel").play();
-	setTimeout(returnHome2, 500);
+	setTimeout(returnHome2, 1000);
 }
 
 function musicOut() {
@@ -917,7 +917,7 @@ function title() {
 
 			clearType = 1;
 			ctx.fillStyle="#F80";
-			setTimeout(transition, 5000);
+			setTimeout(transition, 5000, 3);
 	}
 }
 
