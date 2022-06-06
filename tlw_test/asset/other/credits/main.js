@@ -1,3 +1,5 @@
+var debugMode = "on";
+
 var c;
 var ctx;
 
@@ -59,8 +61,10 @@ function fixBorder() {
 }
 
 function debugText(){
-	document.getElementById("debug_text1").innerHTML = document.getElementById("music").currentTime;
-	document.getElementById("debug_text2").innerHTML = scene;
+	if (debugMode == "on") {
+		document.getElementById("debug_text1").innerHTML = document.getElementById("music").currentTime;
+		document.getElementById("debug_text3").innerHTML = scene;
+	}
 }
 
 function setBlock(what){
@@ -130,8 +134,13 @@ function returnHome() {
 }
 
 function transition(minTime) {
+	document.getElementById("debug_text2").innerHTML = minTime;
 	if (minTime != undefined) {
+		if (debugMode == "on") {
+			document.getElementById("debug_text2").innerHTML = minTime;
+		}
 		if (document.getElementById("music").currentTime >= minTime) {
+			document.getElementById("debug_text2").style.color = "#0FF";
 if (clearLoops < 300) {
 			switch(clearType) {
 				case 0:
@@ -198,18 +207,25 @@ if (clearLoops < 300) {
 			}
 			clearLoops++;
 			if ((clearLoops % 3) == 2) {
-				setTimeout(transition, 15);
+				setTimeout(transition, 15, minTime);
 			} else {
-				transition();
+				transition(minTime);
 			}
 		} else {
 			scene++;
 			title();
 		}
 		} else {
+//			if (debugMode == "on") {
+				document.getElementById("debug_text2").innerHTML = minTime;
+//			}
+			document.getElementById("debug_text2").style.color = "#F00";
 			setTimeout(transition, 15, minTime);
 		}
 	} else {
+//		if (debugMode == "on") {
+			document.getElementById("debug_text2").innerHTML = 0;
+//		}
 		if (clearLoops < 300) {
 			switch(clearType) {
 				case 0:
@@ -506,7 +522,7 @@ function title() {
 
 		case 19:
 			ctx.font = "900 " + (45 * clockScaleMultiplier) + "px monospace";
-			ctx.fillStyle="#000A";
+			ctx.fillStyle="#000";
 			ctx.textAlign = "right";
 			ctx.fillText("Special Thanks", ((c.width/2) + 1000), ((c.height/2) - 600));
 
@@ -516,7 +532,7 @@ function title() {
 			break;
 		case 20:
 			ctx.font = "900 " + (45 * clockScaleMultiplier) + "px monospace";
-			ctx.fillStyle="#000A";
+			ctx.fillStyle="#000";
 			ctx.textAlign = "right";
 			ctx.fillText("Special Thanks", ((c.width/2) + 1000), ((c.height/2) - 600));
 
@@ -542,7 +558,7 @@ function title() {
 
 		case 22:
 			ctx.font = "900 " + (45 * clockScaleMultiplier) + "px monospace";
-			ctx.fillStyle="#0005";
+			ctx.fillStyle="#000";
 			ctx.textAlign = "right";
 			ctx.fillText("Special Thanks", ((c.width/2) + 1000), ((c.height/2) - 600));
 
@@ -552,7 +568,7 @@ function title() {
 			break;
 		case 23:
 			ctx.font = "900 " + (45 * clockScaleMultiplier) + "px monospace";
-			ctx.fillStyle="#000A";
+			ctx.fillStyle="#000";
 			ctx.textAlign = "right";
 			ctx.fillText("Special Thanks", ((c.width/2) + 1000), ((c.height/2) - 600));
 
@@ -694,7 +710,7 @@ function title() {
 			clearType = 0;
 			ctx.fillStyle="#EEE";
 			window.console.log("AAA");
-			setTimeout(transition, 5000);
+			setTimeout(transition, 100, 92.5);
 			break;
 		case 45:
 			clearType = 0;
@@ -923,7 +939,7 @@ function title() {
 
 			clearType = 1;
 			ctx.fillStyle="#F80";
-			setTimeout(transition, 5000, 3);
+			setTimeout(transition, 5000, 6);
 	}
 }
 
