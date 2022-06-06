@@ -9,12 +9,19 @@
 		"x": 32,
 		"y": 0,
 		"menuContents": [
-			{
-				"text": "Procrastinate",
-				"id": "procrast",
-				"type": "button",
-				"behaviour": "Procrastinate"
-			},
+            {
+                "text": "Procrastinate",
+                "id": "procrast",
+                "type": "button",
+                "behaviour": "Procrastinate"
+            },
+            {
+                "text": "Home",
+                "id": "home",
+                "type": "button",
+                "behaviour": "Link",
+                "link": ""
+            },
 			{
 				"text": "Games",
 				"id": "game",
