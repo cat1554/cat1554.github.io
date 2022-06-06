@@ -600,7 +600,7 @@ function title() {
 		case 30:
 			clearType = 0;
 			ctx.fillStyle="#222";
-			setTimeout(transition, 1000);
+			setTimeout(transition, 100, 85.5);
 			break;
 		case 31:
 			clearType = 0;
