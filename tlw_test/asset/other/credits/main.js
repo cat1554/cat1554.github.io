@@ -100,10 +100,27 @@ function returnHome2() {
 	}
 }
 
-function returnHome() {
+function returnHome1() {
 	document.getElementById("backHomeText").style.opacity = "1";
 	document.getElementById("sel").play();
 	setTimeout(returnHome2, 500);
+}
+
+function musicOut() {
+	if (document.getElementById("music").volume > 0) {
+		if ((document.getElementById("music").volume - 0.05) > 0) {
+			document.getElementById("music").volume = (document.getElementById("music").volume - 0.05);
+		} else {
+			document.getElementById("music").volume = (0);
+		}
+		setTimeout(musicOut, 50);
+	} else {
+		setTimeout(returnHome1, 2000);
+	}
+}
+
+function returnHome() {
+	setTimeout(musicOut, 50);
 }
 
 function transition(minTime) {
@@ -669,66 +686,89 @@ function title() {
 			break;
 		case 44:
 			clearType = 0;
-			ctx.fillStyle="#AAA";
+			ctx.fillStyle="#EEE";
 			window.console.log("AAA");
-			setTimeout(transition, 1000);
+			setTimeout(transition, 5000);
 			break;
 		case 45:
 			clearType = 0;
-			ctx.fillStyle="#888";
+			ctx.fillStyle="#DDD";
 			setTimeout(transition, 100);
 			break;
 		case 46:
 			clearType = 0;
-			ctx.fillStyle="#444";
+			ctx.fillStyle="#CCC";
 			setTimeout(transition, 100);
 			break;
 		case 47:
 			clearType = 0;
-			ctx.fillStyle="#000";
+			ctx.fillStyle="#BBB";
 			setTimeout(transition, 100);
 			break;
-
-
 		case 48:
-
 			clearType = 0;
-			ctx.fillStyle="#000";
-			setTimeout(transition, 500);
+			ctx.fillStyle="#AAA";
+			setTimeout(transition, 100);
 			break;
 		case 49:
-			ctx.fillStyle="#555";
-			setBlockLogo();
-
 			clearType = 0;
-			ctx.fillStyle="#000";
+			ctx.fillStyle="#999";
 			setTimeout(transition, 100);
 			break;
 		case 50:
-			ctx.fillStyle="#AAA";
-			setBlockLogo();
-
 			clearType = 0;
-			ctx.fillStyle="#000";
+			ctx.fillStyle="#888";
 			setTimeout(transition, 100);
 			break;
 		case 51:
-			ctx.fillStyle="#FFF";
-			setBlockLogo();
-
 			clearType = 0;
-			ctx.fillStyle="#000";
-			setTimeout(transition, 2000);
+			ctx.fillStyle="#777";
+			setTimeout(transition, 100);
 			break;
 		case 52:
-			ctx.fillStyle="#AAA";
-			setBlockLogo();
-
+			clearType = 0;
+			ctx.fillStyle="#666";
+			setTimeout(transition, 100);
+			break;
+		case 53:
+			clearType = 0;
+			ctx.fillStyle="#555";
+			setTimeout(transition, 100);
+			break;
+		case 54:
+			clearType = 0;
+			ctx.fillStyle="#444";
+			setTimeout(transition, 100);
+			break;
+		case 55:
+			clearType = 0;
+			ctx.fillStyle="#333";
+			setTimeout(transition, 100);
+			break;
+		case 56:
+			clearType = 0;
+			ctx.fillStyle="#222";
+			setTimeout(transition, 100);
+			break;
+		case 57:
+			clearType = 0;
+			ctx.fillStyle="#111";
+			setTimeout(transition, 100);
+			break;
+		case 58:
 			clearType = 0;
 			ctx.fillStyle="#000";
 			setTimeout(transition, 100);
 			break;
-		case 53:
+
+
+		case 59:
+
+			clearType = 0;
+			ctx.fillStyle="#000";
+			setTimeout(transition, 500);
+			break;
+		case 60:
 			ctx.fillStyle="#555";
 			setBlockLogo();
 
@@ -736,7 +776,39 @@ function title() {
 			ctx.fillStyle="#000";
 			setTimeout(transition, 100);
 			break;
-		case 54:
+		case 61:
+			ctx.fillStyle="#AAA";
+			setBlockLogo();
+
+			clearType = 0;
+			ctx.fillStyle="#000";
+			setTimeout(transition, 100);
+			break;
+		case 62:
+			ctx.fillStyle="#FFF";
+			setBlockLogo();
+
+			clearType = 0;
+			ctx.fillStyle="#000";
+			setTimeout(transition, 2000);
+			break;
+		case 63:
+			ctx.fillStyle="#AAA";
+			setBlockLogo();
+
+			clearType = 0;
+			ctx.fillStyle="#000";
+			setTimeout(transition, 100);
+			break;
+		case 64:
+			ctx.fillStyle="#555";
+			setBlockLogo();
+
+			clearType = 0;
+			ctx.fillStyle="#000";
+			setTimeout(transition, 100);
+			break;
+		case 65:
 			ctx.fillStyle="#000";
 			setBlockLogo();
 
@@ -745,7 +817,7 @@ function title() {
 			setTimeout(transition, 500);
 			break;
 
-		case 55:
+		case 66:
 			ctx.font = "900 " + (30 * clockScaleMultiplier) + "px monospace";
 			ctx.fillStyle="#FFF5";
 			ctx.textAlign = "center";
@@ -755,7 +827,7 @@ function title() {
 			ctx.fillStyle="#000";
 			setTimeout(transition, 100);
 			break;
-		case 56:
+		case 67:
 			ctx.font = "900 " + (30 * clockScaleMultiplier) + "px monospace";
 			ctx.fillStyle="#FFFA";
 			ctx.textAlign = "center";
@@ -765,7 +837,7 @@ function title() {
 			ctx.fillStyle="#000";
 			setTimeout(transition, 100);
 			break;
-		case 57:
+		case 68:
 			ctx.font = "900 " + (30 * clockScaleMultiplier) + "px monospace";
 			ctx.fillStyle="#FFF";
 			ctx.textAlign = "center";
@@ -775,7 +847,7 @@ function title() {
 			ctx.fillStyle="#000";
 			setTimeout(transition, 2000);
 			break;
-		case 58:
+		case 69:
 			ctx.font = "900 " + (30 * clockScaleMultiplier) + "px monospace";
 			ctx.fillStyle="#FFFA";
 			ctx.textAlign = "center";
@@ -785,7 +857,7 @@ function title() {
 			ctx.fillStyle="#000";
 			setTimeout(transition, 100);
 			break;
-		case 59:
+		case 70:
 			ctx.font = "900 " + (30 * clockScaleMultiplier) + "px monospace";
 			ctx.fillStyle="#FFF5";
 			ctx.textAlign = "center";
@@ -795,13 +867,13 @@ function title() {
 			ctx.fillStyle="#000";
 			setTimeout(transition, 100);
 			break;
-		case 60:
+		case 71:
 			clearType = 0;
 			ctx.fillStyle="#000";
-			setTimeout(transition, 4000);
+			setTimeout(transition, 2000);
 			break;
 
-		case 61:
+		case 72:
 			returnHome();
 			break;
 
@@ -887,6 +959,8 @@ function haoreuchSetup2() {
 
 function a() {
 	document.getElementById("playText").style.display = "none";
+	document.body.style.cursor = "none";
+	document.body.requestFullscreen();
 
-	setTimeout(haoreuchSetup2, 100);
+	setTimeout(haoreuchSetup2, 1000);
 }
