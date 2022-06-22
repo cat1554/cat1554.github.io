@@ -93,6 +93,15 @@ function global_press(xml, ancestry){
 				global_editMessage("You will be taken to:\n" + xml.link + "\nContinue?", {txt: "No", func: "close"}, {txt: "Yes", func: xml.link}, null);
 				break;
 			case "Procrastinate":
+				if (global_buttonLock == true){
+					if (global_menuOpen == 1) {
+						global_summonAudio("menu_cls");
+					}
+					global_menuOpen = 0;
+					document.getElementById("menubox_" + xml.id + "_container").style.display = "none";
+					document.getElementById("menubox_" + xml.id).style.zIndex = 16;
+					global_buttonLock == false;
+				}
 				break;
 			default:
 		}
