@@ -98,7 +98,6 @@ function global_press(xml, ancestry){
 						global_summonAudio("menu_cls");
 					}
 					global_menuOpen = 0;
-					document.getElementById("menubox_" + ancestry + "_" + xml.id).style.display = "none";
 					document.getElementById("menubox_" + ancestry).style.zIndex = 16;
 					global_buttonLock == false;
 				}
