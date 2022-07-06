@@ -99,6 +99,9 @@ function global_press(xml, ancestry){
 					}
 					global_menuOpen = 0;
 					document.getElementById("menubox_" + ancestry).style.zIndex = 16;
+
+					document.getElementById("menubox_" + ancestry).style.display = "none";
+//					document.getElementById("menubox_" + xml.id).style.zIndex = 16;
 					global_buttonLock == false;
 				}
 				break;
