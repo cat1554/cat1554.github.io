@@ -55,6 +55,7 @@ function global_debugTest(){
 		window.console.log("HTML modified: " + document.lastModified);
 		window.console.log("Main JS modified: " + document.getElementById("script_lastedited").contentDocument.lastModified);
 		window.console.log("Main CSS modified: " + document.getElementById("style_lastedited").contentDocument.lastModified);
+		window.console.log("Navigator modified: " + document.getElementById("menu_lastedited").contentDocument.lastModified);
 	}
 }
 
@@ -512,6 +513,13 @@ function initGlobal() {
 	global_replace_c.id = "style_lastedited";
 	global_replace_c.style.display = "none";
 	global_replace_c.src = "asset/shared/main.css";
+	global_elementThing = global_replace_a;
+	global_elementThing.appendChild(global_replace_c);
+
+	global_replace_c = document.createElement("iframe");
+	global_replace_c.id = "menu_lastedited";
+	global_replace_c.style.display = "none";
+	global_replace_c.src = "asset/shared/menuservice/menucontent.json";
 	global_elementThing = global_replace_a;
 	global_elementThing.appendChild(global_replace_c);
 
