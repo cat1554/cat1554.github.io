@@ -53,7 +53,7 @@
                                 "text": "Train Tools",
                                 "id": "server",
                                 "type": "button",
-                                "behaviour": "OffLink",
+                                "behaviour": "Link",
                                 "link": "game/mc/train"
                             },
                             {
