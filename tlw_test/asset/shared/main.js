@@ -102,7 +102,7 @@ function global_press(xml, ancestry){
 
 					document.getElementById("menubox_" + ancestry).style.display = "none";
 //					document.getElementById("menubox_" + xml.id).style.zIndex = 16;
-					global_buttonLock == false;
+					global_buttonLock = false;
 				}
 				break;
 			default:
