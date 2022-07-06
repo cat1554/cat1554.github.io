@@ -1,6 +1,6 @@
 function pleaseExist() {
 	document.getElementById("map_frame").width = document.getElementById("pageglobal_content").clientWidth
-	document.getElementById("map_frame").height = document.getElementById("pageglobal_content").clientHeight
+//	document.getElementById("map_frame").height = document.getElementById("pageglobal_content").clientHeight - 20
 }
 
 function initPage2() {
