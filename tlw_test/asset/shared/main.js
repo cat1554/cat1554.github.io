@@ -450,8 +450,9 @@ function global_initNotif() {
 
 const global_xmlhttp = new XMLHttpRequest();
 global_xmlhttp.onload = function() {
+	window.console.log(this.responseText);
 	const global_myObj = JSON.parse(this.responseText);
-//	window.console.log(myObj);
+	window.console.log(global_myObj);
 	global_xmlobj = global_myObj;
 	global_parseMenu(global_myObj);
 	global_initNotif();
