@@ -1,14 +1,14 @@
 {
     
     "contents": [
-	{
-		"title": "Navigate",
-		"width": 150,
-		"depth": 8,
-		"id": "NavMenu",
-		"x": 32,
-		"y": 0,
-		"menuContents": [
+    {
+        "title": "Navigate",
+        "width": 150,
+        "depth": 8,
+        "id": "NavMenu",
+        "x": 32,
+        "y": 0,
+        "menuContents": [
             {
                 "text": "Procrastinate",
                 "id": "procrast",
@@ -22,16 +22,16 @@
                 "behaviour": "Link",
                 "link": ""
             },
-			{
-				"text": "Games",
-				"id": "game",
-				"type": "submenu",
-				"behaviour": "Link",
-				"link": "game/",
+            {
+                "text": "Games",
+                "id": "game",
+                "type": "submenu",
+                "behaviour": "Label",
+                "link": "game/",
                 "direction": "right",
                 "width": 150,
                 "depth": 2,
-				"menuContents": [
+                "menuContents": [
                     {
                         "text": "Minecraft Server",
                         "id": "mc_server",
@@ -46,21 +46,21 @@
                                 "text": "Status",
                                 "id": "state",
                                 "type": "button",
-                                "behaviour": "Link",
+                                "behaviour": "OffLink",
                                 "link": "game/mc/state"
                             },
                             {
                                 "text": "Train Tools",
                                 "id": "server",
                                 "type": "button",
-                                "behaviour": "Link",
+                                "behaviour": "OffLink",
                                 "link": "game/mc/train"
                             },
                             {
                                 "text": "Connection",
                                 "id": "connect",
                                 "type": "button",
-                                "behaviour": "Link",
+                                "behaviour": "OffLink",
                                 "link": "game/mc/connect"
                             }
                         ]
@@ -69,42 +69,42 @@
                         "text": "Netris",
                         "id": "netris",
                         "type": "button",
-                        "behaviour": "Link",
+                        "behaviour": "OffLink",
                         "link": "game/netris/"
                     }
-				]
-			},
-			{
-				"text": "Get Centre",
-				"id": "get",
-				"type": "button",
-				"behaviour": "Link",
-				"link": "get/",
-				"menuContents": [
-				]
-			},
-			{
-				"text": "NekoPage",
-				"id": "nekocity",
-				"type": "button",
-				"behaviour": "ExtLink",
-				"link": "nekopage.totallylegitwebsite.online"
-			},
-			{
-				"text": "Other",
-				"id": "other",
-				"type": "submenu",
-				"behaviour": "Link",
-				"link": "other/",
+                ]
+            },
+            {
+                "text": "Get Centre",
+                "id": "get",
+                "type": "button",
+                "behaviour": "OffLink",
+                "link": "get/",
+                "menuContents": [
+                ]
+            },
+            {
+                "text": "NekoPage",
+                "id": "nekocity",
+                "type": "button",
+                "behaviour": "OffLink",
+                "link": "nekopage.totallylegitwebsite.online"
+            },
+            {
+                "text": "Other",
+                "id": "other",
+                "type": "submenu",
+                "behaviour": "Label",
+                "link": "other/",
                 "direction": "right",
                 "width": 150,
                 "depth": 4,
-				"menuContents": [
+                "menuContents": [
                     {
                         "text": "Chipost",
                         "id": "chipost",
                         "type": "button",
-                        "behaviour": "Link",
+                        "behaviour": "OffLink",
                         "link": "other/chipost/"
                     },
                     {
@@ -134,7 +134,7 @@
                                         "behaviour": "Label",
                                         "link": "other/",
                                         "direction": "right",
-                                        "width": 300,
+                                        "width": 150,
                                         "depth": 1,
                                         "menuContents": [
                                             {
@@ -154,51 +154,51 @@
                         "text": "Soundboard",
                         "id": "sb",
                         "type": "button",
-                        "behaviour": "Link",
+                        "behaviour": "OffLink",
                         "link": "other/soundboard/"
                     },
                     {
                         "text": "Zombo",
                         "id": "zombo",
                         "type": "button",
-                        "behaviour": "Link",
+                        "behaviour": "OffLink",
                         "link": "other/zombo/"
                     }
-				]
-			},
-			{
-				"text": "Pawkin",
-				"id": "paw",
-				"type": "submenu",
-				"behaviour": "Link",
-				"link": "pawkin/",
+                ]
+            },
+            {
+                "text": "Pawkin",
+                "id": "paw",
+                "type": "submenu",
+                "behaviour": "Label",
+                "link": "pawkin/",
                 "direction": "right",
                 "width": 150,
                 "depth": 2,
-				"menuContents": [
-				]
-			},
-			{
-				"text": "Utility",
-				"id": "util",
-				"type": "submenu",
-				"behaviour": "Link",
-				"link": "util/",
+                "menuContents": [
+                ]
+            },
+            {
+                "text": "Utility",
+                "id": "util",
+                "type": "submenu",
+                "behaviour": "Label",
+                "link": "util/",
                 "direction": "right",
                 "width": 150,
                 "depth": 2,
-				"menuContents": [
-				]
-			},
-			{
-				"text": "Social",
-				"id": "social",
-				"type": "submenu",
-				"behaviour": "Label",
+                "menuContents": [
+                ]
+            },
+            {
+                "text": "Social",
+                "id": "social",
+                "type": "submenu",
+                "behaviour": "Label",
                 "direction": "right",
                 "width": 150,
                 "depth": 4,
-				"menuContents": [
+                "menuContents": [
                     {
                         "text": "Reddit",
                         "id": "reddit",
@@ -234,9 +234,9 @@
                         "behaviour": "ExtLink",
                         "link": "www.youtube.com/cat1554"
                     }
-				]
-			}
-		]
-	}
+                ]
+            }
+        ]
+    }
     ]
 }

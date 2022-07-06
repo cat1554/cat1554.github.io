@@ -339,6 +339,8 @@ function title() {
 			ctx.fillText("Support", ((c.width/2) + 1000), ((c.height/2) + 300));
 			ctx.fillText("Testing", ((c.width/2) + 1000), ((c.height/2) + 500));
 
+			
+
 			clearType = 2;
 			ctx.fillStyle="#00F";
 			setTimeout(transition, screenTimer);
@@ -982,7 +984,7 @@ function haoreuchSetup2() {
 function a() {
 	document.getElementById("playText").style.display = "none";
 	document.body.style.cursor = "none";
-	document.body.requestFullscreen();
+//	document.body.requestFullscreen();
 
 	setInterval(debugText, 10);
 

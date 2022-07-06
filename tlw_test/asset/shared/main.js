@@ -122,21 +122,27 @@ function global_closeMenu(menu, resetItem){
 function global_createButton(xml, parent, order, menu){
 	global_replace_d = document.createElement("button");
 	global_replace_d.id = "menubox_" + parent + "_" + xml.id;
-	global_replace_d.className = "menubutton";
+	if (xml.behaviour == "OffLink") {
+		global_replace_d.className = "offmenubutton";
+	} else {
+		global_replace_d.className = "menubutton";
+	}
 	global_replace_d.innerHTML = xml.text;
 	global_replace_d.style.top = (order * 20) + "px";
 //	window.console.log(parent);
 	global_elementThing = document.getElementById("menubox_" + parent);
 	global_elementThing.appendChild(global_replace_d);
 
-	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(a){
-		if (global_buttonLock == false){
-			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonlight";
-			if (a.target.id == "menubox_" + parent + "_" + xml.id) {
-				global_summonAudio("menu_pop");
+	if (xml.behaviour != "OffLink") {
+		document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(a){
+			if (global_buttonLock == false){
+				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonlight";
+				if (a.target.id == "menubox_" + parent + "_" + xml.id) {
+					global_summonAudio("menu_pop");
+				}
 			}
-		}
-	});
+		});
+	}
 
 	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("click", function(a){
 		if (xml.behaviour != "Label") {
@@ -152,11 +158,13 @@ function global_createButton(xml, parent, order, menu){
 		}
 	});
 
-	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseleave", function(){
-		if (global_buttonLock == false){
-			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubutton";
-		}
-	});
+	if (xml.behaviour != "OffLink") {
+		document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseleave", function(){
+			if (global_buttonLock == false){
+				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubutton";
+			}
+		});
+	}
 }
 
 function global_createSubMenuContent(xml, source, topmenu, order){
