@@ -471,11 +471,12 @@ function initGlobal() {
 	global_elementThing = document.body;
 	global_elementThing.appendChild(global_replace_a);
 
-	global_replace_a = document.createElement("base");
+/*	global_replace_a = document.createElement("base");
 	global_replace_a.href = "https://www.cat1554.github.io/tlw_test/";
 	global_replace_a.target = "_self";
 	global_elementThing = document.body;
 	global_elementThing.appendChild(global_replace_a);
+*/
 
 	global_replace_a = document.createElement("div");
 	global_replace_a.id = "pageglobal_contentframe";
@@ -521,7 +522,7 @@ function initGlobal() {
 
 	document.title = "tlw" + window.location.pathname;
 
-	global_xmlhttp.open("GET", "asset/shared/menuservice/menucontent.json");
+	global_xmlhttp.open("GET", "https://www.cat1554.github.io/tlw_test/asset/shared/menuservice/menucontent.json");
 	global_xmlhttp.send();
 
 	document.getElementById("script_lastedited").contentWindow.setTimeout(global_debugTest, 1000);
