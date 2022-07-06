@@ -149,14 +149,19 @@ function global_createButton(xml, parent, order, menu){
 
 	document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("click", function(a){
 		if (xml.behaviour != "Label") {
-			if (global_buttonLock == false){
-				global_buttonLock = true;
-				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
-				if (a.target.id == "menubox_" + parent + "_" + xml.id) {
-					global_summonAudio("menu_sel");
+			if (xml.behaviour != "OffLink") {
+				if (global_buttonLock == false){
+					global_buttonLock = true;
+					document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonselect";
+					if (a.target.id == "menubox_" + parent + "_" + xml.id) {
+						global_summonAudio("menu_sel");
+					}
+					document.getElementById("script_lastedited").contentWindow.setTimeout(global_press, 500, xml, parent);
 				}
-
-				document.getElementById("script_lastedited").contentWindow.setTimeout(global_press, 500, xml, parent);
+			} else {
+				if (a.target.id == "menubox_" + parent + "_" + xml.id) {
+						global_summonAudio("menu_err");
+				}
 			}
 		}
 	});
