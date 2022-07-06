@@ -83,7 +83,7 @@ function global_summonAudio(obj) {
 }
 
 function global_press(xml, ancestry){
-	window.console.log(xml, ancestry);
+//	window.console.log(xml, ancestry);
 	if (ancestry != "error") {
 		switch(xml.behaviour) {
 			case "Link":
@@ -224,8 +224,8 @@ function global_createSubMenu(xml, parent, order, topmenu){
 			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonlight";
 			document.getElementById("menubox_" + parent + "_" + xml.id + "_container").style.display = "initial";
 			if (a.target.id == "menubox_" + parent + "_" + xml.id) {
-				window.console.log("menubox_" + parent + "_" + xml.id);
-				window.console.log(a.target.id);
+			//	window.console.log("menubox_" + parent + "_" + xml.id);
+			//	window.console.log(a.target.id);
 				global_summonAudio("menu_opn");
 				global_summonAudio("menu_pop");
 			}
@@ -450,9 +450,9 @@ function global_initNotif() {
 
 const global_xmlhttp = new XMLHttpRequest();
 global_xmlhttp.onload = function() {
-	window.console.log(this.responseText);
+//	window.console.log(this.responseText);
 	const global_myObj = JSON.parse(this.responseText);
-	window.console.log(global_myObj);
+//	window.console.log(global_myObj);
 	global_xmlobj = global_myObj;
 	global_parseMenu(global_myObj);
 	global_initNotif();
