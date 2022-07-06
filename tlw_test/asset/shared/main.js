@@ -522,7 +522,7 @@ function initGlobal() {
 
 	document.title = "tlw" + window.location.pathname;
 
-	global_xmlhttp.open("GET", "https://www.cat1554.github.io/tlw_test/asset/shared/menuservice/menucontent.json");
+	global_xmlhttp.open("GET", "https://cat1554.github.io/tlw_test/asset/shared/menuservice/menucontent.json");
 	global_xmlhttp.send();
 
 	document.getElementById("script_lastedited").contentWindow.setTimeout(global_debugTest, 1000);
