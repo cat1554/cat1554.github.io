@@ -137,7 +137,7 @@
                                         "depth": 1,
                                         "menuContents": [
                                             {
-                                                "text": "Okay stop that",
+                                                "text": "Okay Stop That",
                                                 "id": "recursive_cease",
                                                 "type": "button",
                                                 "behaviour": "Label",
@@ -173,8 +173,29 @@
                 "link": "pawkin/",
                 "direction": "right",
                 "width": 150,
-                "depth": 2,
+                "depth": 3,
                 "menuContents": [
+                    {
+                        "text": "Pawkin Home",
+                        "id": "state",
+                        "type": "button",
+                        "behaviour": "OffLink",
+                        "link": "pawkin/"
+                    },
+                    {
+                        "text": "Games",
+                        "id": "state",
+                        "type": "button",
+                        "behaviour": "OffLink",
+                        "link": "pawkin/game/"
+                    },
+                    {
+                        "text": "TrainLink",
+                        "id": "state",
+                        "type": "button",
+                        "behaviour": "OffLink",
+                        "link": "pawkin/trainlink/"
+                    }
                 ]
             },
             {
@@ -185,8 +206,15 @@
                 "link": "util/",
                 "direction": "right",
                 "width": 150,
-                "depth": 2,
+                "depth": 1,
                 "menuContents": [
+                    {
+                        "text": "No Utilities!",
+                        "id": "state",
+                        "type": "button",
+                        "behaviour": "OffLink",
+                        "link": "utility/"
+                    }
                 ]
             },
             {
