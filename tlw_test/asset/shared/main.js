@@ -198,6 +198,15 @@ function global_createSubMenu(xml, parent, order, topmenu){
 	global_elementThing = document.getElementById("menubox_" + parent);
 	global_elementThing.appendChild(global_replace_d);
 
+	global_replace_e = document.createElement("button");
+	global_replace_e.id = "menubox_" + parent + "_" + xml.id;
+	global_replace_e.className = "menubutton";
+	global_replace_e.innerHTML = xml.text;
+	global_replace_e.style.top = (order * 20) + "px";
+//	window.console.log(parent);
+	global_elementThing = global_replace_d;
+	global_elementThing.appendChild(global_replace_e);
+
 	global_replace_i = document.createElement("div");
 	global_replace_i.id = "menubox_" + parent + "_" + xml.id + "_container";
 	global_replace_i.className = "menucont";
