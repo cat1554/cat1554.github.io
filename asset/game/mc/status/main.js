@@ -12,6 +12,17 @@ var p8n = "";
 var flipping = 0;
 var loop = 0;
 
+function xmlGrab(){
+	for (let i = 0; i < 7; i++) {
+		if (("p" + (i + 1) + "n") !== svrxml.players[i].name) {
+			flipPlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
+			("p" + (i + 1) + "n") = svrxml.players[i].name;
+		} else {
+			updatePlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
+		}
+	}
+}
+
 function updatePlayer(num, icn, usr, rnk, pla, plb) {
 	if (flipping == 0) {
 		document.getElementById("sv_u" + num + "r").innerHTML = rnk;
@@ -139,6 +150,12 @@ function pleaseExist() {
 
 		xmlhttp.open("GET", "/asset/game/mc/status/stat.json");
 		xmlhttp.send();
+	} else if (loop == 7) {
+		xmlGrab();
+	} else if (loop == 15) {
+		xmlGrab();
+	} else if (loop == 23) {
+		xmlGrab();
 	}
 }
 
@@ -149,17 +166,6 @@ function initPage2() {
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
 	svrxml = JSON.parse(this.responseText);
-	
-	window.console.debug(svrxml);
-
-	for (let i = 0; i < 7; i++) {
-		if (("p" + (i + 1) + "n") !== svrxml.players[i].name) {
-			flipPlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
-			("p" + (i + 1) + "n") = svrxml.players[i].name;
-		} else {
-			updatePlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
-		}
-	}
 };
 xmlhttp.onerror = function() {
 	window.console.exception(" X X \n     \n XXX \nX   X\nFailed to load the server status.\nLoading cannot continue.\nTHIS IS NORMAL BEHAVIOUR IF THIS FILE IS LOADED LOCALLY.");
