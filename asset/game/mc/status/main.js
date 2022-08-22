@@ -44,13 +44,11 @@ function secsOn(input) {
 }
 
 function xmlGrab(){
-	for (let i = 0; i < 7.5; i++) {
-		window.console.debug("loop " + i);
-//		window.console.debug(window[("p" + (i + 1) + "n")]);
-//		window.console.debug(svrxml.players[i].name);
+		document.getElementById("sv_players_c").innerHTML = svrxml.online;
 
 		if (svrxml.state == 0) {
 			document.getElementById("sv_state").innerHTML = "Offline"
+			document.getElementById("sv_players_c").innerHTML = "?";
 		} else if (svrxml.state == 1) {
 			document.getElementById("sv_state").innerHTML = "Online"
 		} else if (svrxml.state == 2) {
@@ -58,8 +56,6 @@ function xmlGrab(){
 		} else {
 			document.getElementById("sv_state").innerHTML = "Error"
 		}
-
-		document.getElementById("sv_players_c").innerHTML = svrxml.online;
 
 		document.getElementById("sv_uptime").innerHTML = hoursOn(svrxml.uptime) + ":" + minsOn(svrxml.uptime) + ":" + secsOn(svrxml.uptime);
 		document.getElementById("sv_retime").innerHTML = hoursOn(svrxml.restart) + ":" + minsOn(svrxml.restart) + ":" + secsOn(svrxml.restart);
@@ -74,6 +70,7 @@ function xmlGrab(){
 			document.getElementById("sv_resoon").style.opacity = 0;
 		}
 
+	for (let i = 0; i < 7.5; i++) {
 		if (window[("p" + (i + 1) + "n")] !== svrxml.players[i].name) {
 			flipPlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
 		} else {
