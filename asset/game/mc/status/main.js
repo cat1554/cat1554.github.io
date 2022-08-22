@@ -12,16 +12,75 @@ var p8n = "";
 var flipping = 0;
 var loop = 0;
 
+function daysOn(input) {
+	if ((Math.floor(input / 86400)) < 9.5){
+		return "00" + (Math.floor(input / 86400));
+	} else if ((Math.floor(input / 86400)) < 99.5){
+		return "0" + (Math.floor(input / 86400));
+	} else {
+		return (Math.floor(input / 86400));
+	}
+}
+function hoursOn(input) {
+	if ((Math.floor(input / 3600) % 24) < 9.5) {
+		return "0" + (Math.floor(input / 3600) % 24);
+	} else {
+		return (Math.floor(input / 3600) % 24);
+	}
+}
+function minsOn(input) {
+	if ((Math.floor(input / 3600) % 24) < 9.5) {
+		return "0" + (Math.floor(input / 60) % 60);
+	} else {
+		return (Math.floor(input / 60) % 60);
+	}
+}
+function secsOn(input) {
+	if ((Math.floor(input % 60)) < 9.5) {
+		return "0" + (input % 60);
+	} else {
+		return (input % 60);
+	}
+}
+
 function xmlGrab(){
 	for (let i = 0; i < 7.5; i++) {
 		window.console.debug("loop " + i);
 //		window.console.debug(window[("p" + (i + 1) + "n")]);
 //		window.console.debug(svrxml.players[i].name);
+
+		if (svrxml.state == 0) {
+			document.getElementById("sv_state").innerHTML = "Offline"
+		} else if (svrxml.state == 1) {
+			document.getElementById("sv_state").innerHTML = "Online"
+		} else if (svrxml.state == 2) {
+			document.getElementById("sv_state").innerHTML = "Restarting"
+		} else {
+			document.getElementById("sv_state").innerHTML = "Error"
+		}
+
+		document.getElementById("sv_players_c").innerHTML = svr.online;
+
+		document.getElementById("sv_uptime").innerHTML = hoursOn(svrxml.uptime) + ":" + minsOn(svrxml.uptime) + ":" + secsOn(svrxml.uptime);
+		document.getElementById("sv_retime").innerHTML = hoursOn(svrxml.restart) + ":" + minsOn(svrxml.restart) + ":" + secsOn(svrxml.restart);
+
+		if (svrxml.restart < 1800.5) {
+			if (svrxml.state == 1) {
+				document.getElementById("sv_resoon").style.opacity = 1;
+			} else {
+				document.getElementById("sv_resoon").style.opacity = 0;
+			}
+		} else {
+			document.getElementById("sv_resoon").style.opacity = 0;
+		}
+
 		if (window[("p" + (i + 1) + "n")] !== svrxml.players[i].name) {
 			flipPlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
 		} else {
 			updatePlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
 		}
+
+		pleaseExist2();
 	}
 }
 
@@ -67,7 +126,7 @@ function flipPlayer(num, icn, usr, rnk, pla, plb) {
 	}
 }
 
-function pleaseExist() {
+function pleaseExist2() {
 	if (document.getElementById("sv_state").innerHTML == "Online") {
 		document.getElementById("sv_state").style.color = "#0FF";
 	} else if (document.getElementById("sv_state").innerHTML == "Loading") {
@@ -148,7 +207,9 @@ function pleaseExist() {
 		document.getElementById("sv_players_p").style.color = "#555";
 		document.getElementById("sv_players_g").style.left = "-100%";
 	}
+}
 
+function pleaseExist() {
 	loop++;
 
 	if (loop > 31.5) {
