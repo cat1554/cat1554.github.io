@@ -259,6 +259,16 @@
 	z-index: 4;
 }
 
+#sv_players_s{
+	z-index: 2;
+	position: absolute;
+	top: 0px;
+	left: 32px;
+	right: 32px;
+	bottom: 0px;
+	background-color: #000;
+}
+
 #sv_players_g{
 	z-index: 2;
 	position: absolute;
