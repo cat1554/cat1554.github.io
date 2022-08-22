@@ -59,7 +59,7 @@ function xmlGrab(){
 			document.getElementById("sv_state").innerHTML = "Error"
 		}
 
-		document.getElementById("sv_players_c").innerHTML = svr.online;
+		document.getElementById("sv_players_c").innerHTML = svrxml.online;
 
 		document.getElementById("sv_uptime").innerHTML = hoursOn(svrxml.uptime) + ":" + minsOn(svrxml.uptime) + ":" + secsOn(svrxml.uptime);
 		document.getElementById("sv_retime").innerHTML = hoursOn(svrxml.restart) + ":" + minsOn(svrxml.restart) + ":" + secsOn(svrxml.restart);
@@ -87,16 +87,26 @@ function xmlGrab(){
 function updatePlayer(num, icn, usr, rnk, pla, plb) {
 	if (flipping == 0) {
 		document.getElementById("sv_u" + num + "r").innerHTML = rnk;
-		document.getElementById("sv_u" + num + "p").innerHTML = pla;
-		document.getElementById("sv_u" + num + "t").innerHTML = plb;
+		if (usr == "----------------") {
+			document.getElementById("sv_u" + num + "p").innerHTML = "--:--:--";
+			document.getElementById("sv_u" + num + "t").innerHTML = "---:--:--:--";
+		} else {
+			document.getElementById("sv_u" + num + "p").innerHTML = hoursOn(pla) + ":" + minsOn(pla) + ":" + secsOn(pla);
+			document.getElementById("sv_u" + num + "t").innerHTML = daysOn(pla) + ":" hoursOn(pla) + ":" + minsOn(pla) + ":" + secsOn(pla);
+		}
 	}
 }
 
 function flipPlayer2(num, icn, usr, rnk, pla, plb) {
 	document.getElementById("sv_u" + num + "n").innerHTML = usr;
 	document.getElementById("sv_u" + num + "r").innerHTML = rnk;
-	document.getElementById("sv_u" + num + "p").innerHTML = pla;
-	document.getElementById("sv_u" + num + "t").innerHTML = plb;
+	if (usr == "----------------") {
+		document.getElementById("sv_u" + num + "p").innerHTML = "--:--:--";
+		document.getElementById("sv_u" + num + "t").innerHTML = "---:--:--:--";
+	} else {
+		document.getElementById("sv_u" + num + "p").innerHTML = hoursOn(pla) + ":" + minsOn(pla) + ":" + secsOn(pla);
+		document.getElementById("sv_u" + num + "t").innerHTML = daysOn(pla) + ":" hoursOn(pla) + ":" + minsOn(pla) + ":" + secsOn(pla);
+	}
 	document.getElementById("sv_u" + num + "f").src = icn;
 
 	elm_a = document.getElementById("svc_usr" + num);
