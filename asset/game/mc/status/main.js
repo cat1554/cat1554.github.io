@@ -55,6 +55,8 @@ function flipPlayer(num, icn, usr, rnk, pla, plb) {
 		
 		window["p" + num + "n"] = svrxml.players[num - 1].name;
 
+		document.getElementById("tick").play();
+
 		elm_a = document.getElementById("svc_usr" + num);
 		elm_a.style.animation = "userflip1 100ms ease-in 0s 1 normal both";
 
