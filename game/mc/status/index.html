@@ -40,7 +40,7 @@
 
 	<div class="svc_userhead">
 		<div class="sv_players_s">
-			<div id="sv_players_g" style="left: 50%;">
+			<div id="sv_players_g" style="left: -50%;">
 				<div id="sv_players_e"></div>
 			</div>
 		</div>
@@ -50,13 +50,15 @@
 		<div id="sv_players_p">players online</div>
 	</div>
 
+	<div class="svc_userbox_back"></div>
+
 	<table class="svc_userbox">
 		<thead>
-			<tr style="background-image: linear-gradient(to bottom, #840, #000);">
-				<th colspan="3" style="color: #FFF">User</th>
-				<th colspan="1" style="color: #FFF; width: 128px;">Rank</th>
-				<th colspan="1" style="color: #FFF; width: 100px;">Playtime</th>
-				<th colspan="1" style="color: #FFF">Total playtime</th>
+			<tr>
+				<th colspan="3" style="color: #FFF; border: none;">User</th>
+				<th colspan="1" style="color: #FFF; width: 128px; border: none;">Rank</th>
+				<th colspan="1" style="color: #FFF; width: 100px; border: none;">Playtime</th>
+				<th colspan="1" style="color: #FFF; border: none;">Total playtime</th>
 			</tr>
 		</thead>
 		<tbody id="sv_users_cont">
@@ -142,30 +144,5 @@
 			</tr>
 		</tbody>
 	</table>
-
-<!--
-	<table id="sv_tempbox">
-		<thead>
-			<tr>
-				<th colspan="3" style="color: #FFF">User</th>
-				<th colspan="1" style="color: #FFF; width: 128px;">Rank</th>
-				<th colspan="1" style="color: #FFF; width: 100px;">Playtime</th>
-				<th colspan="1" style="color: #FFF">Total playtime</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr class="svc_ur" id="svc_usr1">
-				<td class="svc_txt">1</td>
-				<td class="svc_uc">
-					<img class="svc_user" id="sv_uf" alt="u" src="./../../../asset/game/mc/status/placeholder.png">
-				</td>
-				<td class="svc_usn" id="sv_un">----------------</td>
-				<td class="svc_txt" id="sv_ur">Unfilled slot</td>
-				<td class="svc_txt" id="sv_up">--:--:--</td>
-				<td class="svc_txt" id="sv_ut">----:--:--:--</td>
-			</tr>
-		</tbody>
-	</table>
-	<p>wip</p> -->
 </body>
 </html>
