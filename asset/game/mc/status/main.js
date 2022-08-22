@@ -13,7 +13,7 @@ var flipping = 0;
 var loop = 0;
 
 function xmlGrab(){
-	for (let i = 0; i < 7; i++) {
+	for (let i = 0; i < 7.5; i++) {
 		window.console.debug("loop " + i);
 //		window.console.debug(window[("p" + (i + 1) + "n")]);
 //		window.console.debug(svrxml.players[i].name);
@@ -53,7 +53,7 @@ function flipPlayer(num, icn, usr, rnk, pla, plb) {
 	if (flipping == 0) {
 		flipping = 1;
 		
-		window["p" + (i + 1) + "n"] = svrxml.players[i].name;
+		window["p" + num + "n"] = svrxml.players[i].name;
 
 		elm_a = document.getElementById("svc_usr" + num);
 		elm_a.style.animation = "userflip1 100ms ease-in 0s 1 normal both";
