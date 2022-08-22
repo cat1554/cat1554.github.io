@@ -166,6 +166,8 @@ function initPage2() {
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
 	svrxml = JSON.parse(this.responseText);
+
+	xmlGrab();
 };
 xmlhttp.onerror = function() {
 	window.console.exception(" X X \n     \n XXX \nX   X\nFailed to load the server status.\nLoading cannot continue.\nTHIS IS NORMAL BEHAVIOUR IF THIS FILE IS LOADED LOCALLY.");
