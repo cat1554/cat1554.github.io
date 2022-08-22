@@ -1,6 +1,53 @@
-var u1n = "";
-var u1p = 0;
-var u1t = 0;
+var elm_a;
+var new_a;
+var p1n = "";
+var p2n = "";
+var p3n = "";
+var p4n = "";
+var p5n = "";
+var p6n = "";
+var p7n = "";
+var p8n = "";
+var flipping = 0;
+var loop = 0;
+
+function updatePlayer(num, icn, usr, rnk, pla, plb) {
+	if (flipping == 0) {
+		document.getElementById("sv_u" + num + "r").innerHTML = rnk;
+		document.getElementById("sv_u" + num + "p").innerHTML = pla;
+		document.getElementById("sv_u" + num + "t").innerHTML = plb;
+	}
+}
+
+function flipPlayer2(num, icn, usr, rnk, pla, plb) {
+	document.getElementById("sv_u" + num + "n").innerHTML = usr;
+	document.getElementById("sv_u" + num + "r").innerHTML = rnk;
+	document.getElementById("sv_u" + num + "p").innerHTML = pla;
+	document.getElementById("sv_u" + num + "t").innerHTML = plb;
+	document.getElementById("sv_u" + num + "f").src = icn;
+
+	elm_a = document.getElementById("svc_usr" + num);
+	elm_a.style.animation = "userflip2 100ms ease-in 0s 1 normal both";
+
+	new_a = elm_a.cloneNode(true);
+	elm_a.parentNode.replaceChild(new_a, elm_a);
+
+	flipping = 0;
+}
+
+function flipPlayer(num, icn, usr, rnk, pla, plb) {
+	if (flipping == 0) {
+		flipping = 1;
+
+		elm_a = document.getElementById("svc_usr" + num);
+		elm_a.style.animation = "userflip1 100ms ease-in 0s 1 normal both";
+
+		new_a = elm_a.cloneNode(true);
+		elm_a.parentNode.replaceChild(new_a, elm_a);
+
+		setTimeout(flipPlayer2, 100, num, icn, usr, rnk, pla, plb);
+	}
+}
 
 function pleaseExist() {
 	if (document.getElementById("sv_state").innerHTML == "Online") {
@@ -84,10 +131,24 @@ function pleaseExist() {
 		document.getElementById("sv_players_g").style.left = "-100%";
 	}
 
+	loop++;
+
+	if (loop > 31.5) {
+		loop = 0;
+
+		xmlhttp.open("GET", "/asset/game/mc/status/stat.json");
+		xmlhttp.send();
+		window.console.debug(svrxml);
+		if (p1n !== svrxml.players[0].name) {
+			flipPlayer(1, "/asset/game/mc/status/placeholder.png", svrxml.players[0].name, svrxml.players[0].rank, svrxml.players[0].ontime, svrxml.players[0].total);
+		} else {
+			updatePlayer(1, "/asset/game/mc/status/placeholder.png", svrxml.players[0].name, svrxml.players[0].rank, svrxml.players[0].ontime, svrxml.players[0].total);
+		}
+	}
 }
 
 function initPage2() {
-	setInterval(pleaseExist, 1000);
+	setInterval(pleaseExist, 50);
 }
 
 const xmlhttp = new XMLHttpRequest();
@@ -103,6 +164,6 @@ xmlhttp.onerror = function() {
 function initPage() {
 	setTimeout(initPage2, 100);
 
-	xmlhttp.open("GET", "./../../../asset/game/mc/status/stat.json");
+	xmlhttp.open("GET", "/asset/game/mc/status/stat.json");
 	xmlhttp.send();
 }
