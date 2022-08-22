@@ -138,12 +138,6 @@ function pleaseExist() {
 
 		xmlhttp.open("GET", "/asset/game/mc/status/stat.json");
 		xmlhttp.send();
-		window.console.debug(svrxml);
-		if (p1n !== svrxml.players[0].name) {
-			flipPlayer(1, "/asset/game/mc/status/placeholder.png", svrxml.players[0].name, svrxml.players[0].rank, svrxml.players[0].ontime, svrxml.players[0].total);
-		} else {
-			updatePlayer(1, "/asset/game/mc/status/placeholder.png", svrxml.players[0].name, svrxml.players[0].rank, svrxml.players[0].ontime, svrxml.players[0].total);
-		}
 	}
 }
 
@@ -156,6 +150,11 @@ xmlhttp.onload = function() {
 	var svrxml = JSON.parse(this.responseText);
 	
 	window.console.debug(svrxml);
+		if (p1n !== svrxml.players[0].name) {
+			flipPlayer(1, "/asset/game/mc/status/placeholder.png", svrxml.players[0].name, svrxml.players[0].rank, svrxml.players[0].ontime, svrxml.players[0].total);
+		} else {
+			updatePlayer(1, "/asset/game/mc/status/placeholder.png", svrxml.players[0].name, svrxml.players[0].rank, svrxml.players[0].ontime, svrxml.players[0].total);
+		}
 };
 xmlhttp.onerror = function() {
 	window.console.exception(" X X \n     \n XXX \nX   X\nFailed to load the server status.\nLoading cannot continue.\nTHIS IS NORMAL BEHAVIOUR IF THIS FILE IS LOADED LOCALLY.");
