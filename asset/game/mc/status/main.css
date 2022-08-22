@@ -17,8 +17,8 @@
 .svc_rebox {
 	position: absolute;
 	top: 0px;
-	left: 0px;
-	width: 100%;
+	left: -32px;
+	right: -32px;
 	height: 32px;
 	line-height: 0px;
 	text-align: left;
@@ -130,8 +130,8 @@
 .sv_header {
 	position: absolute;
 	top: 32px;
-	left: 0px;
-	width: 100%;
+	left: -32px;
+	right: -32px;
 	height: 128px;
 	line-height: 0px;
 	text-align: left;
@@ -144,8 +144,8 @@
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
-	left: 128px;
-	right: 0px;
+	left: 160px;
+	right: 32px;
 	color: #FFF;
 	line-height: 96px;
 	display: inline-block;
@@ -160,8 +160,8 @@
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
-	left: 128px;
-	right: 0px;
+	left: 160px;
+	right: 32px;
 	line-height: 160px;
 	display: inline-block;
         vertical-align: middle;
@@ -174,7 +174,7 @@
 #sv_logo {
 	position: absolute;
 	top: 0px;
-	left: 0px;
+	left: 32px;
 	width: 128px;
 	height: 128px;
 }
