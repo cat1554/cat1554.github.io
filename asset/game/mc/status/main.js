@@ -92,7 +92,7 @@ function updatePlayer(num, icn, usr, rnk, pla, plb) {
 			document.getElementById("sv_u" + num + "t").innerHTML = "---:--:--:--";
 		} else {
 			document.getElementById("sv_u" + num + "p").innerHTML = hoursOn(pla) + ":" + minsOn(pla) + ":" + secsOn(pla);
-			document.getElementById("sv_u" + num + "t").innerHTML = daysOn(pla) + ":" hoursOn(pla) + ":" + minsOn(pla) + ":" + secsOn(pla);
+			document.getElementById("sv_u" + num + "t").innerHTML = daysOn(pla) + ":" + hoursOn(pla) + ":" + minsOn(pla) + ":" + secsOn(pla);
 		}
 	}
 }
@@ -105,7 +105,7 @@ function flipPlayer2(num, icn, usr, rnk, pla, plb) {
 		document.getElementById("sv_u" + num + "t").innerHTML = "---:--:--:--";
 	} else {
 		document.getElementById("sv_u" + num + "p").innerHTML = hoursOn(pla) + ":" + minsOn(pla) + ":" + secsOn(pla);
-		document.getElementById("sv_u" + num + "t").innerHTML = daysOn(pla) + ":" hoursOn(pla) + ":" + minsOn(pla) + ":" + secsOn(pla);
+		document.getElementById("sv_u" + num + "t").innerHTML = daysOn(pla) + ":" + hoursOn(pla) + ":" + minsOn(pla) + ":" + secsOn(pla);
 	}
 	document.getElementById("sv_u" + num + "f").src = icn;
 
