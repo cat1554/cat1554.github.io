@@ -53,7 +53,7 @@ function flipPlayer(num, icn, usr, rnk, pla, plb) {
 	if (flipping == 0) {
 		flipping = 1;
 		
-		window["p" + num + "n"] = svrxml.players[i].name;
+		window["p" + num + "n"] = svrxml.players[num - 1].name;
 
 		elm_a = document.getElementById("svc_usr" + num);
 		elm_a.style.animation = "userflip1 100ms ease-in 0s 1 normal both";
