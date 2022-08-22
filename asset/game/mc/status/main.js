@@ -150,11 +150,14 @@ xmlhttp.onload = function() {
 	var svrxml = JSON.parse(this.responseText);
 	
 	window.console.debug(svrxml);
-		if (p1n !== svrxml.players[0].name) {
-			flipPlayer(1, "/asset/game/mc/status/placeholder.png", svrxml.players[0].name, svrxml.players[0].rank, svrxml.players[0].ontime, svrxml.players[0].total);
+
+	for (let i = 0; i < 7; i++) {
+		if ((p + (i + 1) + n) !== svrxml.players[i].name) {
+			flipPlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
 		} else {
-			updatePlayer(1, "/asset/game/mc/status/placeholder.png", svrxml.players[0].name, svrxml.players[0].rank, svrxml.players[0].ontime, svrxml.players[0].total);
+			updatePlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
 		}
+	}
 };
 xmlhttp.onerror = function() {
 	window.console.exception(" X X \n     \n XXX \nX   X\nFailed to load the server status.\nLoading cannot continue.\nTHIS IS NORMAL BEHAVIOUR IF THIS FILE IS LOADED LOCALLY.");

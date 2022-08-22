@@ -5,11 +5,60 @@
             "online":0,
             "players": [
                 {
-                    "name":"cat1554YT",
-                    "rank":"Admin",
+                    "name":"----------------",
+                    "rank":"Unfilled slot",
                     "ontime":0,
                     "total":0,
-                    "face":"fail"
+                    "face":"none"
+                },
+                {
+                    "name":"----------------",
+                    "rank":"Unfilled slot",
+                    "ontime":0,
+                    "total":0,
+                    "face":"none"
+                },
+                {
+                    "name":"----------------",
+                    "rank":"Unfilled slot",
+                    "ontime":0,
+                    "total":0,
+                    "face":"none"
+                },
+                {
+                    "name":"----------------",
+                    "rank":"Unfilled slot",
+                    "ontime":0,
+                    "total":0,
+                    "face":"none"
+                },
+                {
+                    "name":"----------------",
+                    "rank":"Unfilled slot",
+                    "ontime":0,
+                    "total":0,
+                    "face":"none"
+                },
+                {
+                    "name":"----------------",
+                    "rank":"Unfilled slot",
+                    "ontime":0,
+                    "total":0,
+                    "face":"none"
+                },
+                {
+                    "name":"----------------",
+                    "rank":"Unfilled slot",
+                    "ontime":0,
+                    "total":0,
+                    "face":"none"
+                },
+                {
+                    "name":"----------------",
+                    "rank":"Unfilled slot",
+                    "ontime":0,
+                    "total":0,
+                    "face":"none"
                 }
             ]
 }
