@@ -14,9 +14,11 @@ var loop = 0;
 
 function xmlGrab(){
 	for (let i = 0; i < 7; i++) {
-		if (("p" + (i + 1) + "n") !== svrxml.players[i].name) {
+		window.console.debug("loop " + i);
+//		window.console.debug(window[("p" + (i + 1) + "n")]);
+//		window.console.debug(svrxml.players[i].name);
+		if (window[("p" + (i + 1) + "n")] !== svrxml.players[i].name) {
 			flipPlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
-			window["p" + (i + 1) + "n"] = svrxml.players[i].name;
 		} else {
 			updatePlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
 		}
@@ -50,6 +52,8 @@ function flipPlayer2(num, icn, usr, rnk, pla, plb) {
 function flipPlayer(num, icn, usr, rnk, pla, plb) {
 	if (flipping == 0) {
 		flipping = 1;
+		
+		window["p" + (i + 1) + "n"] = svrxml.players[i].name;
 
 		elm_a = document.getElementById("svc_usr" + num);
 		elm_a.style.animation = "userflip1 100ms ease-in 0s 1 normal both";
