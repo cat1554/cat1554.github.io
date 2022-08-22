@@ -155,6 +155,7 @@ xmlhttp.onload = function() {
 	for (let i = 0; i < 7; i++) {
 		if (("p" + (i + 1) + "n") !== svrxml.players[i].name) {
 			flipPlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
+			("p" + (i + 1) + "n") = svrxml.players[i].name;
 		} else {
 			updatePlayer((i + 1), "/asset/game/mc/status/placeholder.png", svrxml.players[i].name, svrxml.players[i].rank, svrxml.players[i].ontime, svrxml.players[i].total);
 		}
