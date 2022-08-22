@@ -189,6 +189,7 @@
 	height: 32px;
 	background-color: #000;
 	overflow: hidden;
+	background-image: linear-gradient(to top, #840, #000, #000, #840);
 }
 
 #sv_players_c {
@@ -276,7 +277,7 @@
 	width: 100%;
 	bottom: 0px;
 	background-color: #840;
-	transition: right 250ms ease 0s;
+	transition: left 250ms ease 0s;
 }
 
 #sv_players_e{
@@ -286,8 +287,8 @@
 	left: 100%;
 	width: 32px;
 	bottom: 0px;
-	background-color: #840;
-	background-image: linear-gradient(to right, #840, #000);
+	background-color: transparent;
+	background-image: linear-gradient(to right, #840, transparent);
 }
 
 /* --------------------------------------- */
