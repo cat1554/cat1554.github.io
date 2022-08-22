@@ -1,0 +1,316 @@
+#pageglobal_contentframe {
+	background-color: #000;
+}
+
+@keyframes rebootpulse {
+	0% {
+		color: #F80;
+	}
+	50% {
+		color: #840;
+	}
+	100% {
+		color: #F80;
+	}
+}
+
+.svc_rebox {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 32px;
+	line-height: 0px;
+	text-align: left;
+	border: none;
+	background-color: #000;
+	background-image: linear-gradient(to top, #420, #000);
+}
+
+.svc_uptime {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 250px;
+	color: #FFF;
+	line-height: 16px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: center;
+	font-weight: 500;
+	font-size: 16px;
+	border: none;
+}
+
+#sv_uptime {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 100px;
+	color: #FFF;
+	line-height: 16px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: center;
+	font-weight: 500;
+	font-size: 16px;
+	border: none;
+}
+
+.svc_rediv {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	color: #FFF;
+	line-height: 16px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: center;
+	font-weight: 500;
+	font-size: 16px;
+	border: none;
+}
+
+.svc_retime {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 100px;
+	right: 0px;
+	color: #FFF;
+	line-height: 16px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: center;
+	font-weight: 500;
+	font-size: 16px;
+	border: none;
+}
+
+#sv_retime {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 250px;
+	right: 0px;
+	color: #FFF;
+	line-height: 16px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: center;
+	font-weight: 500;
+	font-size: 16px;
+	border: none;
+}
+
+#sv_resoon {
+	position: absolute;
+	top: 16px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	color: #FFF;
+	line-height: 16px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: center;
+	font-weight: 900;
+	font-size: 16px;
+	border: none;
+	animation: rebootpulse 500ms linear 0s infinite;
+	transition: opacity 500ms ease 0s;
+}
+
+/* --------------------------------------- */
+
+.sv_header {
+	position: absolute;
+	top: 32px;
+	left: 0px;
+	width: 100%;
+	height: 128px;
+	line-height: 0px;
+	text-align: left;
+	border: none;
+	background-color: #000;
+	background-image: linear-gradient(to bottom, #420, #840, #420, #000);
+}
+
+.sv_name1 {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 128px;
+	right: 0px;
+	color: #FFF;
+	line-height: 96px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: center;
+	font-weight: 500;
+	font-size: 32px;
+	border: none;
+}
+
+#sv_state {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 128px;
+	right: 0px;
+	line-height: 160px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: center;
+	font-weight: 900;
+	font-size: 32px;
+	border: none;
+}
+
+#sv_logo {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 128px;
+	height: 128px;
+}
+
+/* --------------------------------------- */
+
+.svc_userhead {
+	position: absolute;
+	top: 160px;
+	left: 0px;
+	right: 0px;
+	height: 32px;
+	background-color: #000;
+	overflow: hidden;
+}
+
+#sv_players_c {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 16px;
+	right: 0px;
+	color: #FFF;
+	line-height: 24px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: left;
+	font-weight: 500;
+	font-size: 24px;
+	border: none;
+	z-index: 4;
+}
+
+#sv_players_o {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 38px;
+	right: 0px;
+	color: #FFF;
+	line-height: 24px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: left;
+	font-weight: 500;
+	font-size: 24px;
+	border: none;
+	z-index: 4;
+}
+
+#sv_players_m {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 72px;
+	right: 0px;
+	color: #FFF;
+	line-height: 24px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: left;
+	font-weight: 500;
+	font-size: 24px;
+	border: none;
+	z-index: 4;
+}
+
+#sv_players_p {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 94px;
+	right: 0px;
+	color: #FFF;
+	line-height: 24px;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: left;
+	font-weight: 500;
+	font-size: 24px;
+	border: none;
+	z-index: 4;
+}
+
+#sv_players_g{
+	z-index: 2;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	bottom: 0px;
+	background-color: #840;
+	transition: right 250ms ease 0s;
+}
+
+#sv_players_e{
+	z-index: 2;
+	position: absolute;
+	top: 0px;
+	left: 100%;
+	width: 32px;
+	bottom: 0px;
+	background-color: #840;
+	background-image: linear-gradient(to right, #840, #000);
+}
+
+/* --------------------------------------- */
+
+.svc_userbox {
+	position: absolute;
+	top: 192px;
+	left: 0px;
+	right: 0px;
+	color: #FFF;
+	background-color: #000;
+	display: inline-block;
+        vertical-align: middle;
+	text-align: center;
+	font-weight: 500;
+	font-size: 16px;
+	border: none;
+}
+
+.svc_ur {
+	height: 32px;
+}
+
+.svc_uc {
+	width: 32px;
+}
+
+.svc_user {
+	color: #FFF;
+	width: 32px;
+	height: 32px;
+}
+.svc_usn {
+	width: 160px;
+	text-align: left;
+}

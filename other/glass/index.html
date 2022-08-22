@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>cat1554 soundboard</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="main.js"></script>
+
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+	<button onclick="blar()">GO</button>
+	<svg width="640" height="480">
+		<defs>
+			<clipPath id="cut-off-right">
+				<rect x="0" y="0" width="320" height="480" />
+			</clipPath>
+			<clipPath id="cut-off-bottom">
+				<rect x="0" y="-200" width="120" height="480" />
+			</clipPath>
+		</defs>
+		<rect x="0" y="0" width="640" height="480" stroke="black" stroke-width="1" />
+		<circle cx="320" cy="240" r="100" stroke="transparent" fill="white" stroke-width="5" id="coreCircle"/>
+<!--		<rect x="0" y="0" width="640" height="480"fill="black" stroke-width="1" clip-path="url(#cut-off-right)" id="fi2"/> -->
+		<circle cx="320" cy="240" r="100" stroke="transparent" fill="white" stroke-width="5" clip-path="url(#cut-off-right)" id="fi3"/>
+
+		<circle cx="0" cy="0" r="100" stroke="black" fill="transparent" stroke-width="2" id="ct2" clip-path="url(#cut-off-bottom)" transform="translate(320, 140) rotate(-120)"/>
+
+		<circle cx="0" cy="0" r="100" stroke="black" fill="transparent" stroke-width="2" id="ct3" clip-path="url(#cut-off-bottom)" transform="translate(407, 190) rotate(-60)"/>
+
+		<circle cx="0" cy="0" r="100" stroke="black" fill="transparent" stroke-width="2" id="ct4" clip-path="url(#cut-off-bottom)" transform="translate(407, 290) rotate(0)"/>
+
+		<circle cx="0" cy="0" r="100" stroke="black" fill="transparent" stroke-width="2" id="ct5" clip-path="url(#cut-off-bottom)" transform="translate(320, 340) rotate(60)"/>
+
+		<circle cx="0" cy="0" r="100" stroke="black" fill="transparent" stroke-width="2" id="ct6" clip-path="url(#cut-off-bottom)" transform="translate(233, 290) rotate(120)"/>
+
+		<circle cx="0" cy="0" r="100" stroke="green" fill="transparent" stroke-width="2" id="ct1" clip-path="url(#cut-off-bottom)" transform="translate(233, 190) rotate(180)"/>
+
+<!--		<circle cx="407" cy="190" r="100" stroke="blue" fill="transparent" stroke-width="2" id="ci3"/>
+		<circle cx="407" cy="290" r="100" stroke="blue" fill="transparent" stroke-width="2" id="ci4"/>
+		<circle cx="320" cy="340" r="100" stroke="blue" fill="transparent" stroke-width="2" id="ci5"/>
+		<circle cx="233" cy="290" r="100" stroke="blue" fill="transparent" stroke-width="2" id="ci6"/>
+		<circle cx="233" cy="190" r="100" stroke="blue" fill="transparent" stroke-width="2" id="ci1"/>
+-->
+
+		<path d="M 10 80 Q 95 10 180 80" stroke="red" fill="transparent" stroke-width="2"/>
+
+		<line x1="320" x2="320" y1="240" y2="140" stroke="black" stroke-width="2" id="tr1"/>
+		<line x1="320" x2="320" y1="140" y2="240" stroke="black" stroke-width="2" id="tr2"/>
+	</svg>
+</body>
+</html>

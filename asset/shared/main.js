@@ -9,6 +9,11 @@ var global_xmlobj;
 
 var global_lastsel = "";
 
+var global_menu_x1;
+var global_menu_x2;
+var global_menu_y1;
+var global_menu_y2;
+
 var global_replace_a;
 var global_replace_b;
 var global_replace_c;
@@ -57,10 +62,10 @@ var global_sys_aud_src = {
 
 function global_debugTest(){
 	if (global_debugMode != -1) {
-		window.console.log("HTML modified: " + document.lastModified);
-		window.console.log("Main JS modified: " + document.getElementById("script_lastedited").contentDocument.lastModified);
-		window.console.log("Main CSS modified: " + document.getElementById("style_lastedited").contentDocument.lastModified);
-		window.console.log("Navigator modified: " + document.getElementById("menu_lastedited").contentDocument.lastModified);
+		window.console.debug("HTML modified: " + document.lastModified);
+		window.console.debug("Main JS modified: " + document.getElementById("script_lastedited").contentDocument.lastModified);
+		window.console.debug("Main CSS modified: " + document.getElementById("style_lastedited").contentDocument.lastModified);
+		window.console.debug("Navigator modified: " + document.getElementById("menu_lastedited").contentDocument.lastModified);
 	}
 }
 
@@ -69,7 +74,7 @@ function global_summonAudio2(obj) {
 		document.getElementById(obj).remove();
 	});
 	document.getElementById(obj).addEventListener("error", function() {
-		window.console.log("Failed to load file " + document.getElementById(obj).src + " for item: " + obj);
+		window.console.warn("Failed to load file " + document.getElementById(obj).src + " for item: " + obj);
 		document.getElementById(obj).remove();
 	});
 }
@@ -89,7 +94,9 @@ function global_summonAudio(obj) {
 }
 
 function global_press(xml, ancestry){
-//	window.console.log(xml, ancestry);
+	if (global_debugMode != -1) {
+		window.console.debug(xml, ancestry);
+	}
 	if (ancestry != "error") {
 		switch(xml.behaviour) {
 			case "Link":
@@ -100,6 +107,7 @@ function global_press(xml, ancestry){
 					if (global_menuOpen == 1) {
 						global_summonAudio("menu_cls");
 					}
+					global_lastsel = "no";
 					global_menuOpen = 0;
 					document.getElementById("menubox_" + ancestry).style.zIndex = 16;
 
@@ -118,6 +126,7 @@ function global_press(xml, ancestry){
 					if (global_menuOpen == 1) {
 						global_summonAudio("menu_cls");
 					}
+					global_lastsel = "no";
 					global_menuOpen = 0;
 					document.getElementById("menubox_" + ancestry).style.zIndex = 16;
 
@@ -155,7 +164,7 @@ function global_createButton(xml, parent, order, menu){
 	}
 	global_replace_d.innerHTML = xml.text;
 	global_replace_d.style.top = (order * 20) + "px";
-//	window.console.log(parent);
+//	window.console.debug(parent);
 	global_elementThing = document.getElementById("menubox_" + parent);
 	global_elementThing.appendChild(global_replace_d);
 
@@ -166,6 +175,18 @@ function global_createButton(xml, parent, order, menu){
 				if (a.target.id == "menubox_" + parent + "_" + xml.id) {
 					if (global_lastsel != "menubox_" + parent + "_" + xml.id) {
 						global_summonAudio("menu_pop");
+						global_lastsel = "menubox_" + parent + "_" + xml.id;
+					}
+				}
+			}
+		});
+	} else {
+		document.getElementById("menubox_" + parent + "_" + xml.id).addEventListener("mouseover", function(a){
+			if (global_buttonLock == false){
+//				document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonlight";
+				if (a.target.id == "menubox_" + parent + "_" + xml.id) {
+					if (global_lastsel != "menubox_" + parent + "_" + xml.id) {
+//						global_summonAudio("menu_pop");
 						global_lastsel = "menubox_" + parent + "_" + xml.id;
 					}
 				}
@@ -186,6 +207,9 @@ function global_createButton(xml, parent, order, menu){
 				}
 			} else {
 				if (a.target.id == "menubox_" + parent + "_" + xml.id) {
+	if (global_debugMode != -1) {
+		window.console.debug(xml, parent, menu);
+	}
 						global_summonAudio("menu_err");
 				}
 			}
@@ -204,7 +228,7 @@ function global_createButton(xml, parent, order, menu){
 function global_createSubMenuContent(xml, source, topmenu, order){
 //	Main frame
 
-//	window.console.log("xml=", xml, "\nsrc=" + source + "\ntop=" + topmenu + "\nord=" + order);
+//	window.console.debug("xml=", xml, "\nsrc=" + source + "\ntop=" + topmenu + "\nord=" + order);
 /*
 	for (let global_menusLoopSubMenu = 0; global_menusLoopSubMenu < xml.menuContents.length; global_menusLoopSubMenu++) {
 		global_buildMenu(xml.menuContents[global_menusLoopSubMenu], ancestry + "_" + xml.id + "_container", global_menusLoopSubMenu, xml.id);
@@ -217,7 +241,7 @@ function global_createSubMenu(xml, parent, order, topmenu){
 	global_replace_d.className = "menubutton";
 	global_replace_d.innerHTML = xml.text;
 	global_replace_d.style.top = (order * 20) + "px";
-//	window.console.log(parent);
+//	window.console.debug(parent);
 	global_elementThing = document.getElementById("menubox_" + parent);
 	global_elementThing.appendChild(global_replace_d);
 
@@ -230,7 +254,7 @@ function global_createSubMenu(xml, parent, order, topmenu){
 	global_replace_e.style.right = "6px";
 	global_replace_e.style.width = "8px";
 	global_replace_e.style.height = "8px";
-//	window.console.log(parent);
+//	window.console.debug(parent);
 	global_elementThing = global_replace_d;
 	global_elementThing.appendChild(global_replace_e);
 
@@ -245,7 +269,7 @@ function global_createSubMenu(xml, parent, order, topmenu){
 	global_elementThing = document.getElementById("menubox_" + parent + "_" + xml.id);
 	global_elementThing.appendChild(global_replace_i);
 
-//	window.console.log(topmenu);
+//	window.console.debug(topmenu);
 
 	document.getElementById("menubox_" + parent + "_" + xml.id + "_container").style.display = "none";
 
@@ -261,8 +285,8 @@ function global_createSubMenu(xml, parent, order, topmenu){
 			document.getElementById("menubox_" + parent + "_" + xml.id).className = "menubuttonlight";
 			document.getElementById("menubox_" + parent + "_" + xml.id + "_container").style.display = "initial";
 			if (a.target.id == "menubox_" + parent + "_" + xml.id) {
-			//	window.console.log("menubox_" + parent + "_" + xml.id);
-			//	window.console.log(a.target.id);
+			//	window.console.debug("menubox_" + parent + "_" + xml.id);
+			//	window.console.debug(a.target.id);
 				if (global_lastsel != "menubox_" + parent + "_" + xml.id) {
 					global_summonAudio("menu_opn");
 					global_summonAudio("menu_pop");
@@ -391,7 +415,7 @@ function global_createMessage(){
 
 function global_buildMenu(xml, parent, order, menu) {
 	// Top button
-//	window.console.log(xml);
+//	window.console.debug(xml);
 	switch(xml.type) {
 		case "button":
 			global_createButton(xml, parent, order, menu);
@@ -404,7 +428,7 @@ function global_buildMenu(xml, parent, order, menu) {
 
 function global_initMenu(xml) {
 //	Main frame
-//	window.console.log(xml);
+//	window.console.debug(xml);
 
 	global_replace_a = document.createElement("div");
 	global_replace_a.id = "menubox_" + xml.id;
@@ -447,11 +471,15 @@ function global_initMenu(xml) {
 		}
 	});
 
-	document.getElementById("menubox_" + xml.id).addEventListener("mouseleave", function(){
+	document.getElementById("menubox_" + xml.id).addEventListener("mouseleave", function(e){
+		if (global_debugMode == 1) {
+			window.console.debug(e);
+		}
 		if (global_buttonLock == false){
 			if (global_menuOpen == 1) {
 				global_summonAudio("menu_cls");
 			}
+			global_lastsel = "no";
 			global_menuOpen = 0;
 			document.getElementById("menubox_" + xml.id + "_container").style.display = "none";
 			document.getElementById("menubox_" + xml.id).style.zIndex = 16;
@@ -490,14 +518,17 @@ function global_initNotif() {
 
 const global_xmlhttp = new XMLHttpRequest();
 global_xmlhttp.onload = function() {
-//	window.console.log(this.responseText);
+//	window.console.debug(this.responseText);
 	const global_myObj = JSON.parse(this.responseText);
-//	window.console.log(global_myObj);
+//	window.console.debug(global_myObj);
 	global_xmlobj = global_myObj;
 	global_parseMenu(global_myObj);
 	global_initNotif();
 
 //	xmlobj["contents"][0];
+};
+global_xmlhttp.onerror = function() {
+	window.console.exception(" X X \n     \n XXX \nX   X\nFailed to load the menu contents.\nLoading cannot continue.\nTHIS IS NORMAL BEHAVIOUR IF THIS FILE IS LOADED LOCALLY.");
 };
 
 function initGlobal() {
@@ -564,7 +595,7 @@ function initGlobal() {
 
 	global_createMessage();
 
-	window.console.log("debug: " + global_debugMode);
+	window.console.debug("debug: " + global_debugMode);
 
 	document.title = "tlw" + window.location.pathname;
 
