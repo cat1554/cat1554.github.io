@@ -1,3 +1,4 @@
+var svrxml;
 var elm_a;
 var new_a;
 var p1n = "";
@@ -147,7 +148,7 @@ function initPage2() {
 
 const xmlhttp = new XMLHttpRequest();
 xmlhttp.onload = function() {
-	var svrxml = JSON.parse(this.responseText);
+	svrxml = JSON.parse(this.responseText);
 	
 	window.console.debug(svrxml);
 
