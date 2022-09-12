@@ -309,10 +309,11 @@ a {
 #pageglobal_timebar {
 	position: absolute;
 	top: 0px;
-	right: 0px;
+	right: 4px;
 	width: 256px;
 	height: 20px;
 	text-align: right;
+	color: white;
 }
 
 #pageglobal_headbar_notificationbox {
