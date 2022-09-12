@@ -473,22 +473,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "title": "Test",
-            "width": 150,
-            "depth": 1,
-            "id": "TestMenu",
-            "x": 182,
-            "y": 0,
-            "menuContents": [
-                {
-                    "text": "Procrastinate",
-                    "id": "procrast2",
-                    "type": "button",
-                    "behaviour": "Procrastinate"
-                }
-            ]
         }
     ]
 }
