@@ -306,6 +306,15 @@ a {
 	padding: none;
 }
 
+#pageglobal_timebar {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 256px;
+	height: 20px;
+	text-align: right;
+}
+
 #pageglobal_headbar_notificationbox {
 	position: absolute;
 	left: 182px;
