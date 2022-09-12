@@ -1,6 +1,14 @@
 var global_debugMode = 0;
 var global_buttonLock = false;
 
+var global_time = new Date();
+var global_hour = 0;
+var global_hour_st = "";
+var global_min = 0;
+var global_min_st = "";
+var global_sec = 0;
+var global_sec_st = "";
+
 var global_pageContent;
 
 var global_source = "tlw";
@@ -516,6 +524,32 @@ function global_initNotif() {
 	document.getElementById("style_lastedited").contentWindow.setInterval(global_notifSys, 1000);
 }
 
+function global_clockUpdate() {
+	global_time = new Date();
+
+	if (global_time.getHours() < 9.5) {
+		global_hour_st = "0" + global_time.getHours();
+	} else {
+		global_hour_st = global_time.getHours();
+	}
+	if (global_time.getMinutes() < 9.5) {
+		global_min_st = "0" + global_time.getMinutes();
+	} else {
+		global_min_st = global_time.getMinutes();
+	}
+	if (global_time.getSeconds() < 9.5) {
+		global_sec_st = "0" + global_time.getSeconds();
+	} else {
+		global_sec_st = global_time.getSeconds();
+	}
+
+	if ((global_time.getSeconds() % 2) == 1) {
+		document.getElementById("pageglobal_timebar").innerHTML = global_hour_st + ":" + global_min_st + ":" + global_sec_st;
+	} else {
+		document.getElementById("pageglobal_timebar").innerHTML = global_hour_st + " " + global_min_st + " " + global_sec_st;
+	}
+}
+
 const global_xmlhttp = new XMLHttpRequest();
 global_xmlhttp.onload = function() {
 //	window.console.debug(this.responseText);
@@ -608,4 +642,5 @@ function initGlobal() {
 	global_xmlhttp.send();
 
 	document.getElementById("script_lastedited").contentWindow.setTimeout(global_debugTest, 1000);
+	document.getElementById("script_lastedited").contentWindow.setInterval(global_clockUpdate, 50);
 }
