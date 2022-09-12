@@ -542,6 +542,11 @@ function initGlobal() {
 	global_elementThing = document.body;
 	global_elementThing.appendChild(global_replace_a);
 
+	global_replace_d = document.createElement("div");
+	global_replace_d.id = "pageglobal_timebar";
+	global_elementThing = global_replace_a;
+	global_elementThing.appendChild(global_replace_d);
+
 /*	global_replace_a = document.createElement("base");
 	global_replace_a.href = "https://www.cat1554.github.io/tlw_test/";
 	global_replace_a.target = "_self";
