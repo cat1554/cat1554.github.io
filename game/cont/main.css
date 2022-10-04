@@ -1,0 +1,95 @@
+@keyframes p_errormessage_slide {
+	0% {
+		top: -32px;
+	}
+	10% {
+		top: 0px;
+	}
+	100% {
+		top: 0px;
+	}
+}
+@keyframes p_errormessage_slide_fast {
+	0% {
+		top: -32px;
+	}
+	100% {
+		top: 0px;
+	}
+}
+
+.p_eror {
+	position: absolute;
+	top: -32px;
+	left: 0px;
+	background-color: #F00;
+	width: 100%;
+	height: 32px;
+	color: #FFF;
+	font-weight: 900;
+	font-size: 16px;
+	font-family: monospace;
+
+	display: flex;
+	text-align: center;
+	justify-content: center; 
+	align-items: center; 
+	z-index: 512;
+}
+.p_warn {
+	position: absolute;
+	top: -32px;
+	left: 0px;
+	background-color: #F80;
+	width: 100%;
+	height: 32px;
+	color: #FFF;
+	font-weight: 900;
+	font-size: 16px;
+	font-family: monospace;
+
+	display: flex;
+	text-align: center;
+	justify-content: center; 
+	align-items: center; 
+	z-index: 512;
+}
+.p_sucs {
+	position: absolute;
+	top: -32px;
+	left: 0px;
+	background-color: #55F;
+	width: 100%;
+	height: 32px;
+	color: #FFF;
+	font-weight: 900;
+	font-size: 16px;
+	font-family: monospace;
+
+	display: flex;
+	text-align: center;
+	justify-content: center; 
+	align-items: center; 
+	z-index: 512;
+}
+.p_load {
+	position: absolute;
+	top: -32px;
+	left: 0px;
+	background-color: #777;
+	width: 100%;
+	height: 32px;
+	color: #FFF;
+	font-weight: 900;
+	font-size: 16px;
+	font-family: monospace;
+
+	display: flex;
+	text-align: center;
+	justify-content: center; 
+	align-items: center; 
+	z-index: 512;
+}
+.no {
+	display: none;
+}

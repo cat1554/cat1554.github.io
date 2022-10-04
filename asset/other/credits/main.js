@@ -61,7 +61,7 @@ function fixBorder() {
 }
 
 function debugText(){
-	if (debugMode == "on") {
+	if (debugMode !== -1) {
 		document.getElementById("debug_text1").innerHTML = document.getElementById("music").currentTime;
 		document.getElementById("debug_text3").innerHTML = scene;
 	}
@@ -939,6 +939,10 @@ function title() {
 	}
 }
 
+function mPlay() {
+	document.getElementById("music").play();
+}
+
 function haoreuchSetup2() {
 	c = document.getElementById("anim_canvas");
 	ctx = c.getContext("2d");
@@ -972,10 +976,13 @@ function haoreuchSetup2() {
 	fixBorder();
 	c.style.opacity = "1";
 	document.getElementById("music").addEventListener("play", title);
-	document.getElementById("music").play();
+
+	setTimeout(mPlay, 100);
 }
 
 function a() {
+	debugMode = ((window.location.search).indexOf("debug=1"));
+
 	document.getElementById("playText").style.display = "none";
 	document.body.style.cursor = "none";
 
