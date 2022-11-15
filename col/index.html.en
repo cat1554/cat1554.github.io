@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>title</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="main.css">
+
+	<script>
+		function initPage() {
+			document.getElementById("mnscrpt").src = "main.js?anticache" + Date.now();
+		}
+	</script>
+</head>
+
+<body onLoad="initPage();">
+	<script type="module" id="mnscrpt" src="main.js"></script>
+	<div id="failureScreen">
+		<div id="failAlign">
+			<div id="failText">
+			</div>
+		</div>
+	</div>
+	<div id="simulation">
+		<div id="simulation_align">
+		</div>
+	</div>
+	
+	<div id="buildCover" style="position: absolute; top: 0px; left: 0px; right: 0px; height: 100%; text-align: center; display: flex; align-items: center; justify-content: center; background-color: #000; color: #FFF; font-family: Sans-serif; font-weight: 900; z-index: 512; transition: opacity 500ms linear; opacity: 1;">Waiting for render service...
+	</div>
+
+	<audio preload="auto" id="lu"><source src="./texture/l2u.wav" type="audio/wav"></audio>
+	<audio preload="auto" id="ld"><source src="./texture/l2d.wav" type="audio/wav"></audio>
+	<audio preload="auto" id="lb"><source src="./texture/dinga.wav" type="audio/wav"></audio>
+</body>
+</html>

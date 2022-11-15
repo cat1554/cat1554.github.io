@@ -1,0 +1,207 @@
+:root {
+	touch-action: pan-x pan-y;
+	height: 100% 
+}
+
+body {
+	overflow: hidden;
+}
+
+#simulation {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+/* 
+#simulation_align {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 50%;
+	height: 50%;
+}
+canvas {
+	position: absolute;
+	bottom: -240px;
+	right: -320px;
+	width: 640px !important;
+	height: 480px !important;
+}
+*/
+
+#simulation_align {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+canvas {
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100% !important;
+	height: 100% !important;
+	display: block;
+
+	transform-style: preserve-3d;
+	transform: perspective(1000px) rotateY(0deg);
+	perspective-origin: center;
+	transition: transform 500ms linear;
+	transform-origin: center left;
+}
+
+#toolbar {
+	position: absolute;
+	top: 0px;
+	right: -200px;
+	width: 200px;
+	height: 100%;
+	background-color: #AAA;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url("./texture/elevpanelsilver.jpg");
+	background-size: 100% 100%;
+	transition: right 500ms linear;
+}
+
+#failureScreen {
+	z-index: 65535;
+	background-color: #0008;
+	position: absolute;
+	top: -100%;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	transition: top 250ms linear;
+}
+#failAlign {
+	background-color: transparent;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 50%;
+	height: 50%;
+}
+#failText {
+	background-color: #000;
+	color: #FFF;
+	text-align: center;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	width: 300px;
+	height: 100px;
+	bottom: -50px;
+	right: -150px;
+	font-family: Sans-serif;
+	font-weight: 900;
+}
+#paneopen {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	width: 64px;
+	height: 64px;
+	z-index: 512;
+	border: none;
+	border-radius: 0px;
+	background-color: #F0F;
+
+	display: none;
+}
+
+.floorbutton {
+	background-color: #000;
+	color: #FFF;
+	position: absolute;
+	left: 76px;
+	width: 48px;
+	height: 48px;
+	border: none;
+	border-radius: 32px;
+	font-weight: 900;
+	font-family: Sans-serif;
+	font-size: 24px;
+	transform: translateX(0px) translateY(0px);
+	text-align: center;
+}
+.floorbutton:active {
+	background-color: #000;
+	color: #FFF;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 32px;
+	font-weight: 900;
+	font-family: Sans-serif;
+	font-size: 20px;
+	transform: translateX(4px) translateY(4px);
+}
+
+.tbpanelal {
+	position: absolute;
+	top: 50%;
+	left: 0px;
+	width: 100%;
+	bottom: 0px;
+	background-color: transparent;
+}
+
+.floorbutton0 {top: 160px;}
+.floorbutton1 {top: 108px;}
+.floorbutton2 {top: 56px;}
+.floorbutton3 {top: 4px;}
+.floorbutton4 {top: -48px;}
+.floorbutton5 {top: -100px;}
+.floorbutton6 {top: -152px;}
+.floorbutton7 {top: -204px;}
+
+.floorbuttonding {
+	top: 212px;
+	left: 24px;
+	font-size: 16px;
+}
+.floorbuttonding:active {
+	font-size: 13px;
+}
+.floorbuttondoor {
+	top: 212px;
+	left: 76px;
+	font-size: 12px;
+}
+.floorbuttondoor:active {
+	font-size: 10px;
+}
+.floorbuttoncrash {
+	top: 212px;
+	left: 128px;
+}
+.floorbuttoncolla {
+	top: -256px;
+	left: 76px;
+}
+.floorbuttoncrash2 {
+	background-color: #000;
+	color: #FFF;
+	position: absolute;
+	border: none;
+	border-radius: 32px;
+	font-weight: 900;
+	font-family: Sans-serif;
+	text-align: center;
+
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+	transform: translateX(4px) translateY(4px);
+	top: 212px;
+	left: 128px;
+}
+.crash_button_img {position: absolute; top: 10%; left: 10%; width: 80%; height: 80%;}
