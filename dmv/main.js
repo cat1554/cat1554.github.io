@@ -4,13 +4,23 @@ var output = "";
 function profanitycheck(txt) {
 	window.console.debug(txt);
 
-//	Hitler references
-	if (txt.search("18") != -1) {output = "18, hitler reference"; return false;};
-	if (txt.search("88") != -1) {output = "88, hitler reference"; return false;};
+//	Funny - Ace Attorney
+	if (txt.search("boat") != -1) {output = "boat, haemorrhoids reference"; return false;};
+	if (txt.search("dl-6") != -1) {output = "DL-6 reference"; return false;};
+	if (txt.search("dl6") != -1) {output = "DL-6 reference"; return false;};
+	if (txt.search("elev") != -1) {output = "elev, DL-6 reference"; return false;};
+	if (txt.search("yanni") != -1) {output = "yanni, DL-6 reference"; return false;};
+	if (txt.search("yogi") != -1) {output = "yogi, DL-6 reference"; return false;};
+	if (txt.search("mvk") != -1) {output = "manfred von karma"; return false;};
+	if (txt.search("von") != -1) {output = "von karma"; return false;};
+	if (txt.search("karma") != -1) {output = "von karma"; return false;};
 
-//	Religious references
-	if (txt.search("666") != -1) {output = "666, religious reference"; return false;};
-	if (txt.search("hel") != -1) {output = "hell, religious reference"; return false;};
+//	Funny - Programming
+	if (txt.search("rm") != -1) {output = "rm, removal command"; return false;};
+	if (txt.search("sudo") != -1) {output = "You do not have permission to use \"sudo\". Contact your system administrator for help."; return false;};
+
+//	Bad characters
+//	if (txt.search("-") != -1) {output = "invalid character"; return false;};
 
 //	Gang references
 	if (txt.search("14") != -1) {output = "14, gang reference"; return false;};
@@ -18,6 +28,14 @@ function profanitycheck(txt) {
 	if (txt.search("blue") != -1) {output = "blue, gang reference"; return false;};
 	if (txt.search("red") != -1) {output = "red, gang reference"; return false;};
 	if (txt.search("gang") != -1) {output = "gang"; return false;};
+
+//	Hitler references
+	if (txt.search("18") != -1) {output = "18, hitler reference"; return false;};
+	if (txt.search("88") != -1) {output = "88, hitler reference"; return false;};
+
+//	Religious references
+	if (txt.search("666") != -1) {output = "666, religious reference"; return false;};
+	if (txt.search("hel") != -1) {output = "hell, religious reference"; return false;};
 
 //	Violent speech
 	if (txt.search("fy") != -1) {output = "fy, fuck you"; return false;};
@@ -32,6 +50,7 @@ function profanitycheck(txt) {
 	if (txt.search("ratio") != -1) {output = "ratio"; return false;};
 	if (txt.search("hate") != -1) {output = "hate"; return false;};
 	if (txt.search("h8") != -1) {output = "h8, hate"; return false;};
+	if (txt.search("u") != -1) {output = "u, hostile"; return false;};
 
 //	Sexual connotations
 	if (txt.search("wet") != -1) {output = "wet"; return false;};
@@ -71,24 +90,6 @@ function profanitycheck(txt) {
 	if (txt.search("cnt") != -1) {output = "cunt"; return false;};
 	if (txt.search("cunt") != -1) {output = "cunt"; return false;};
 	if (txt.search("ass") != -1) {output = "ass"; return false;};
-
-//	Funny - Ace Attorney
-	if (txt.search("boat") != -1) {output = "boat, haemorrhoids reference"; return false;};
-	if (txt.search("dl-6") != -1) {output = "DL-6 reference"; return false;};
-	if (txt.search("dl6") != -1) {output = "DL-6 reference"; return false;};
-	if (txt.search("elev") != -1) {output = "elev, DL-6 reference"; return false;};
-	if (txt.search("yanni") != -1) {output = "yanni, DL-6 reference"; return false;};
-	if (txt.search("yogi") != -1) {output = "yogi, DL-6 reference"; return false;};
-	if (txt.search("mvk") != -1) {output = "manfred von karma"; return false;};
-	if (txt.search("von") != -1) {output = "von karma"; return false;};
-	if (txt.search("karma") != -1) {output = "von karma"; return false;};
-
-//	Funny - Programming
-	if (txt.search("rm") != -1) {output = "rm, removal command"; return false;};
-	if (txt.search("sudo") != -1) {output = "You do not have permission to use \"sudo\". Contact your system administrator for help."; return false;};
-
-//	Bad characters
-//	if (txt.search("-") != -1) {output = "invalid character"; return false;};
 
 //	Pass
 	return true;
