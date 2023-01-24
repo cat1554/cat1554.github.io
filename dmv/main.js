@@ -119,12 +119,12 @@ function toletters(txt) {
 }
 
 function submitdmv() {
-	if (document.getElementById("email").validity.valid == false) {
-		output = "Enter a valid email.";
+/*	if (document.getElementById("email").validity.valid == false) {
+		output = "Enter a valid email";
 		return false;
-	}
+	} */
 	if (document.getElementById("plate").validity.valid == false) {
-		output = "Enter a valid plate.";
+		output = "Enter a valid plate";
 		return false;
 	}
 	var pfc = profanitycheck(document.getElementById("plate").value.toLowerCase());
@@ -148,7 +148,7 @@ function submitdmv() {
 }
 
 function coredmv() {
-	output = "Email with final approval will arrive in 6 to 8 weeks.";
+	output = "Email with final approval will arrive in 6 to 8 weeks";
 	var res = submitdmv();
 
 	document.getElementById("dmv_output").innerHTML = output.toUpperCase();
