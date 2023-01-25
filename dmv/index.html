@@ -5,17 +5,66 @@
 	<title>Catala DMV Custom Plate Request</title>
 	<meta property="og:title" content="Catala DMV Custom Plate Request" />
 	<script src="main.js"></script>
+	<style>
+		tr,td {
+			vertical-align: top;
+			align-items: start;
+		}
+		td p {
+			margin: 0px;
+		}
+	</style>
 </head>
-<body>
+<body onload="setup();">
 	<h2>Catala D.M.V. Custom Plate Request</h2>
-	<form>
-		<label for="email">Email: </label>
-		<input type="email" name="email" id="email" disabled>
-		<label for="plate">Plate: </label>
-		<input type="text" name="plate" id="plate" maxlength="8" size="8" style="font: 12px monospace" required>
-		<input type="button" onclick="coredmv()" value="Submit">
-	</form>
-	<p id="dmv_state"></p>
-	<p id="dmv_output"></p>
+	<table>
+		<tr>
+			<td style="width: 300px">
+				<label for="email">Email: </label>
+				<input type="email" name="email" id="email" disabled>
+			</td>
+			<td rowspan="5">
+				<p style="text-align: center">Preview:</p>
+				<svg id="preview" viewBox="0 0 120 60" style="width: 240px">
+					<defs>
+						<mask id="add_holes">
+							<rect fill="#000" x="0" y="0" width="120" height="60"></rect>
+							<rect fill="#FFF" x="0" y="0" width="120" height="60" rx="4"></rect>
+							<circle fill="#000" cx="20" cy="3" r="2" />
+							<circle fill="#000" cx="100" cy="3" r="2" />
+							<circle fill="#000" cx="20" cy="57" r="2" />
+							<circle fill="#000" cx="100" cy="57" r="2" />
+						</mask>
+					</defs>
+					<g mask="url(#add_holes)">
+						<rect fill="#0F0" x="0" y="0" width="120" height="60"></rect>
+						<text text-anchor="middle" x="60" y="10" style="fill: #F00; font: 8px monospace; font-weight: 900;">CATALA</text>
+						<text id="platenum" text-anchor="middle" x="60" y="37.5" style="fill: #F00; font: 20px monospace; font-weight: 900;"></text>
+					</g>
+				</svg>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="plate">Plate: </label>
+				<input type="text" name="plate" id="plate" maxlength="8" size="8" style="font: 12px monospace" required>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<input type="button" onclick="coredmv()" value="Submit">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>DMV: <span id="dmv_output"></span></p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p id="dmv_state_header">Verdict: <span id="dmv_state"></span></p>
+			</td>
+		</tr>
+	</table>
 </body>
 </html>
